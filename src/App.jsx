@@ -1,7 +1,7 @@
 import About from "./About"
 import Contact from "./Contact"
 import Education from "./Education"
-import Intro from "./intro"
+import Intro from "./Intro"
 import ProjectContainer from "./ProjectContainer"
 import Skills from "./Skills"
 
