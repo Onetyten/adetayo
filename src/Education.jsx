@@ -52,17 +52,17 @@ export default function Education() {
 
                 <div className="grid grid-rows-3 h-full">
                     <div className="bg-myblack h-full relative">
-                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute top-0 -left-2">
+                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
 
                         </div>
                     </div>
                     <div className="bg-myblack h-full  relative">
-                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute top-0 -left-2">
+                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white hover:bg-myteal absolute top-0 -left-2">
 
                         </div>
                     </div>
                     <div className="bg-myblack  h-full  relative">
-                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute top-0 -left-2">
+                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
 
                         </div>
                     </div>

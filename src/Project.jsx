@@ -8,7 +8,7 @@ import ConsoleText from "./ConsoleText";
 import ProjectItem from "./Components/ProjectItem";
 
 export default function Project(props) {
-  const { name, role, skills, desc, letter,isMobile ,imgPath} = props;
+  const { name, role, skills, desc, letter,isMobile ,imgPath,githubPath,projectPath} = props;
   const [isVisible, setIsVisible] = useState(false);
   const projectRef = useRef(null);
 
@@ -53,7 +53,7 @@ export default function Project(props) {
           {isVisible && (
             <Canvas>
               <directionalLight intensity={4} position={[0, 1, 1]} color={"#fffadb"} />
-              <LaptopModel isMobile = {isMobile} imgPath={imgPath} />
+              <LaptopModel {...props}/>
             </Canvas>
           )}
         </div>
@@ -70,4 +70,6 @@ Project.propTypes = {
   letter: PropTypes.node,
   isMobile: PropTypes.node,
   imgPath: PropTypes.node,
+  githubPath: PropTypes.node,
+  projectPath: PropTypes.node,
 };

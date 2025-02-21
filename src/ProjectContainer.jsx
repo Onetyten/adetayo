@@ -44,13 +44,15 @@ export default function ProjectContainer() {
 
   const projectDetails = [
     {
-      name: "Code Ninja",
+      name: "Stock Ninja",
       role: "Frontend Engineer",
       skills: ["React", "TailwindCSS"],
       desc: "Stock market watchlist...",
       letter: "C",
       isMobile:false,
-      imgPath:'/3D model/screenImg/CodeNinja.png'
+      imgPath:'/3D model/screenImg/CodeNinja.png',
+      projectPath:'https://stockninjawatchlist.netlify.app/',
+      githubPath:'https://github.com/Onetyten/stock-ninja'
     },
     {
       name: "Moris Recipee",
@@ -59,7 +61,9 @@ export default function ProjectContainer() {
       desc: "Recipe app...",
       letter: "M",
       isMobile:false,
-      imgPath:'/3D model/screenImg/MorisRecipee.png'
+      imgPath:'/3D model/screenImg/MorisRecipee.png',
+      projectPath:'https://morisrecipee.netlify.app/',
+      githubPath:'https://github.com/Onetyten/moris_recipee'
     },
     {
       name: "Solidus",
@@ -68,7 +72,9 @@ export default function ProjectContainer() {
       desc: "Portfolio site...",
       letter: "S",
       isMobile:false,
-      imgPath:'/3D model/screenImg/solidus.png'
+      imgPath:'/3D model/screenImg/solidus.png',
+      projectPath:'https://solidusteammanager.netlify.app/',
+      githubPath:'https://github.com/Onetyten/solidus_team_manager'
     },
     {
       name: "Lift mobile",
@@ -77,7 +83,9 @@ export default function ProjectContainer() {
       desc: "Mobile app UI...",
       letter: "L",
       isMobile:true,
-      imgPath:'/3D model/screenImg/LiftMobile.png'
+      imgPath:'/3D model/screenImg/LiftMobile.png',
+      projectPath:'https://github.com/Onetyten/Ride-Share-App',
+      githubPath:'https://github.com/Onetyten/Ride-Share-App'
       
     },
   ];

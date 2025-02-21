@@ -11,9 +11,9 @@ export default function ContactConsole({children,projectname}) {
           <div className='border-b-[1px] h-12 w-full border-b-lightergrey flex flex-row items-center justify-start'>
             <div className='flex items-center justify-center w-full relative'>
                 <div className='flex gap-3 ml-4 absolute top-0 left-0'>
-                    <div className='bg-mypurple w-3 h-3 rounded-full'></div>
-                    <div className='bg-orange-300 w-3 h-3 rounded-full'></div>
-                    <div className='bg-myteal w-3 h-3 rounded-full'></div>
+                    <div className='bg-mypurple hover:bg-pink-600 w-3 h-3 rounded-full'></div>
+                    <div className='bg-orange-300 hover:bg-orange-400 w-3 h-3 rounded-full'></div>
+                    <div className='bg-myteal hover:bg-green-600 w-3 h-3 rounded-full'></div>
                 </div>
 
                 <div className='flex-1 text-center w-full flex justify-center'>

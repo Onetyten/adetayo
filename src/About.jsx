@@ -14,11 +14,13 @@ import AboutpicMobile from '/Images/aboutpicmobile.png'
 export default function About() {
   return (
     <div className=' h-screen relative box-border flex-col md:flex-row  flex overflow-x-hidden section-snap '>
-      <div className="bg-darkgrey h-full flex-[0.513] relative">
-        <img src={Aboutpic} alt="" className='absolute md:-right-[32%] md:block hidden v-align md:w-xs w-60 object-contain' />
-        <div className='md:hidden right-[12%] flex justify-center items-center h-full w-full'>
-          <img src={AboutpicMobile} alt="" className='md:w-xs w-[60%] object-contain ' />
-        </div>
+      <div className="bg-darkgrey h-full flex-[0.52] relative">
+      <img 
+  src={Aboutpic} alt="" className='absolute md:-right-[32%] md:block hidden v-align md:w-xs w-60 object-contain grayscale-0 hover:grayscale transition duration-300'/>
+
+    <div className='md:hidden right-[12%] flex justify-center items-center h-full w-full'>
+      <img src={AboutpicMobile} alt="" className='md:w-xs w-[60%] object-contain grayscale-0 hover:grayscale transition duration-300' />
+    </div>
       </div>
       <div className="bg-white h-full flex-1 flex justify-center p-4 items-center">
         <ConsoleText projectname = 'About.js'>

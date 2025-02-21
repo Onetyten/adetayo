@@ -5,7 +5,7 @@ import StringText from './StringText'
 import PropTypes from 'prop-types'
 
 export default function ProjectItem(props) {
-    const { name,role,skills,desc} = props
+    const { name,role,skills,desc,githubPath,projectPath} = props
   return (
     <div>
         <div className='ml-0'>
@@ -40,10 +40,10 @@ export default function ProjectItem(props) {
             Description : <StringText> &quot;{desc}.&quot;</StringText><GreyText> ,</GreyText>
         </div>
         <div className='ml-4'>
-            Github Link : <BoolText> Click here </BoolText><GreyText> ,</GreyText>
+            Github Link : <a href={githubPath} target='_blank'><BoolText> Click here </BoolText></a><GreyText> ,</GreyText>
         </div>
         <div className='ml-4'>
-            Project Link : <BoolText> Click here </BoolText><GreyText> ,</GreyText>
+            Project Link : <a href={projectPath} target='_blank'><BoolText> Click here </BoolText></a><GreyText> ,</GreyText>
         </div>
         <span className='text-orange-300'> {')'} </span><GreyText>{"}"}</GreyText>
         <div className='ml-0'>
@@ -62,5 +62,7 @@ ProjectItem.propTypes={
     name : PropTypes.node,
     role : PropTypes.node,
     skills : PropTypes.node,
+    githubPath : PropTypes.node,
+    projectPath : PropTypes.node,
     desc : PropTypes.node
 }

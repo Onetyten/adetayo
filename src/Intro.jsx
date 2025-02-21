@@ -108,20 +108,20 @@ export default function Intro() {
 
 
 
-                <a href="https://github.com/Onetyten" target='_blank'>
-                    <FontAwesomeIcon icon={faGithub} className="text-white text-lg xl:text-3xl link-shadow " ref ={(el)=>{iconRef.current[0] = el}}/>
+                <a href="https://github.com/Onetyten" target='_blank' rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faGithub} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow " ref ={(el)=>{iconRef.current[0] = el}}/>
                 </a>
-                <a href="www.linkedin.com/in/labaeka-adetayo-a9681a247">
-                    <FontAwesomeIcon icon={faLinkedin} className="text-white  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[1] = el}}/>
+                <a href="https://www.linkedin.com/in/labaeka-adetayo-a9681a247" target='_blank' rel="noopener noreferrer" >
+                    <FontAwesomeIcon icon={faLinkedin} className="text-white hover:text-lightergrey  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[1] = el}}/>
                 </a>
                 <a href="mailto:labaekaabdulrazaq@gmail.com">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-white  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[2] = el}}/>
+                    <FontAwesomeIcon icon={faEnvelope} className="text-white hover:text-lightergrey  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[2] = el}}/>
                 </a>
                 <a href="tel:+2349155073769">
-                    <FontAwesomeIcon icon={faPhone} className="text-white text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[3] = el}}/>
+                    <FontAwesomeIcon icon={faPhone} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[3] = el}}/>
                 </a>
-                <a href="https://x.com/Onetyten_exe">
-                    <FontAwesomeIcon icon={faTwitter} className="text-white text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[4] = el}}/>
+                <a href="https://x.com/Onetyten_exe" target='_blank' rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={faTwitter} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[4] = el}}/>
                 </a>
 
             </div>

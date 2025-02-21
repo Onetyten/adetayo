@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/no-unknown-property */
-import { useAnimations, useGLTF,useTexture } from "@react-three/drei";
-import { useEffect, useRef } from "react";
+import { useAnimations, useCursor, useGLTF,useTexture } from "@react-three/drei";
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three"; // Import Three.js
@@ -11,7 +11,9 @@ useGLTF.preload("/3D model/Laptop/laptop.gltf");
 useGLTF.preload("/3D model/Phone/Phone.gltf");
 
 export default function LaptopModel(props) {
-  const {isMobile,imgPath} = props
+  const [hovered,setHovered] = useState(false)
+  useCursor(hovered)
+  const {isMobile,imgPath,projectPath} = props
   const group = useRef(null);
 
   const { animations, scene } = useGLTF(isMobile?"/3D model/Phone/Phone.gltf":"/3D model/Laptop/laptop.gltf");
@@ -61,7 +63,7 @@ export default function LaptopModel(props) {
   });
 
   return (
-    <group ref={group} position={[0, -0.1, isMobile? 4.83:4.7]}>
+    <group ref={group} position={[0, -0.1, isMobile? 4.83:4.7]} onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)} onClick={() => window.open(projectPath, "_blank")}>
       <primitive object={scene} />
     </group>
   );
@@ -69,5 +71,6 @@ export default function LaptopModel(props) {
 
 LaptopModel.propTypes={
   isMobile:PropTypes.bool,
-  imgPath:PropTypes.node
+  imgPath:PropTypes.node,
+  projectPath:PropTypes.node,
 }
