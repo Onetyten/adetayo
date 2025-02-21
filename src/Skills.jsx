@@ -43,16 +43,20 @@ export default function Skills() {
         gsap.from(skillBoxRef.current,{y:'50',opacity:0,stagger:0.2,duration:2 ,scrollTrigger:{trigger:skillBoxRef.current,toggleActions:'restart none none none'}})
     })
   return (
-    <div className='max-w-full h-screen relative box-border section-snap p-56 flex overflow-hidden justify-center gap-8 flex-wrap items-center' ref={headerRef}>
+    <div className='max-w-full h-screen relative box-border section-snap flex overflow-hidden justify-center flex-wrap items-center' ref={headerRef}>
 
-        {skillContainer.map((skill, index)=>{
-            return(
-                <div ref={(el)=>{skillBoxRef.current[index] = el}} key={index}>
-                    <SkillItem source = {skill.source} title = {skill.name}/>
-                </div>
-            )
+        <div className=" w-[60%]  relative box-border section-snap flex overflow-hidden justify-center gap-12 flex-wrap items-center">
+            {skillContainer.map((skill, index)=>{
+                return(
+                    <div ref={(el)=>{skillBoxRef.current[index] = el}} key={index}>
+                        <SkillItem source = {skill.source} title = {skill.name}/>
+                    </div>
+                )
 
-        })}
+            })}
+        </div>
+
+       
         
 
 

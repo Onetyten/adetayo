@@ -26,10 +26,10 @@ export default function Education() {
     },[])
 
   return (
-    <div ref={EduRef}  className="min-w-screen min-h-screen relative box-border section-snap flex flex-row items-stretch justify-between items-center bg-white">
-        <div className='flex-[0.5] bg-darkgrey min-h-screen flex justify-center items-center w-full'>
+    <div ref={EduRef}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col flex xl:flex-row items-stretch justify-between bg-white">
+        <div className='flex-[0.5] bg-darkgrey xl:min-h-screen flex justify-center items-center w-full'>
             
-            <div className="w-full h-screen">
+            <div className="w-full xl:h-screen h-96">
                 {isVisible && (<Canvas >
                     <Model/>
                     <directionalLight position={[1,2,6]} rotation={[1,2,6]} intensity= {2} color={"#9bc0ce"}/>

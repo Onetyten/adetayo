@@ -9,7 +9,7 @@ export default function ContactBox(props) {
         <div className="w-full relative">
             {!isArea&&(<input type="text" className="bg-darkgrey w-full pl-8 text-white h-9 placeholder:text-lightergrey" placeholder={placeholder}/>)}
             {isArea&&(<textarea className="bg-darkgrey w-full pl-8 text-white h-16 p-2 placeholder:text-lightergrey"  placeholder={placeholder}/>)}
-            <FontAwesomeIcon icon={icon} className="text-white absolute left-3 top-2 link-shadow"  color={" #5d5c5c"}/>
+            <FontAwesomeIcon icon={icon} className="text-white absolute left-3 top-2.5 link-shadow"  color={" #5d5c5c"}/>
         </div>
     </div>
   )

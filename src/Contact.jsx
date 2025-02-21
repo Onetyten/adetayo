@@ -15,10 +15,10 @@ import ContactBox from "./Components/ContactBox"
 export default function Contact() {
 
   return (
-    <div className='max-w-full h-screen relative box-border section-snap flex overflow-hidden justify-center gap-8  flex-wrap items-center'>
+    <div className='max-w-full h-screen relative box-border section-snap flex overflow-auto justify-center gap-8 p-3 md:p-0 flex-wrap items-center'>
 
-        <div className="w-4xl h-[500px] flex gap-2" >
-            <div className=" p-5  grey flex-1 h-full flex flex-col">
+        <div className="w-4xl md:h-[500px] h-screen md:flex-row flex-col flex md:gap-2 gap-8" >
+            <div className=" p-5  grey flex-1 xl:h-full flex flex-col h-screen">
                 <div className="flex-1 h-full flex flex-col gap-4">
                     <h2 className="text-3xl font-bold text-white">Contact me</h2>
                     <p className="text-lightergrey text-xs">Fill out the form and i’ll be in touch as soon as possible.</p>
@@ -66,7 +66,7 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-4 mt-24 md:mt-0">
 
                     <a href="https://github.com/Onetyten" target='_blank'>
                         <FontAwesomeIcon icon={faGithub} className="text-white text-xl link-shadow " />
@@ -87,20 +87,24 @@ export default function Contact() {
                 </div>
             </div>
 
-            <ContactConsole>
-                <div className="flex flex-col justify-between gap-6">
+            <div className="flex-1 w-full  flex justify-center items-center">
+                <ContactConsole>
+                    <div className="flex mb-10 md:mb-0 flex-col justify-between gap-6">
 
-                    <div className="flex flex-col gap-4">
-                        <ContactBox name="Name" icon = {faUser} placeholder = "e.g. John Doe" isArea = {false}/>
-                        <ContactBox name="Email" icon = {faEnvelope} placeholder = "e.g. johndoe@gmail.com" isArea = {false}/>
-                        <ContactBox name="Phone" icon = {faPhone} placeholder = "Phone Number" isArea = {false}/>
-                        <ContactBox name="Message" icon = {faMessage} placeholder = "Write message..." isArea = {true}/>
+                        <div className="flex flex-col gap-4">
+                            <ContactBox name="Name" icon = {faUser} placeholder = "e.g. John Doe" isArea = {false}/>
+                            <ContactBox name="Email" icon = {faEnvelope} placeholder = "e.g. johndoe@gmail.com" isArea = {false}/>
+                            <ContactBox name="Phone" icon = {faPhone} placeholder = "Phone Number" isArea = {false}/>
+                            <ContactBox name="Message" icon = {faMessage} placeholder = "Write message..." isArea = {true}/>
+                        </div>
+                        <div className="text-center bg-white text-darkgrey text-md p-2 font-bold">
+                            SEND
+                        </div>
                     </div>
-                    <div className="text-center bg-white text-darkgrey text-md p-2 font-bold">
-                        SEND
-                    </div>
-                </div>
-            </ContactConsole>
+                </ContactConsole>
+            </div>
+
+           
             
         </div>
 

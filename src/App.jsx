@@ -8,7 +8,7 @@ import Skills from "./Skills"
 function App() {
 
   return (
-    <>
+    <main className="overflow-x-hidden scroll-snap-y">
         <Intro/>
         <About/>
         <ProjectContainer/>        
@@ -16,7 +16,7 @@ function App() {
         <Education/>
         <Contact/>
         
-    </>
+    </main>
 
   )
 }

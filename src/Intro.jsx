@@ -25,7 +25,7 @@ export default function Intro() {
 
   return (
     
-    <div className='max-w-full h-screen relative box-border overflow-x-hidden section-snap'>
+    <div className='max-w-full h-screen relative box-border overflow-hidden section-snap'>
 
         {/* the two backgrounds that are going to scroll in */}
         <div className='max-w-full h-screen flex  flex-row relative justify-start '>
@@ -49,7 +49,7 @@ export default function Intro() {
         <div className='h-screen top-0 w-screen absolute box-border flex-1  overflow-hidden flex justify-start  items-center'>
                 <div className="justify-self-start w-[50vw] h-full flex justify-center items-center overflow-hidden">
                     <span className="left-span">
-                        <p className="text-[40vw] ab font-roboto font-bold text-lightgrey text-center left-title">
+                        <p className="text-[70vw] xl:text-[40vw] ab font-roboto font-bold text-lightgrey text-center left-title">
                             Hello
                         </p>     
                     </span>
@@ -63,7 +63,7 @@ export default function Intro() {
             <div className='h-screen top-0 w-screen absolute box-border flex-1  overflow-hidden flex justify-end  items-center'>
                 <div className="justify-self-end w-[50vw] h-full flex justify-center items-center overflow-hidden">
                     <span className="right-span">
-                        <p className="text-[40vw] ab font-roboto font-bold text-lightgrey text-center right-title">
+                        <p className=" text-[70vw] xl:text-[40vw] ab font-roboto font-bold text-lightgrey text-center right-title">
                             Hello
                         </p>   
                     </span>
@@ -103,25 +103,25 @@ export default function Intro() {
         </div>
 
 
-        <div className='h-screen top-0 w-screen absolute box-border flex justify-center items-end '>
-            <div className="w-[50%] h-12 bg-lightgrey flex justify-center gap-[5%] items-center overflow-hidden">
+        <div className='h-screen top-0 w-screen absolute box-content flex justify-center items-end '>
+            <div className="w-[80%] xl:w-[50%] h-12 bg-lightgrey flex justify-center gap-[5%] items-center overflow-hidden">
 
 
 
                 <a href="https://github.com/Onetyten" target='_blank'>
-                    <FontAwesomeIcon icon={faGithub} className="text-white text-3xl link-shadow " ref ={(el)=>{iconRef.current[0] = el}}/>
+                    <FontAwesomeIcon icon={faGithub} className="text-white text-lg xl:text-3xl link-shadow " ref ={(el)=>{iconRef.current[0] = el}}/>
                 </a>
                 <a href="www.linkedin.com/in/labaeka-adetayo-a9681a247">
-                    <FontAwesomeIcon icon={faLinkedin} className="text-white  text-3xl link-shadow" ref ={(el)=>{iconRef.current[1] = el}}/>
+                    <FontAwesomeIcon icon={faLinkedin} className="text-white  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[1] = el}}/>
                 </a>
                 <a href="mailto:labaekaabdulrazaq@gmail.com">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-white  text-3xl link-shadow" ref ={(el)=>{iconRef.current[2] = el}}/>
+                    <FontAwesomeIcon icon={faEnvelope} className="text-white  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[2] = el}}/>
                 </a>
                 <a href="tel:+2349155073769">
-                    <FontAwesomeIcon icon={faPhone} className="text-white text-3xl link-shadow" ref ={(el)=>{iconRef.current[3] = el}}/>
+                    <FontAwesomeIcon icon={faPhone} className="text-white text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[3] = el}}/>
                 </a>
                 <a href="https://x.com/Onetyten_exe">
-                    <FontAwesomeIcon icon={faTwitter} className="text-white text-3xl link-shadow" ref ={(el)=>{iconRef.current[4] = el}}/>
+                    <FontAwesomeIcon icon={faTwitter} className="text-white text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[4] = el}}/>
                 </a>
 
             </div>

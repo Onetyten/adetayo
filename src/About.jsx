@@ -4,6 +4,7 @@ import GreyText from './Components/GreyText'
 import StringText from './Components/StringText'
 import BoolText from './Components/BoolText'
 import ConsoleText from './ConsoleText'
+import AboutpicMobile from '/Images/aboutpicmobile.png'
 
 
 
@@ -12,11 +13,14 @@ import ConsoleText from './ConsoleText'
 
 export default function About() {
   return (
-    <div className='max-w-full h-screen relative box-border flex overflow-x-hidden section-snap '>
-      <div className="bg-darkgrey h-full flex-[0.5] relative">
-        <img src={Aboutpic} alt="" className='absolute -right-40 top-28 w-xs object-contain' />
+    <div className=' h-screen relative box-border flex-col md:flex-row  flex overflow-x-hidden section-snap '>
+      <div className="bg-darkgrey h-full flex-[0.513] relative">
+        <img src={Aboutpic} alt="" className='absolute md:-right-[32%] md:block hidden v-align md:w-xs w-60 object-contain' />
+        <div className='md:hidden right-[12%] flex justify-center items-center h-full w-full'>
+          <img src={AboutpicMobile} alt="" className='md:w-xs w-[60%] object-contain ' />
+        </div>
       </div>
-      <div className="bg-white h-full flex-1 flex justify-center items-center">
+      <div className="bg-white h-full flex-1 flex justify-center p-4 items-center">
         <ConsoleText projectname = 'About.js'>
 
           <div className='ml-0'>

@@ -45,3 +45,13 @@ html{
 .console-shadow2{
     box-shadow: 12px 8px 0px #121212  ;
 }
+.v-align{
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}

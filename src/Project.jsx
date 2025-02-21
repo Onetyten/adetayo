@@ -36,8 +36,8 @@ export default function Project(props) {
       ref={projectRef}
       className="min-w-screen h-screen relative box-border section-snap flex justify-between items-center bg-white"
     >
-      <div className="w-screen h-screen flex flex-row">
-        <div className="flex-[0.5] flex justify-center items-center">
+      <div className="w-screen h-screen flex xl:flex-row flex-col-reverse">
+        <div className="flex-[0.5] flex justify-center p-4 xl:p-0 items-center">
           <ConsoleText projectname={name}>
             <ProjectItem {...props} />
           </ConsoleText>
