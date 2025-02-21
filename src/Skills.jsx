@@ -15,7 +15,7 @@ import Express from '/Images/Skills/Express.png'
 import Python from '/Images/Skills/Python.png'
 import Tailwind from '/Images/Skills/tailwind.png'
 import ThreeJsIMG from '/Images/Skills/threejs.png'
-import SkillItem from './Components/skillItem'
+import SkillItem from './Components/SkillItem'
 import { useRef } from 'react'
 
 
