@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+@theme{
+    --color-darkgrey: #171616;
+    --color-lightgrey: #232323;
+    --color-lightergrey: #5d5c5c;
+    --color-myblack: #121212;
+    --color-mypurple: #ec4899;
+    --color-mygreen: #99b84a;
+    --color-myteal: #16f2b3;
+    --font-roboto: "Roboto",sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+html{
+    background-color:#171616 ;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    scroll-snap-type: both mandatory;
+}
+
+.section-snap{
+    scroll-snap-align: start;
+}
+
+.head-shadows{
+    text-shadow: 15px 15px 0px #121212 ;
+}
+.right-title{
+    transform: translateX(-25vw);
+}
+.left-title{
+    transform: translateX(25vw);
+}
+.link-shadow{
+    filter:drop-shadow(5px 5px 0px #121212)
+}
+.console-shadow{
+    box-shadow: 5px 5px 0px #5d5c5c  ;
+}
+.console-shadow2{
+    box-shadow: 12px 8px 0px #121212  ;
+}
