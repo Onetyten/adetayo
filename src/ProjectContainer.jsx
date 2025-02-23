@@ -66,14 +66,14 @@ export default function ProjectContainer() {
       githubPath:'https://github.com/Onetyten/moris_recipee'
     },
     {
-      name: "Solidus",
+      name: "Scissors",
       role: "Frontend Engineer",
       skills: ["React", "TailwindCSS"],
       desc: "Portfolio site...",
       letter: "S",
       isMobile:false,
-      imgPath:'/3D model/screenImg/solidus.png',
-      projectPath:'https://solidusteammanager.netlify.app/',
+      imgPath:'/3D model/screenImg/scissors.png',
+      projectPath:'https://onetyten-altschool.vercel.app/Scissors/index.html',
       githubPath:'https://github.com/Onetyten/solidus_team_manager'
     },
     {

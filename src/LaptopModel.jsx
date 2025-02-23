@@ -41,6 +41,7 @@ export default function LaptopModel(props) {
   }, [scene, screenTexture]);
   
 
+
   
 
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function LaptopModel(props) {
     group.current.rotation.y = x * 0.15; // Rotate left/right
     group.current.rotation.x = y * 0.1; // Rotate up/down
   });
+  
 
   return (
     <group ref={group} position={[0, -0.1, isMobile? 4.83:4.7]} onPointerOver={() => setHovered(true)} onPointerOut={() => setHovered(false)} onClick={() => window.open(projectPath, "_blank")}>

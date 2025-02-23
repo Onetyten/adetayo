@@ -37,7 +37,6 @@ export default function Skills() {
         {name:"Python", source: Python },
         {name:"Tailwind", source: Tailwind },
         {name:"ThreeJS", source: ThreeJsIMG},
-
     ]
     useGSAP(()=>{
         gsap.from(skillBoxRef.current,{y:'50',opacity:0,stagger:0.2,duration:2 ,scrollTrigger:{trigger:skillBoxRef.current,toggleActions:'restart none none none'}})
