@@ -1,18 +1,24 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unknown-property */
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, Suspense } from "react";
 import PropTypes from "prop-types";
 import { Canvas } from "@react-three/fiber";
 import LaptopModel from "./LaptopModel";
 import ConsoleText from "./ConsoleText";
 import ProjectItem from "./Components/ProjectItem";
+import Loader from "./Components/Loader";
+import { motion } from "framer-motion";
+
+
+
 
 export default function Project(props) {
-  const { name, role, skills, desc, letter,isMobile ,imgPath,githubPath,projectPath} = props;
+  const { name, role, skills, desc, letter,isMobile ,showMessage,message,imgPath,githubPath,projectPath} = props;
   const [isVisible, setIsVisible] = useState(false);
   const projectRef = useRef(null);
 
   useEffect(() => {
+    if (isVisible) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
@@ -50,10 +56,25 @@ export default function Project(props) {
             </p>
           </div>
 
+          {showMessage&&(<div className="w-full h-full absolute top-0 left-0 p-2 md:p-9 flex justify-end items-start overflow-hidden">
+            <div className="bg-lightergrey hover:bg-stone-400 console-shadow2 md:px-9 md:py-5 px-3 py-2 ">
+              <p className="text text-xs font-roboto text-white font-bold">
+                {message}
+              </p> 
+            </div>
+          </div>)}
+
+          <motion.div initial={{height:'100%'}} whileInView={{height:0}} transition={{duration:2,ease:'easeInOut'}} className="w-full z-10 h-full absolute top-0 left-0 bg-gradient-to-b from-myblack to-lightgrey flex justify-center items-center overflow-hidden">
+            
+          </motion.div>
+
           {isVisible && (
             <Canvas>
               <directionalLight intensity={4} position={[0, 1, 1]} color={"#fffadb"} />
-              <LaptopModel {...props}/>
+              <Suspense fallback={<Loader/>}>
+                <LaptopModel {...props}/>
+              </Suspense>
+              
             </Canvas>
           )}
         </div>
@@ -68,8 +89,10 @@ Project.propTypes = {
   skills: PropTypes.node,
   desc: PropTypes.node,
   letter: PropTypes.node,
-  isMobile: PropTypes.node,
+  isMobile: PropTypes.bool,
+  showMessage: PropTypes.bool,
   imgPath: PropTypes.node,
   githubPath: PropTypes.node,
   projectPath: PropTypes.node,
+  message: PropTypes.node,
 };

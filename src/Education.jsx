@@ -1,8 +1,9 @@
 /* eslint-disable react/no-unknown-property */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState,Suspense } from "react";
 import EducationCard from "./EducationCard";
 import { Canvas } from "@react-three/fiber";
 import Model from "./Model";
+import Loader from "./Components/Loader";
 
 
 export default function Education() {
@@ -26,17 +27,25 @@ export default function Education() {
     },[])
 
   return (
-    <div ref={EduRef}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col flex xl:flex-row items-stretch justify-between bg-white">
-        <div className='flex-[0.5] bg-darkgrey xl:min-h-screen flex justify-center items-center w-full'>
+    <div ref={EduRef}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between bg-white">
+        <div className='flex-[0.5] flex-col-reverse md:flex-col  bg-darkgrey xl:min-h-screen flex justify-center items-center w-full'>
             
+            <div className="w-full p-8">
+                <p className="text-center md:text-left  md:text-3xl text-xl font-roboto font-extrabold text-white">Education</p>
+            </div>
             <div className="w-full xl:h-screen h-96">
                 {isVisible && (<Canvas >
-                    <Model/>
+                    <Suspense fallback={<Loader/>}>
+                        <Model/>
+                    </Suspense>
+                    
                     <directionalLight position={[1,2,6]} rotation={[1,2,6]} intensity= {2} color={"#9bc0ce"}/>
                     <directionalLight position={[-1,2,6]} rotation={[1,2,-6]} intensity= {1} color={"#f8ee95"}/>
                     {/* <OrbitControls/> */}
                 </Canvas>)}
             </div>
+            
+
 
             
 

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { motion } from 'framer-motion'
 
 
 
@@ -16,18 +17,18 @@ export default function FixedConsole({children,projectname}) {
                     <div className='bg-myteal hover:bg-green-600 w-3 h-3 rounded-full'></div>
                 </div>
 
-                <div className='flex-1 text-center w-full flex justify-center'>
+                <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}}  className='flex-1 text-center w-full flex justify-center'>
                     <p className='font-roboto  text-white hover:text-lightergrey xl:text-md text-xs'>{projectname}</p>
                     
-                </div>
+                </motion.div>
 
             </div>
 
           </div>
 
-          <div className='text-white xl:px-4 xl:py-8 px-3 py-3 box-border'>
+          <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}} className='text-white xl:px-4 xl:py-8 px-3 py-3 box-border'>
             {children}
-          </div>
+          </motion.div>
         </div>
   )
 }
