@@ -1,5 +1,9 @@
 import { useEffect, useRef} from "react";
 import Project from "./Project";
+import Morees from '/Images/Portfolio/morees.png'
+import Scissors from '/Images/Portfolio/Scissors.png'
+import StockNinja from '/Images/Portfolio/StockNinja.png'
+import LiftMobile from '/Images/Portfolio/LiftMobile.png'
 
 export default function ProjectContainer() {
   const containerRef = useRef(null);
@@ -15,7 +19,7 @@ export default function ProjectContainer() {
       const direction = e.deltaY > 0 ? 1 : -1; // Detect scroll direction
 
       // Allow vertical scroll if at the first or last project
-      if ((scrollLeft === 0 && direction === -1) || (scrollLeft === maxScrollLeft && direction === 1)) {
+      if ((scrollLeft === 0 && direction === -1) || (scrollLeft >= maxScrollLeft-2 && direction === 1)) {
         return; // Let normal scrolling happen
       }
 
@@ -46,12 +50,13 @@ export default function ProjectContainer() {
     {
       name: "Stock Ninja",
       role: "Frontend Engineer",
-      skills: ["Finnhub Stock API", "React","Axios","Recharts","react-router","vite","tailwindcss"],
+      skills: ["Finnhub Stock API", "React","Axios","Recharts","React-router","Vite","Tailwindcss"],
       desc: "Developed a stock market watchlist that uses the Finnhub API to provide real-time financial data, including stock prices, charts, company information and recent news. The site offers users an organized, responsive experience, allowing you to track and analyze market trends",
       letter: "C",
       showMessage: true,
       message: "scroll right",
       isMobile:false,
+      image: StockNinja,
       imgPath:'/3D model/screenImg/CodeNinja.png',
       projectPath:'https://stockninjawatchlist.netlify.app/',
       githubPath:'https://github.com/Onetyten/stock-ninja'
@@ -59,12 +64,13 @@ export default function ProjectContainer() {
     {
       name: "Moris Recipee",
       role: "Frontend Engineer",
-      skills: ["ThemealDB api","React","axios","TailwindCSS","react-dom","vite"],
+      skills: ["ThemealDB api","React","Axios","TailwindCSS","React-dom","Vite"],
       desc: "This is a recipe web app developed using React. It implements the MealDB API to deliver a huge selection of recipes from a database. Tailwind CSS is used for modern and responsive styling, ensuring a visually appealing interface",
       letter: "M",
       showMessage: false,
       message: "",
       isMobile:false,
+      image: Morees,
       imgPath:'/3D model/screenImg/MorisRecipee.png',
       projectPath:'https://morisrecipee.netlify.app/',
       githubPath:'https://github.com/Onetyten/moris_recipee'
@@ -78,6 +84,7 @@ export default function ProjectContainer() {
       showMessage: false,
       message: "",
       isMobile:false,
+      image: Scissors,
       imgPath:'/3D model/screenImg/scissors.png',
       projectPath:'https://onetyten-altschool.vercel.app/Scissors/index.html',
       githubPath:'https://github.com/Onetyten/MyAltschoolProfile/tree/main/Scissors'
@@ -91,6 +98,7 @@ export default function ProjectContainer() {
       showMessage: true,
       message: "scroll down",
       isMobile:true,
+      image: LiftMobile,
       imgPath:'/3D model/screenImg/LiftMobile.png',
       projectPath:'https://github.com/Onetyten/Ride-Share-App',
       githubPath:'https://github.com/Onetyten/Ride-Share-App'

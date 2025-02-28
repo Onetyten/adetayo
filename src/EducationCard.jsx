@@ -1,7 +1,4 @@
-import BoolText from "./Components/BoolText";
-import CodeText from "./Components/CodeText";
-import GreyText from "./Components/GreyText";
-import StringText from "./Components/StringText";
+
 import FixedConsole from "./FixedConsole";
 import PropTypes from "prop-types";
 
@@ -10,32 +7,28 @@ export default function EducationCard(props) {
   return (
     <div>
         <FixedConsole projectname={projectname} className='xl:text-md text-xs' >
-            <div className='ml-0'>
-                <CodeText> const </CodeText> <span>newTraining</span> 
-                <CodeText> = new <BoolText>Training</BoolText> </CodeText> <span className='text-orange-300'> {'('} </span><GreyText>{"{"}</GreyText>
+
+        <div className='flex flex-col gap-3'>
+        
+            <div className=''>
+                <p className='text-lg 2xl:text-2xl'>{projectname}</p>
             </div>
-            <div className=' ml-2 xl:ml-4'>
-                Institution : <StringText> &quot;{projectname}
-                &quot;</StringText><GreyText> ,</GreyText>
-            </div>
-            <div className='ml-2 xl:ml-4'>
-                Timeline : <StringText> &quot;{timeline}
-                &quot;</StringText><GreyText> ,</GreyText>
-            </div>
-            <div className='ml-2 xl:ml-4'>
-                Skills_learnt : <StringText> &quot;{skills}&quot;</StringText><GreyText> ,</GreyText>
+            <div className='ml-4'>
+            <p className=' 2xl:text-lg text-lightergrey' >Timeline : <span className='text-white'>{timeline}</span></p> 
             </div>
 
-            <div className='ml-2 xl:ml-4 xl:block hidden'>
-                Description : <StringText> &quot;{desc}&quot;</StringText><GreyText> ,</GreyText>
+            <div className='ml-4 2xl:text-lg text-lightergrey'>
+                Skills learnt : { " "}
+                <span className='text-myteal'>
+                    {skills}{ " "}
+                </span>
             </div>
-            <span className='text-orange-300'> {')'} </span><GreyText>{"}"}</GreyText>
-            <div className='ml-0'>
-                <span className="text-xs">newTraining.</span><BoolText> save </BoolText> <span className='text-orange-300'> {' ( ) '} </span>  
+
+            <div className='ml-4 2xl:text-lg'>
+                {desc}
             </div>
-            <div className='ml-2 xl:ml-4 xl:block hidden '>
-            . <BoolText> then  </BoolText><span className='text-orange-300'> {' ( '} </span><GreyText>{"dev "}</GreyText><CodeText>{'=>'}</CodeText> console.<BoolText>log  </BoolText><GreyText>{"("}</GreyText> <StringText>&quot; Training saved &quot;</StringText><span className='text-orange-300'> {' ) '} </span><GreyText>{")"}</GreyText>
-            </div>
+
+        </div>
 
         </FixedConsole>
 

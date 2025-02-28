@@ -1,57 +1,50 @@
-import CodeText from './CodeText'
-import GreyText from './GreyText'
-import BoolText from './BoolText'
-import StringText from './StringText'
+
 import PropTypes from 'prop-types'
 
 export default function ProjectItem(props) {
     const { name,role,skills,desc,githubPath,projectPath} = props
   return (
-    <div>
-        <div className='ml-0'>
-            <CodeText> const </CodeText> <span>newProject</span> 
-            <CodeText> = new <BoolText>Project</BoolText> </CodeText> <span className='text-orange-300'> {'('} </span><GreyText>{"{"}</GreyText>
+    <div className='flex flex-col gap-3'>
+        
+        <div className=''>
+            <p className='text-lg 2xl:text-2xl'>{name}</p>
         </div>
         <div className='ml-4'>
-            Project_Name : <StringText> &quot;{name}&quot;</StringText><GreyText> ,</GreyText>
+           <p className=' 2xl:text-lg text-lightergrey' >Role : <span className='text-white'>{role}</span></p> 
         </div>
-        <div className='ml-4'>
-            My_Role : <StringText> &quot;{role}&quot;</StringText><GreyText> ,</GreyText>
-        </div>
-        <div className='ml-4'>
-            Tools :
-                <GreyText>{' ['}</GreyText> 
+
+        <div className='ml-4 2xl:text-lg text-lightergrey'>
+            Tools : { " "}
                 {
                     skills.map((item,index)=>{
                         return( 
-                            <span key={index}>
-                                <StringText> &apos;{item}&apos;</StringText><GreyText> ,</GreyText>  
+                            <span key={index} className='text-myteal'>
+                                {item},{ " "}
                             </span>
                             
                         )
                     })
                 }
-                <StringText> &apos;Git&apos;</StringText>
-                <GreyText>{' ]'}</GreyText> 
+                <span className='text-myteal'> Git</span>
+               
 
         </div>
 
-        <div className='ml-4'>
-            Description : <StringText> &quot;{desc}.&quot;</StringText><GreyText> ,</GreyText>
+        <div className='ml-4 2xl:text-lg'>
+            {desc}
         </div>
-        <div className='ml-4'>
-            Github Link : <a href={githubPath} target='_blank'><BoolText> Click here </BoolText></a><GreyText> ,</GreyText>
+
+        <div className=' flex gap-3 ml-4'>
+            <div className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-md p-2 font-bold">
+                <a href={githubPath} target='_blank'> GITHUB </a>
+            </div>
+
+            <div className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-md p-2 font-bold">
+                <a href={projectPath} target='_blank'>VIEW PROJECT </a>
+            </div>
         </div>
-        <div className='ml-4'>
-            Project Link : <a href={projectPath} target='_blank'><BoolText> Click here </BoolText></a><GreyText> ,</GreyText>
-        </div>
-        <span className='text-orange-300'> {')'} </span><GreyText>{"}"}</GreyText>
-        <div className='ml-0'>
-            <span>newDeveloper.</span><BoolText> save </BoolText> <span className='text-orange-300'> {' ( ) '} </span>  
-        </div>
-        <div className='ml-4'>
-        . <BoolText> then  </BoolText><span className='text-orange-300'> {' ( '} </span><GreyText>{"dev "}</GreyText><CodeText>{'=>'}</CodeText> console.<BoolText>log  </BoolText><GreyText>{"("}</GreyText> <StringText>&quot; Developer saved &quot;</StringText><span className='text-orange-300'> {' ) '} </span><GreyText>{")"}</GreyText>
-        </div>
+
+      
 
     </div>
     

@@ -30,9 +30,37 @@ export default function About() {
     </div>
       </div>
       <div className="bg-white h-full flex-1 flex justify-center p-4 items-center">
-        <ConsoleText projectname = 'About.js'>
+        <ConsoleText projectname = 'About'>
 
-          <div className='ml-0'>
+
+        <div className='flex flex-col gap-3'>
+        
+          <div className=''>
+              <p className='text-lg 2xl:text-2xl'>Adetayo</p>
+          </div>
+          <div className='ml-4'>
+          <p className=' 2xl:text-lg text-lightergrey' >Stack : <span className='text-white'>MERN_STACK</span></p> 
+          </div>
+
+          <div className='ml-4 2xl:text-lg text-lightergrey'>
+            Skills : 
+              <span className='text-myteal'>  HTML , CSS , Javascript , React , React_Native , NodeJS , ExpressJS , MongoDB , TailwindCSS , Python , ThreeJS , Git  </span>
+          </div>
+
+          <div className='ml-4 2xl:text-lg'>
+            I specialize in the JavaScript stack, including HTML, CSS, JavaScript, React, React Native, and more, as detailed below. I invite you to explore my portfolio and discover the passion and dedication that fuels my craft. Whether you are here to check out my latest project or learn more about my expertise in the world of web development and programming in general, I hope you find inspiration in my projects and feel the passion I felt while making them.
+          </div>
+
+          <div className="text-center bg-white hover:bg-lightergrey w-32 text-darkgrey ml-4 mt-10 hover:text-white text-md p-2 font-bold">
+                <a href= " " target='_blank'> GITHUB </a>
+            </div>
+
+        </div>
+
+
+
+
+          {/* <div className='ml-0'>
               <CodeText> const </CodeText> <span>newDeveloper</span> 
               <CodeText> = new <BoolText>Developer</BoolText> </CodeText> <span className='text-orange-300'> {'('} </span><GreyText>{"{"}</GreyText>
             </div>
@@ -73,7 +101,7 @@ export default function About() {
             </div>
             <div className='ml-4'>
               . <BoolText> then  </BoolText><span className='text-orange-300'> {' ( '} </span><GreyText>{"dev "}</GreyText><CodeText>{'=>'}</CodeText> console.<BoolText>log  </BoolText><GreyText>{"("}</GreyText> <StringText>&quot; Developer saved &quot;</StringText><GreyText>{")"}</GreyText><span className='text-orange-300'> {' ) '} </span>
-            </div>
+            </div> */}
         </ConsoleText>
       </div>
     </div>

@@ -12,7 +12,14 @@ import ContactConsole from "./ContactConsole"
 import ContactBox from "./Components/ContactBox"
 
 
+
 export default function Contact() {
+
+    const onSubmit = async (event) =>{
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        console.log(formData)
+    }
 
   return (
     <div className='max-w-full h-screen relative box-border section-snap flex overflow-auto justify-center gap-8 p-3 md:p-0 flex-wrap items-center'>
@@ -93,7 +100,8 @@ export default function Contact() {
 
             <div className="flex-1 w-full  flex justify-center items-center">
                 <ContactConsole>
-                    <div className="flex mb-10 md:mb-0 flex-col justify-between gap-6">
+                    <form className="flex mb-10 md:mb-0 flex-col justify-between gap-6" action="" onSubmit={onSubmit}>
+
 
                         <div className="flex flex-col gap-4">
                             <ContactBox name="Name" icon = {faUser} placeholder = "e.g. John Doe" isArea = {false}/>
@@ -101,10 +109,10 @@ export default function Contact() {
                             <ContactBox name="Phone" icon = {faPhone} placeholder = "Phone Number" isArea = {false}/>
                             <ContactBox name="Message" icon = {faMessage} placeholder = "Write message..." isArea = {true}/>
                         </div>
-                        <div className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-md p-2 font-bold">
+                        <button type="submit" className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-md p-2 font-bold">
                             SEND
-                        </div>
-                    </div>
+                        </button>
+                    </form>
                 </ContactConsole>
             </div>
 

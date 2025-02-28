@@ -26,9 +26,9 @@ export default function FixedConsole({children,projectname}) {
 
           </div>
 
-          <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}} className='text-white xl:px-4 xl:py-8 px-3 py-3 box-border'>
+          <div className='text-white xl:px-4 xl:py-8 px-3 py-3 box-border'>
             {children}
-          </motion.div>
+          </div>
         </div>
   )
 }
