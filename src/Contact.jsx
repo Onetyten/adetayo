@@ -24,11 +24,11 @@ export default function Contact() {
   return (
     <div className='max-w-full h-screen relative box-border section-snap flex overflow-auto justify-center gap-8 p-3 md:p-0 flex-wrap items-center'>
 
-        <div className="w-4xl items-center md:h-[500px] h-screen md:flex-row flex-col flex md:gap-2 gap-8" >
-            <div className=" p-5  grey flex-1 gap-20 flex items-center justify-center flex-col ">
+        <div className="w-4xl md:h-[500px] h-screen md:flex-row flex-col flex md:gap-2 gap-8" >
+            <div className=" p-5  grey flex-1 xl:h-full flex flex-col h-screen">
                 <div className="flex-1 h-full flex flex-col gap-4">
                     <h2 className="text-3xl font-bold text-white">Contact me</h2>
-                    {/* <p className="text-lightergrey text-xs">Fill out the form and i’ll be in touch as soon as possible.</p> */}
+                    <p className="text-lightergrey text-xs">Fill out the form and i’ll be in touch as soon as possible.</p>
                     <div className="flex gap-4">
                         <div>
                             <FontAwesomeIcon icon={faLocationPin} color="#ffffff"/>
@@ -77,7 +77,7 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-4 mt-6 md:mt-0">
+                <div className="flex gap-4 mt-24 md:mt-0">
 
                     <a href="https://github.com/Onetyten" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faGithub} className="text-white hover:text-lightergrey text-xl link-shadow " />
@@ -98,7 +98,7 @@ export default function Contact() {
                 </div>
             </div>
 
-            {/* <div className="flex-1 w-full  flex justify-center items-center">
+            <div className="flex-1 w-full  flex justify-center items-center">
                 <ContactConsole>
                     <form className="flex mb-10 md:mb-0 flex-col justify-between gap-6" action="" onSubmit={onSubmit}>
 
@@ -114,7 +114,7 @@ export default function Contact() {
                         </button>
                     </form>
                 </ContactConsole>
-            </div> */}
+            </div>
 
            
             
