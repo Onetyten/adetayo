@@ -52,7 +52,7 @@ export default function About() {
           </div>
 
           <div className="text-center bg-white hover:bg-lightergrey w-32 text-darkgrey ml-4 mt-10 hover:text-white text-md p-2 font-bold">
-                <a href= " " target='_blank'> GITHUB </a>
+                <a href= "https://github.com/Onetyten" target='_blank'> GITHUB </a>
             </div>
 
         </div>

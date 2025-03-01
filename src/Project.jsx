@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 
 
 export default function Project(props) {
-  const { name,image,letter,isMobile ,showMessage,message} = props;
+  const { name,image,letter,isMobile ,showMessage,message,githubPath,projectPath} = props;
   const projectRef = useRef(null);
   const imageRef = useRef(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
@@ -62,7 +62,10 @@ export default function Project(props) {
 
 
           <div className={`h-full w-full absolute top-0 left-0 flex justify-center items-center p-10`}>
-              <img ref={imageRef} src={image} alt="" className={`${isMobile ? "h-[80%]" : "w-full"} object-contain`} style={{transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,transition: "transform 0.1s ease-out",}} />
+              <a href={projectPath} target='_blank' className="w-full h-full flex justify-center">
+                <img ref={imageRef} src={image} alt="" className={`${isMobile ? "h-[80%]" : "w-full"} object-contain`} style={{transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,transition: "transform 0.1s ease-out",}} />
+              </a>
+              
           </div>
 
         </div>
