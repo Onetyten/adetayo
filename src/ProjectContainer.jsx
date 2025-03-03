@@ -4,6 +4,7 @@ import Morees from '/Images/Portfolio/morees.png'
 import Scissors from '/Images/Portfolio/Scissors.png'
 import StockNinja from '/Images/Portfolio/StockNinja.png'
 import LiftMobile from '/Images/Portfolio/LiftMobile.png'
+import OSLogistics from '/Images/Portfolio/OSLogistics.png'
 
 export default function ProjectContainer() {
   const containerRef = useRef(null);
@@ -76,22 +77,22 @@ export default function ProjectContainer() {
       githubPath:'https://github.com/Onetyten/moris_recipee'
     },
     {
-      name: "Scissors",
+      name: "OS Logistics",
       role: "Frontend Engineer",
-      skills: ["HTML", "CSS","Javascript"],
-      desc: "This is a URL shortener that personalizes your shortened URLs to align with your brand identity. Utilizing custom slugs, branded links, and domain customization options to reinforce your brand presence and enhance user engagement.",
-      letter: "S",
+      skills: ["React", "TailwindCSS","WebSocket","Axios","React Router","Map Libre","Recharts"],
+      desc: "This here is a responsive that dashboard that displays shipment data for a logistics company. With features like dark/light theme toggle, A map used for the tracking of individual shipments and a collection of charts for better data visualisation while adopting various optimization methods like lazyloading components to reduce initial load time.",
+      letter: "O",
       showMessage: false,
       message: "",
       isMobile:false,
-      image: Scissors,
+      image: OSLogistics,
       imgPath:'/3D model/screenImg/scissors.png',
-      projectPath:'https://onetyten-altschool.vercel.app/Scissors/index.html',
-      githubPath:'https://github.com/Onetyten/MyAltschoolProfile/tree/main/Scissors'
+      projectPath:'https://oslogistics.netlify.app/',
+      githubPath:'https://github.com/Onetyten/os-logistics'
     },
     {
       name: "Lift mobile",
-      role: "Frontend Engineer",
+      role: " FullStack developer",
       skills: ["React native", "Native wind","Axios","Bcrypt","Expo","Expo-router","Express","MongoDB","React","React-dom","react-native-encrypted-storage","TailwindCSS","NodeJS"],
       desc: "This is a full-stack, user-driven car rental platform that allows individuals to rent out their cars when not in use. Built with Express.js and MongoDB, it has a smooth authentication and profile creation system and provides a seamless and secure experience for both car owners and renters",
       letter: "L",
