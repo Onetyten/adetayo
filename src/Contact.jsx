@@ -10,22 +10,40 @@ import { faUser } from "@fortawesome/free-solid-svg-icons"
 import { faMessage } from "@fortawesome/free-solid-svg-icons"
 import ContactConsole from "./ContactConsole"
 import ContactBox from "./Components/ContactBox"
+import { useState } from "react"
+import emailjs from '@emailjs/browser'
 
 
 
 export default function Contact() {
+    const [name,setName] = useState("")
+    const [email,setEmail] = useState("")
+    const [phone,setPhone] = useState("")
+    const [message,setMessage] = useState("")
 
-    const onSubmit = async (event) =>{
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        console.log(formData)
-    }
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        const templateParams = {
+          to_name: "Adetayo",
+          from_name: name,
+          message: message,
+          from_email: email,
+          from_phone: phone,
+        };
+      
+        try {
+          const response = await emailjs.send("service_2w95e4n","template_e3omq4a", templateParams,"euD0IpeDBiwmaCHrf");
+          console.log("Email sent successfully!", response);
+          alert("Email sent successfully!")
+        } catch (error) {
+          console.error("Email send failed:", error);}
+      };
 
   return (
     <div className='max-w-full h-screen relative box-border section-snap flex overflow-auto justify-center gap-8 p-3 md:p-0 flex-wrap items-center'>
 
         <div className="w-4xl md:h-[500px] h-screen md:flex-row flex-col flex md:gap-2 gap-8" >
-            <div className=" p-5  grey flex-1 xl:h-full flex flex-col h-screen">
+            <div className=" p-5  grey flex-1 flex flex-col justify-start">
                 <div className="flex-1 h-full flex flex-col gap-4">
                     <h2 className="text-3xl font-bold text-white">Contact me</h2>
                     <p className="text-lightergrey text-xs">Fill out the form and i’ll be in touch as soon as possible.</p>
@@ -104,10 +122,10 @@ export default function Contact() {
 
 
                         <div className="flex flex-col gap-4">
-                            <ContactBox name="Name" icon = {faUser} placeholder = "e.g. John Doe" isArea = {false}/>
-                            <ContactBox name="Email" icon = {faEnvelope} placeholder = "e.g. johndoe@gmail.com" isArea = {false}/>
-                            <ContactBox name="Phone" icon = {faPhone} placeholder = "Phone Number" isArea = {false}/>
-                            <ContactBox name="Message" icon = {faMessage} placeholder = "Write message..." isArea = {true}/>
+                            <ContactBox name="Name" onChange={(e)=>{setName(e.target.value)}} icon = {faUser} placeholder = "e.g. John Doe" isArea = {false}/>
+                            <ContactBox name="Email" onChange={(e)=>{setEmail(e.target.value)}} icon = {faEnvelope} placeholder = "e.g. johndoe@gmail.com" isArea = {false}/>
+                            <ContactBox name="Phone" onChange={(e)=>{setPhone(e.target.value)}} icon = {faPhone} placeholder = "Phone Number" isArea = {false}/>
+                            <ContactBox name="Message" onChange={(e)=>{setMessage(e.target.value)}} icon = {faMessage} placeholder = "Write message..." isArea = {true}/>
                         </div>
                         <button type="submit" className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-md p-2 font-bold">
                             SEND

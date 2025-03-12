@@ -1,7 +1,6 @@
 import { useEffect, useRef} from "react";
 import Project from "./Project";
 import Morees from '/Images/Portfolio/morees.png'
-import Scissors from '/Images/Portfolio/Scissors.png'
 import StockNinja from '/Images/Portfolio/StockNinja.png'
 import LiftMobile from '/Images/Portfolio/LiftMobile.png'
 import OSLogistics from '/Images/Portfolio/OSLogistics.png'
