@@ -10,7 +10,10 @@ import Express from '/Images/Skills/Express.png'
 import Python from '/Images/Skills/Python.png'
 import Tailwind from '/Images/Skills/tailwind.png'
 import ThreeJsIMG from '/Images/Skills/threejs.png'
+import NextJSImg from '/Images/Skills/NextJS.png'
 import SkillItem from './Components/SkillItem'
+import JestImg from '/Images/Skills/jest.png'
+import TypescriptImg from '/Images/Skills/typescript.png'
 import { motion } from 'framer-motion' 
 
 
@@ -19,14 +22,16 @@ export default function Skills() {
     const skillContainer = [
         {name:"Javascript", source: JsIMG  },
         {name:"React",source: ReactIMG},
+        {name:"NextJS",source: NextJSImg},
         {name:"React Native", source: ReactNIMG},
         {name:"NodeJS", source: NodeIMG},
+        {name:"MongoDB", source: Mongodb },
+        {name:"ExpressJS", source: Express },
+        {name:"Typescript", source: TypescriptImg },
         {name:"Git", source: GitImg},
         {name:"HTML5", source: HTML},
         {name:"CSS3", source: CSS},
-        {name:"MongoDB", source: Mongodb },
-        {name:"ExpressJS", source: Express },
-        {name:"React", source: ReactIMG },
+        {name:"Jest", source: JestImg },
         {name:"Python", source: Python },
         {name:"Tailwind", source: Tailwind },
         {name:"ThreeJS", source: ThreeJsIMG},
