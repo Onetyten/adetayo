@@ -11,7 +11,7 @@ export default function Education() {
 
 
         <div className='flex-1 min-h-screen '>
-            <div className="min-h-screen grid grid-cols-[1fr_2px_1fr] gap-4 items-center p-8">
+            <div className="min-h-screen grid grid-cols-[1fr_2px_1fr] gap-4 items-center p-8 py-32 xl:py-64">
                 <div className="grid grid-rows-3 gap-2 w-full justify-items-end ">
                     <div>2019</div>
                     <EducationCard projectname="Aptech computer institute" timeline="2023 - 2024" skills = "Web development, Python programming" desc="In 2023. I expanded my knowledge in Web Development and Python programming at Aptech Computer Institute, located in Adamasingba, Ibadan.This programme gave a solid foundation in front-end web development. During this time, I collaborated with various developers to create functional web apps" />

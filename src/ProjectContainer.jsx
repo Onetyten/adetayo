@@ -1,52 +1,42 @@
 import { useEffect, useRef} from "react";
 import Project from "./Project";
-import Morees from '/Images/Portfolio/morees.png'
 import StockNinja from '/Images/Portfolio/StockNinja.png'
 import LiftMobile from '/Images/Portfolio/LiftMobile.png'
 import OSLogistics from '/Images/Portfolio/OSLogistics.png'
+import Questlog from '/Images/Portfolio/Questlog.png'
 
-export default function ProjectContainer() {
-  const containerRef = useRef(null);
-  const scrollTimeout = useRef(null);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
 
-    const handleWheelScroll = (e) => {
-      const scrollLeft = container.scrollLeft;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      const direction = e.deltaY > 0 ? 1 : -1; // Detect scroll direction
-
-      // Allow vertical scroll if at the first or last project
-      if ((scrollLeft === 0 && direction === -1) || (scrollLeft >= maxScrollLeft-2 && direction === 1)) {
-        return; // Let normal scrolling happen
-      }
-
-      e.preventDefault(); // Prevent default only for horizontal scrolling
-
-      if (scrollTimeout.current) return; // Prevent rapid scrolls
-
-      container.scrollTo({
-        left: scrollLeft + direction * container.clientWidth,
-        behavior: "smooth", // Smooth scrolling effect
-      });
-
-      scrollTimeout.current = setTimeout(() => {
-        scrollTimeout.current = null;
-      }, 200);
-    };
-
-    container.addEventListener("wheel", handleWheelScroll, { passive: false });
-
-    return () => {
-      container.removeEventListener("wheel", handleWheelScroll);
-      clearTimeout(scrollTimeout.current);
-    };
-  }, []);
-  
 
   const projectDetails = [
+      {
+      name: "OS Logistics",
+      role: "Frontend Engineer",
+      skills: ["React", "TailwindCSS","WebSocket","Axios","React Router","Map Libre","Recharts"],
+      desc: "This here is a responsive that dashboard that displays shipment data for a logistics company. With features like dark/light theme toggle, A map used for the tracking of individual shipments and a collection of charts for better data visualisation while adopting various optimization methods like lazyloading components to reduce initial load time.",
+      letter: "O",
+      showMessage: false,
+      message: "",
+      isMobile:false,
+      image: OSLogistics,
+      imgPath:'/3D model/screenImg/scissors.png',
+      projectPath:'https://oslogistics.netlify.app/',
+      githubPath:'https://github.com/Onetyten/os-logistics'
+    },
+    {
+      name: "Questlog",
+      role: "Fullstack developer ",
+      skills: ["NextJs","Typescript","NodeJs","ExpressJs","MongoDB","Jsonwebtoken","Jest","Supertest","Bcrypt","Axios","Redux","Redux-toolkit"],
+      desc: "This is a task management web app that gamifies doing. This is done by letting users break down large tasks into subtasks to make them less overwhelming, as well as awarding users on the basis of task completion, while rocking a fully-featured backend in the form of a REST API that securely saves user data and tasks.",
+      letter: "Q",
+      showMessage: false,
+      message: "",
+      isMobile:false,
+      image: Questlog,
+      imgPath:'/3D model/screenImg/Questlog.png',
+      projectPath:'https://questlog-gamified.vercel.app/',
+      githubPath:'https://github.com/Onetyten/questlog'
+    },
     {
       name: "Stock Ninja",
       role: "Frontend Engineer",
@@ -60,34 +50,6 @@ export default function ProjectContainer() {
       imgPath:'/3D model/screenImg/CodeNinja.png',
       projectPath:'https://stockninjawatchlist.netlify.app/',
       githubPath:'https://github.com/Onetyten/stock-ninja'
-    },
-    {
-      name: "Moris Recipee",
-      role: "Frontend Engineer",
-      skills: ["ThemealDB api","React","Axios","TailwindCSS","React-dom","Vite"],
-      desc: "This is a recipe web app developed using React. It implements the MealDB API to deliver a huge selection of recipes from a database. Tailwind CSS is used for modern and responsive styling, ensuring a visually appealing interface",
-      letter: "M",
-      showMessage: false,
-      message: "",
-      isMobile:false,
-      image: Morees,
-      imgPath:'/3D model/screenImg/MorisRecipee.png',
-      projectPath:'https://morisrecipee.netlify.app/',
-      githubPath:'https://github.com/Onetyten/moris_recipee'
-    },
-    {
-      name: "OS Logistics",
-      role: "Frontend Engineer",
-      skills: ["React", "TailwindCSS","WebSocket","Axios","React Router","Map Libre","Recharts"],
-      desc: "This here is a responsive that dashboard that displays shipment data for a logistics company. With features like dark/light theme toggle, A map used for the tracking of individual shipments and a collection of charts for better data visualisation while adopting various optimization methods like lazyloading components to reduce initial load time.",
-      letter: "O",
-      showMessage: false,
-      message: "",
-      isMobile:false,
-      image: OSLogistics,
-      imgPath:'/3D model/screenImg/scissors.png',
-      projectPath:'https://oslogistics.netlify.app/',
-      githubPath:'https://github.com/Onetyten/os-logistics'
     },
     {
       name: "Lift mobile",
@@ -106,11 +68,54 @@ export default function ProjectContainer() {
     },
   ];
 
+export default function ProjectContainer() {
+  const containerRef = useRef(null);
+  const scrollTimeout = useRef(null);
+  
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheelScroll = (e) => {
+      const scrollLeft = container.scrollLeft;
+      const maxScrollLeft = container.scrollWidth - container.clientWidth;
+      const direction = e.deltaY > 0 ? 1 : -1; // Detect scroll direction
+      const atStart = scrollLeft < 1;
+      const atEnd = Math.abs(scrollLeft - maxScrollLeft) < 1;
+
+      if ((atStart && direction === -1) || (atEnd && direction === 1)) {
+        return; // Let native vertical scrolling happen
+      }
+
+      e.preventDefault(); // Prevent default only for horizontal scrolling
+
+      if (scrollTimeout.current) return; 
+
+      container.scrollTo({
+        left: scrollLeft + direction * container.clientWidth,
+        behavior: "smooth", // Smooth scrolling effect
+      });
+
+      scrollTimeout.current = setTimeout(() => {
+        scrollTimeout.current = null;
+      }, 650); // A longer timeout to ensure animation completes
+    };
+
+    container.addEventListener("wheel", handleWheelScroll, { passive: false }); 
+    return () => { 
+      container.removeEventListener("wheel", handleWheelScroll); 
+      clearTimeout(scrollTimeout.current); 
+    }; 
+  }, []);
+  
+
+
+
   return (
     <div className="section-snap h-screen overflow-y-auto">
       <div
         ref={containerRef}
-        className="w-screen h-screen overflow-x-scroll flex snap-x snap-mandatory scroll-smooth"
+        className="w-screen h-screen overflow-x-scroll flex"
       >
         {projectDetails.map((project, index) => (
           <Project

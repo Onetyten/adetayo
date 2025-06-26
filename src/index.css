@@ -20,7 +20,7 @@ html{
     background-color:#171616 ;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    scroll-snap-type: both mandatory;
+    /* scroll-snap-type: both mandatory; */
 }
 
 .section-snap{
