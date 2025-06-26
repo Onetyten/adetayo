@@ -1,6 +1,6 @@
 import { useEffect, useRef} from "react";
 import Project from "./Project";
-import StockNinja from '/Images/Portfolio/StockNinja.png'
+import Scissors from '/Images/Portfolio/Scissors.png'
 import LiftMobile from '/Images/Portfolio/LiftMobile.png'
 import OSLogistics from '/Images/Portfolio/OSLogistics.png'
 import Questlog from '/Images/Portfolio/Questlog.png'
@@ -38,18 +38,19 @@ import Questlog from '/Images/Portfolio/Questlog.png'
       githubPath:'https://github.com/Onetyten/questlog'
     },
     {
-      name: "Stock Ninja",
-      role: "Frontend Engineer",
-      skills: ["Finnhub Stock API", "React","Axios","Recharts","React-router","Vite","Tailwindcss"],
-      desc: "Developed a stock market watchlist that uses the Finnhub API to provide real-time financial data, including stock prices, charts, company information and recent news. The site offers users an organized, responsive experience, allowing you to track and analyze market trends",
-      letter: "C",
-      showMessage: true,
-      message: "scroll right",
-      isMobile:false,
-      image: StockNinja,
-      imgPath:'/3D model/screenImg/CodeNinja.png',
-      projectPath:'https://stockninjawatchlist.netlify.app/',
-      githubPath:'https://github.com/Onetyten/stock-ninja'
+     name: "Scissors",
+     role: "Frontend Engineer",
+     skills: ["HTML", "CSS","Javascript"],
+     desc: "This is a URL shortener that personalizes your shortened URLs to align with your brand identity. Utilizing custom slugs, branded links, and domain customization options to reinforce your brand presence and enhance user engagement.",
+     letter: "S",
+     showMessage: false,
+     message: "",
+     isMobile:false,
+     image: Scissors,
+     imgPath:'/3D model/screenImg/scissors.png',
+     projectPath:'https://onetyten-altschool.vercel.app/Scissors/index.html',
+     githubPath:'https://github.com/Onetyten/MyAltschoolProfile/tree/main/Scissors'
+
     },
     {
       name: "Lift mobile",
