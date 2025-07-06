@@ -1,9 +1,9 @@
 import { useEffect, useRef} from "react";
 import Project from "./Project";
-import Scissors from '/Images/Portfolio/Scissors.png'
 import LiftMobile from '/Images/Portfolio/LiftMobile.png'
 import OSLogistics from '/Images/Portfolio/OSLogistics.png'
 import Questlog from '/Images/Portfolio/Questlog.png'
+import Conduit from '/Images/Portfolio/Conduit.png'
 
 
 
@@ -15,13 +15,29 @@ import Questlog from '/Images/Portfolio/Questlog.png'
       skills: ["React", "TailwindCSS","WebSocket","Axios","React Router","Map Libre","Recharts"],
       desc: "This here is a responsive that dashboard that displays shipment data for a logistics company. With features like dark/light theme toggle, A map used for the tracking of individual shipments and a collection of charts for better data visualisation while adopting various optimization methods like lazyloading components to reduce initial load time.",
       letter: "O",
-      showMessage: false,
-      message: "",
+      showMessage: true,
+      message: "Scroll left",
       isMobile:false,
       image: OSLogistics,
       imgPath:'/3D model/screenImg/scissors.png',
       projectPath:'https://oslogistics.netlify.app/',
       githubPath:'https://github.com/Onetyten/os-logistics'
+    },
+    
+    {
+     name: "Conduit",
+     role: "Fullstack developer",
+     skills: ["NextJs","Framer motion","Cloudinary","MongoDB","Axios","Redux","Redux-toolkit","Figma","Typescript","NodeJs","Bcrypt"],
+     desc: "Conduit is a Local service Aggregator that connects users with local service providers around them. You can message service providers, book appointments, and handle payment all on Conduit, Additionally, you can offer your own services and get hired through the platform",
+     letter: "C",
+     showMessage: false,
+     message: "",
+     isMobile:false,
+     image: Conduit,
+     imgPath:'/3D model/screenImg/scissors.png',
+     projectPath:'https://conduit-services.vercel.app/',
+     githubPath:'https://github.com/Onetyten/conduit'
+
     },
     {
       name: "Questlog",
@@ -36,21 +52,6 @@ import Questlog from '/Images/Portfolio/Questlog.png'
       imgPath:'/3D model/screenImg/Questlog.png',
       projectPath:'https://questlog-gamified.vercel.app/',
       githubPath:'https://github.com/Onetyten/questlog'
-    },
-    {
-     name: "Scissors",
-     role: "Frontend Engineer",
-     skills: ["HTML", "CSS","Javascript"],
-     desc: "This is a URL shortener that personalizes your shortened URLs to align with your brand identity. Utilizing custom slugs, branded links, and domain customization options to reinforce your brand presence and enhance user engagement.",
-     letter: "S",
-     showMessage: false,
-     message: "",
-     isMobile:false,
-     image: Scissors,
-     imgPath:'/3D model/screenImg/scissors.png',
-     projectPath:'https://onetyten-altschool.vercel.app/Scissors/index.html',
-     githubPath:'https://github.com/Onetyten/MyAltschoolProfile/tree/main/Scissors'
-
     },
     {
       name: "Lift mobile",
