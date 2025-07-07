@@ -72,8 +72,8 @@ import QuestlogVid from '/Video/Questlog.webm'
       isMobile:true,
       image: LiftMobile,
       imgPath:'/3D model/screenImg/LiftMobile.png',
-      projectPath:'https://github.com/Onetyten/Ride-Share-App',
-      githubPath:'https://github.com/Onetyten/Ride-Share-App'
+      projectPath:'https://github.com/Onetyten/Lift-mobile',
+      githubPath:'https://github.com/Onetyten/Lift-mobile'
       
     },
   ];
