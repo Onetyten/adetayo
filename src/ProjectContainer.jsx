@@ -4,6 +4,11 @@ import LiftMobile from '/Images/Portfolio/LiftMobile.png'
 import OSLogistics from '/Images/Portfolio/OSLogistics.png'
 import Questlog from '/Images/Portfolio/Questlog.png'
 import Conduit from '/Images/Portfolio/Conduit.png'
+import OSVid from '/Video/OS logistics.webm'
+import ConduitVid from '/Video/Conduit.webm'
+import QuestlogVid from '/Video/Questlog.webm'
+
+
 
 
 
@@ -19,6 +24,7 @@ import Conduit from '/Images/Portfolio/Conduit.png'
       message: "Scroll left",
       isMobile:false,
       image: OSLogistics,
+      video:OSVid,
       imgPath:'/3D model/screenImg/scissors.png',
       projectPath:'https://oslogistics.netlify.app/',
       githubPath:'https://github.com/Onetyten/os-logistics'
@@ -34,6 +40,7 @@ import Conduit from '/Images/Portfolio/Conduit.png'
      message: "",
      isMobile:false,
      image: Conduit,
+     video:ConduitVid,
      imgPath:'/3D model/screenImg/scissors.png',
      projectPath:'https://conduit-services.vercel.app/',
      githubPath:'https://github.com/Onetyten/conduit'
@@ -49,6 +56,7 @@ import Conduit from '/Images/Portfolio/Conduit.png'
       message: "",
       isMobile:false,
       image: Questlog,
+      video:QuestlogVid,
       imgPath:'/3D model/screenImg/Questlog.png',
       projectPath:'https://questlog-gamified.vercel.app/',
       githubPath:'https://github.com/Onetyten/questlog'
