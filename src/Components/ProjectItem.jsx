@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default function ProjectItem(props) {
     const { name,role,skills,desc,githubPath,projectPath} = props
   return (
-    <div className='flex flex-col gap-3'>
+    <div className='flex flex-col gap-2 sm:gap-3'>
         
         <div className=''>
             <p className='text-lg 2xl:text-2xl'>{name}</p>

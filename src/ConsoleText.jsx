@@ -25,7 +25,7 @@ export default function ConsoleText({children,projectname}) {
 
           </div>
 
-          <div className='text-white px-4 py-8 box-border'>
+          <div className='text-white px-4 sm:py-8 py-6 pb-16 box-border'>
             {children}
           </div>
         </div>

@@ -36,7 +36,7 @@ export default function Project(props) {
       className="min-w-screen h-screen relative box-border section-snap flex justify-between items-center bg-white"
     >
       <div className="w-screen h-screen flex xl:flex-row flex-col-reverse">
-        <div className="flex-[0.5] flex justify-center p-4 xl:p-0 items-center">
+        <div className=" flex-1 sm:flex-[0.5] flex justify-center p-2 sm:p-4 xl:p-0 items-center">
           <ConsoleText projectname={name}>
             <ProjectItem {...props} />
           </ConsoleText>
@@ -64,7 +64,7 @@ export default function Project(props) {
           <div className={`h-full w-full absolute top-0 left-0 flex justify-center items-center p-10`}>
               {video?(
                 <a href={projectPath} target='_blank' className="w-full h-full flex justify-center">
-                  <video src={video} autoPlay loop muted playsInline className={`${isMobile ? "h-[80%]" : "w-full"} object-contain`} style={{transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,transition: "transform 0.1s ease-out",}}/>
+                  <video src={video} autoPlay loop muted playsInline className={`${isMobile ? "h-[90%]" : "w-full"} object-contain`} style={{transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,transition: "transform 0.1s ease-out",}}/>
                 </a>
               )
             :(

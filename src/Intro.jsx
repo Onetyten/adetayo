@@ -104,7 +104,7 @@ export default function Intro() {
 
 
         <div className='h-screen top-0 w-screen absolute box-content flex justify-center items-end '>
-            <div className="w-[80%] xl:w-[50%] h-12 bg-lightgrey flex justify-center gap-[5%] items-center overflow-hidden">
+            <div className="w-[80%] xl:w-[50%] h-12 bg-lightgrey mb-14 sm:mb-0 flex justify-center gap-[5%] items-center overflow-hidden">
 
 
 
