@@ -1,4 +1,4 @@
-/* eslint-disable react/no-unknown-property */
+ 
 import {useRef} from "react";
 import EducationCard from "./EducationCard";
 
@@ -11,7 +11,7 @@ export default function Education() {
 
 
         <div className='flex-1 min-h-screen '>
-            <div className="min-h-screen grid grid-cols-[1fr_2px_1fr] gap-4 items-center p-8 py-32 xl:py-64">
+            <div className="min-h-screen grid grid-cols-[1fr_2px_1fr] gap-4 items-center p-3 md:p-8 py-16 xl:py-32">
                 <div className="grid grid-rows-3 gap-2 w-full justify-items-end ">
                     <div>2019</div>
                     <EducationCard projectname="Aptech computer institute" timeline="2023 - 2024" skills = "Web development, Python programming" desc="In 2023. I expanded my knowledge in Web Development and Python programming at Aptech Computer Institute, located in Adamasingba, Ibadan.This programme gave a solid foundation in front-end web development. During this time, I collaborated with various developers to create functional web apps" />
@@ -38,7 +38,7 @@ export default function Education() {
                 </div>
 
                 <div className="grid grid-rows-3 gap-2">
-                    <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - now" skills = "Computer Engineering" desc="Currently, I am pursuing a Bachelor of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience here has exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/>
+                    <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - 2025" skills = "Computer Engineering" desc="I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/>
                     <div>2023</div>
                     <EducationCard projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/>
 

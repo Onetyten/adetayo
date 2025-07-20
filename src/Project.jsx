@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/no-unknown-property */
+ 
 import { useState, useEffect, useRef, Suspense } from "react";
 import PropTypes from "prop-types";
 import ConsoleText from "./ConsoleText";
@@ -36,22 +36,22 @@ export default function Project(props) {
       className="min-w-screen h-screen relative box-border section-snap flex justify-between items-center bg-white"
     >
       <div className="w-screen h-screen flex xl:flex-row flex-col-reverse">
-        <div className=" flex-1 sm:flex-[0.5] flex justify-center p-2 sm:p-4 xl:p-0 items-center">
+        <div className=" flex-1 sm:flex-[0.6] flex justify-center p-2 sm:p-4 xl:p-0 items-center">
           <ConsoleText projectname={name}>
             <ProjectItem {...props} />
           </ConsoleText>
         </div>
 
-        <div className="flex-1 bg-darkgrey relative" onMouseMove={handleMouseMove}>
+        <div className="flex-[0.8] md:flex-1 bg-darkgrey relative" onMouseMove={handleMouseMove}>
           <div className="w-full h-full absolute top-0 left-0 flex justify-center items-center overflow-hidden">
-            <p className="text-[65vw] p-32 font-roboto head-shadows text-lightgrey">
+            <p className="text-[65vw] p-32 font-intel head-shadows text-lightgrey">
               {letter}
             </p>
           </div>
 
           {showMessage&&(<div className="w-full h-full absolute top-0 left-0 p-2 md:p-9 flex justify-end items-start overflow-hidden">
             <div className="bg-lightergrey hover:bg-stone-400 console-shadow2 md:px-9 md:py-5 px-3 py-2 ">
-              <p className="text text-xs font-roboto text-white font-bold">
+              <p className="text text-xs font-intel text-white font-bold">
                 {message}
               </p> 
             </div>

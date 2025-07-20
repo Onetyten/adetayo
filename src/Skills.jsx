@@ -40,7 +40,7 @@ export default function Skills() {
     <div className='max-w-full h-screen relative box-border section-snap flex overflow-hidden justify-center flex-wrap items-center'>
 
         <div className='absolute top-[3%] left-[4%] md:top-[10%] md:left-[5%]'>
-            <p className='md:text-3xl text-xl font-roboto font-extrabold text-white'>Skills</p>
+            <p className='md:text-3xl text-xl font-intel font-extrabold text-white'>Skills</p>
         </div>
 
         <div className=" w-[60%]  relative box-border section-snap flex overflow-hidden justify-center gap-12 flex-wrap items-center">

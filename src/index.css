@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&display=swap');
 @import "tailwindcss";
 
 
 @theme{
     --color-darkgrey: #171616;
     --color-lightgrey: #232323;
-    --color-lightergrey: #5d5c5c;
+    --color-lightgrey-hover: #232323;
+    --color-lightergrey: #bab4b4;
     --color-myblack: #121212;
     --color-mypurple: #ec4899;
     --color-mygreen: #99b84a;
     --color-myteal: #16f2b3;
     --font-roboto: "Roboto",sans-serif;
+    --font-intel: "Intel One Mono",sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -37,10 +40,10 @@ html{
     transform: translateX(25vw);
 }
 .link-shadow{
-    filter:drop-shadow(5px 5px 0px #121212)
+    filter:drop-shadow(5px 5px 0px #121212 )
 }
 .console-shadow{
-    box-shadow: 5px 5px 0px #5d5c5c  ;
+    box-shadow: 10px 10px 0px #bab4b4  ;
 }
 .console-shadow2{
     box-shadow: 12px 8px 0px #121212  ;

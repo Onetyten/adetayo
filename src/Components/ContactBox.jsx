@@ -2,14 +2,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import PropTypes from "prop-types"
 
 export default function ContactBox(props) {
-    const {name,icon,placeholder,isArea,onChange} = props
+    const {name,icon,placeholder,isArea,onChange,isRequired} = props
   return (
-    <div className="flex flex-col gap-2">
-        <p className="text-white text-xs font-bold">{name}</p>
+    <div className="flex flex-col gap-3">
+        <p className="text-white text-sm md:text-base font-bold">{name}</p>
         <div className="w-full relative">
-            {!isArea&&(<input type="text" className="bg-darkgrey w-full pl-8 text-white h-9 placeholder:text-lightergrey" onChange={onChange} placeholder={placeholder}/>)}
-            {isArea&&(<textarea className="bg-darkgrey w-full pl-8 text-white h-16 p-2 placeholder:text-lightergrey"  onChange={onChange}  placeholder={placeholder}/>)}
-            <FontAwesomeIcon icon={icon} className="text-white absolute left-3 top-2.5 link-shadow"  color={" #5d5c5c"}/>
+            {!isArea&&(<input type="text" required={isRequired}  className="bg-darkgrey w-full pl-12 text-white h-10 md:h-14 text-xs md:text-sm placeholder:text-lightergrey" onChange={onChange} placeholder={placeholder}/>)}
+            {isArea&&(<textarea rows={5} required className="bg-darkgrey text-xs md:text-lg  w-full pl-12 text-white max-h-36 p-2 pt-3 placeholder:text-lightergrey"  onChange={onChange}  placeholder={placeholder}/>)}
+            <FontAwesomeIcon icon={icon} className="text-white text-sm md:text-base absolute left-3 md:top-5 top-3 link-shadow"  color={" #5d5c5c"}/>
         </div>
     </div>
   )
@@ -21,4 +21,5 @@ ContactBox.propTypes={
     placeholder:PropTypes.node,
     onChange:PropTypes.node,
     isArea:PropTypes.bool,
+    isRequired:PropTypes.bool
 }

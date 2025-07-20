@@ -49,7 +49,7 @@ export default function Intro() {
         <div className='h-screen top-0 w-screen absolute box-border flex-1  overflow-hidden flex justify-start  items-center'>
                 <div className="justify-self-start w-[50vw] h-full flex justify-center items-center overflow-hidden">
                     <span className="left-span">
-                        <p className="text-[70vw] xl:text-[40vw] ab font-roboto font-bold text-lightgrey text-center left-title">
+                        <p className="text-[40vw] xl:text-[30vw] uppercase ab font-intel font-bold text-lightgrey text-center left-title">
                             Hello
                         </p>     
                     </span>
@@ -63,8 +63,8 @@ export default function Intro() {
             <div className='h-screen top-0 w-screen absolute box-border flex-1  overflow-hidden flex justify-end  items-center'>
                 <div className="justify-self-end w-[50vw] h-full flex justify-center items-center overflow-hidden">
                     <span className="right-span">
-                        <p className=" text-[70vw] xl:text-[40vw] ab font-roboto font-bold text-lightgrey text-center right-title">
-                            Hello
+                        <p className=" text-[40vw] uppercase xl:text-[30vw] ab font-intel font-bold text-lightgrey text-center right-title">
+                            Hello 
                         </p>   
                     </span>
                       
@@ -88,12 +88,12 @@ export default function Intro() {
     
         <div className='h-screen top-0 w-screen absolute box-border flex justify-center items-center'>
             <div className="flex flex-col gap-1">
-                <div className="bg-white h-10 overflow-hidden slide-in uppercase font-roboto text-center text-2xl px-5 py-1 font-extralight">
+                <div className="bg-white h-10 overflow-hidden slide-in uppercase font-intel text-center text-2xl px-5 py-1 font-extralight">
                     <p className="name-popup">
                         &lt; LABAEKA ADETAYO/ &gt;
                     </p>
                 </div>
-                <div className="bg-white h-10 slide-in overflow-hidden uppercase text-center font-roboto text-2xl px-5 py-1 font-extralight">
+                <div className="bg-white h-10 slide-in overflow-hidden uppercase text-center font-intel text-2xl px-5 py-1 font-extralight">
                     <p className="name-popup">
                         Frontend engineer
                     </p>
