@@ -1,18 +1,35 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
 import Aboutpic from '/Images/aboutpic.png'
 import ConsoleText from './ConsoleText'
 import AboutpicMobile from '/Images/aboutpicmobile.png'
 import placMobilePic from '/Images/placeholderImage/plac-aboutpicmobile.png'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 
 
 
 
 
-export default function About() {
+export default function About(props) {
+  const {setShowScrollIconPos,setScrollIconUp,setScrollIconDown,pageIndex,viewList,setCurrentIndex,setCurrentLink,pageUrls} = props
   const [mobileLoaded,setMobileLoaded] = useState(false)
+
+
+
+
+  useEffect(()=>{
+      setShowScrollIconPos(true)
+      setScrollIconUp(true)
+      setScrollIconDown(true)
+      setCurrentIndex(pageIndex)
+      setCurrentLink(pageUrls[pageIndex])
+  },[viewList[pageIndex].inView])
+  
+
   return (
-    <div className=' h-screen relative box-border flex-col md:flex-row  flex overflow-x-hidden section-snap '>
+    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className=' h-screen relative box-border flex-col md:flex-row  flex overflow-x-hidden section-snap '>
       <div className="bg-darkgrey h-0 sm:h-full flex-[0.45]  md:flex-[0.62] relative ">
         <div>
           <img src={Aboutpic} alt="" loading='lazy' className='absolute md:-right-[22%] md:block hidden v-align md:w-xs w-60 object-contain grayscale-0 hover:grayscale transition duration-300'/>
@@ -40,7 +57,7 @@ export default function About() {
 
           <div className='2xl:text-lg text-lightergrey'>
             Skills : 
-              <span className='text-myteal'>  HTML , CSS , Javascript , React , React_Native , NodeJS , ExpressJS , MongoDB , TailwindCSS , Python , ThreeJS , Git  </span>
+              <span className='text-myteal'>  HTML, CSS, Javascript, React, React_Native, NodeJS, ExpressJS, MongoDB, TailwindCSS, Python, ThreeJS, Git</span>
           </div>
 
           <div className=' 2xl:text-lg'>
@@ -48,7 +65,7 @@ export default function About() {
           </div>
 
           <div className="text-center bg-white hover:bg-lightergrey w-32 text-darkgrey hover:text-white text-sm md:text-base p-1 md:p-2   font-bold">
-                <a href= "https://github.com/Onetyten" target='_blank'> GITHUB </a>
+                <a href= "https://github.com/Onetyten" target='_blank' > GITHUB </a>
           </div>
 
         </div>
@@ -57,4 +74,11 @@ export default function About() {
       </div>
     </div>
   )
+}
+
+
+About.propTypes = {
+  setShowScrollIconPos:PropTypes.func.isRequired,
+  setScrollIconUp:PropTypes.func.isRequired,
+  setScrollIconDown:PropTypes.func.isRequired
 }

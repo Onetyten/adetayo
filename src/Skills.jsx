@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 import JsIMG from '/Images/Skills/Js.png'
 import ReactIMG from '/Images/Skills/reactlogo.png'
 import ReactNIMG from '/Images/Skills/ReactNative.png'
@@ -15,10 +17,12 @@ import SkillItem from './Components/SkillItem'
 import JestImg from '/Images/Skills/jest.png'
 import TypescriptImg from '/Images/Skills/typescript.png'
 import { motion } from 'framer-motion' 
+import { useEffect } from 'react'
+import PropTypes from 'prop-types'
 
 
 
-export default function Skills() {
+export default function Skills(props) {
     const skillContainer = [
         {name:"Javascript", source: JsIMG  },
         {name:"React",source: ReactIMG},
@@ -36,8 +40,18 @@ export default function Skills() {
         {name:"Tailwind", source: Tailwind },
         {name:"ThreeJS", source: ThreeJsIMG},
     ]
+    const {setScrollIconUp, setScrollIconDown,pageIndex,viewList,setCurrentIndex,setCurrentLink,pageUrls} = props
+    
+    useEffect(()=>{
+        setScrollIconUp(true)
+        setScrollIconDown(true)
+        setCurrentIndex(pageIndex)
+        setCurrentLink(pageUrls[pageIndex])
+    },[pageIndex, setCurrentIndex, setScrollIconDown, setScrollIconUp,viewList[pageIndex].inView])
+
+
   return (
-    <div className='max-w-full h-screen relative box-border section-snap flex overflow-hidden justify-center flex-wrap items-center'>
+    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='max-w-full h-screen relative box-border section-snap flex overflow-hidden justify-center flex-wrap items-center'>
 
         <div className='absolute top-[3%] left-[4%] md:top-[10%] md:left-[5%]'>
             <p className='md:text-3xl text-xl font-intel font-extrabold text-white'>Skills</p>
@@ -54,11 +68,13 @@ export default function Skills() {
             })}
         </div>
 
-       
-        
-
-
     </div>
 
   )
+}
+
+
+Skills.propTypes = {
+    setScrollIconUp:PropTypes.func.isRequired,
+    setScrollIconDown:PropTypes.func.isRequired
 }

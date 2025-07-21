@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -6,9 +8,10 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import { faTwitter } from "@fortawesome/free-brands-svg-icons"
-import { useRef } from "react"
+import { useEffect, useRef } from "react"
 
-export default function Intro() {
+export default function Intro(props) {
+    const {setShowScrollIconPos,pageIndex,pageUrls,viewList,setCurrentIndex,setCurrentLink,setShowScrollIconNeg} = props
 
     const iconRef = useRef([])
 
@@ -22,10 +25,19 @@ export default function Intro() {
         gsap.from('.name-popup',{opacity:0,y:20,ease:'power1.out' ,duration:0.5,delay:2.5})
         gsap.from (iconRef.current,{x:'-200', opacity:0, stagger:0.15,duration:1,delay:0.5})
     })
+    
 
+    useEffect(()=>{
+        setShowScrollIconPos(false)
+        setShowScrollIconNeg(true)
+        setCurrentIndex(pageIndex)
+        setCurrentLink(pageUrls[pageIndex])
+        
+    },[viewList[pageIndex].inView])
+    
   return (
     
-    <div className='max-w-full h-screen relative box-border overflow-hidden section-snap'>
+    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='max-w-full h-screen relative box-border overflow-hidden section-snap'>
 
         {/* the two backgrounds that are going to scroll in */}
         <div className='max-w-full h-screen flex  flex-row relative justify-start '>
@@ -89,7 +101,7 @@ export default function Intro() {
         <div className='h-screen top-0 w-screen absolute box-border flex justify-center items-center'>
             <div className="flex flex-col gap-1">
                 <div className="bg-white h-10 overflow-hidden slide-in uppercase font-intel text-center text-2xl px-5 py-1 font-extralight">
-                    <p className="name-popup">
+                    <p  className="name-popup">
                         &lt; LABAEKA ADETAYO/ &gt;
                     </p>
                 </div>

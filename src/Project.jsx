@@ -1,40 +1,59 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
  
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useState, useRef,useEffect} from "react";
 import PropTypes from "prop-types";
 import ConsoleText from "./ConsoleText";
 import ProjectItem from "./Components/ProjectItem";
 import { motion } from "framer-motion";
-
+import { useInView } from "react-intersection-observer";
 
 
 
 export default function Project(props) {
-  const { name,image,letter,isMobile ,showMessage,message,githubPath,projectPath,video} = props;
-  const projectRef = useRef(null);
+  const { name,image,letter,isMobile ,showMessage,message,githubPath,projectPath,video,setScrollIconUp,setScrollIconDown,index,projectlength,pageIndex,pageUrls,setCurrentLink,viewList,setCurrentIndex} = props;
   const imageRef = useRef(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
+
   const handleMouseMove = (e) => {
-    if (imageRef.current) {
-        const rect = imageRef.current.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const mouseX = e.clientX - centerX;
-        const mouseY = e.clientY - centerY;
+      if (imageRef.current) {
+          const rect = imageRef.current.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+          const mouseX = e.clientX - centerX;
+          const mouseY = e.clientY - centerY;
 
-        const rotateX = mouseY / 500; // Adjust sensitivity
-        const rotateY = -mouseX / 500; // Adjust sensitivity
+          const rotateX = mouseY / 500; // Adjust sensitivity
+          const rotateY = -mouseX / 500; // Adjust sensitivity
 
-        setRotation({ x: rotateX, y: rotateY });
-    }
-};
+          setRotation({ x: rotateX, y: rotateY });
+      }
+  };
+
+
+  useEffect(()=>{
+
+      if (index == 0){
+        setScrollIconUp(true)
+        setScrollIconDown(false)
+      }
+      else if (index == projectlength-1)
+      {
+          setScrollIconUp(false)
+          setScrollIconDown(true)
+      }
+      else{
+          setScrollIconUp(false)
+          setScrollIconDown(false)
+      }
+      setCurrentIndex(pageIndex)
+      setCurrentLink(pageUrls[pageIndex])
+  },[index, projectlength, setScrollIconDown, setScrollIconUp,viewList[pageIndex].inView])
 
   return (
-    <div
-      ref={projectRef}
-      className="min-w-screen h-screen relative box-border section-snap flex justify-between items-center bg-white"
-    >
+    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className="min-w-screen h-screen relative box-border section-snap flex justify-between items-center bg-white">
       <div className="w-screen h-screen flex xl:flex-row flex-col-reverse">
         <div className=" flex-1 sm:flex-[0.6] flex justify-center p-2 sm:p-4 xl:p-0 items-center">
           <ConsoleText projectname={name}>
@@ -84,6 +103,7 @@ export default function Project(props) {
 
 Project.propTypes = {
   name: PropTypes.node,
+  projectlength:PropTypes.node,
   role: PropTypes.node,
   skills: PropTypes.node,
   desc: PropTypes.node,
@@ -95,5 +115,8 @@ Project.propTypes = {
   projectPath: PropTypes.node,
   message: PropTypes.node,
   image: PropTypes.node,
-  video: PropTypes.node
+  video: PropTypes.node,
+  index:PropTypes.node,
+  setScrollIconDown:PropTypes.func.isRequired,
+  setScrollIconUp:PropTypes.func.isRequired
 };

@@ -1,13 +1,21 @@
- 
-import {useRef} from "react";
+/* eslint-disable react/prop-types */
+/* eslint-disable react-hooks/exhaustive-deps */
 import EducationCard from "./EducationCard";
+import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 
-export default function Education() {
-    const EduRef = useRef(null)
+export default function Education(props) {
+    const {setShowScrollIconNeg,pageIndex,viewList,setCurrentIndex,setCurrentLink,pageUrls} = props
+    useEffect(()=>{
+        setShowScrollIconNeg(true)
+        setCurrentIndex(pageIndex)
+        setCurrentLink(pageUrls[pageIndex])
+    },[setShowScrollIconNeg,viewList[pageIndex].inView])
+
 
   return (
-    <div ref={EduRef}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between bg-white">
+    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between bg-white">
 
 
         <div className='flex-1 min-h-screen '>
@@ -40,7 +48,7 @@ export default function Education() {
                 <div className="grid grid-rows-3 gap-2">
                     <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - 2025" skills = "Computer Engineering" desc="I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/>
                     <div>2023</div>
-                    <EducationCard projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/>
+                    <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/>
 
                 </div>
             </div>
@@ -52,4 +60,8 @@ export default function Education() {
         
     </div>
   )
+}
+
+Education.propTypes = {
+    setShowScrollIconNeg:PropTypes.func.isRequired
 }

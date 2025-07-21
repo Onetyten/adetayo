@@ -42,11 +42,18 @@ html{
 .link-shadow{
     filter:drop-shadow(5px 5px 0px #121212 )
 }
+.link-shadow2{
+    filter:drop-shadow(3px 3px 0px #bab4b4  )
+}
+.link-shadow2:hover{
+    filter:drop-shadow(5px 3px 0px #bab4b4  )
+}
+
 .console-shadow{
     box-shadow: 10px 10px 0px #bab4b4  ;
 }
 .console-shadow2{
-    box-shadow: 12px 8px 0px #121212  ;
+    box-shadow: 10px 10px 0px #121212  ;
 }
 .v-align{
     top: 50%;

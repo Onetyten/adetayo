@@ -1,9 +1,15 @@
 /* eslint-disable no-unused-vars */
 
 import PropTypes from 'prop-types'
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 
 export default function ProjectItem(props) {
-    const { name,role,skills,desc,githubPath,projectPath} = props
+    const { name,role,skills,desc,githubPath,projectPath,setScrollIconUp,setScrollIconDown} = props
+    
+   
+
+    
   return (
     <div className='flex flex-col gap-2 sm:gap-3'>
         
@@ -58,5 +64,7 @@ ProjectItem.propTypes={
     skills : PropTypes.node,
     githubPath : PropTypes.node,
     projectPath : PropTypes.node,
-    desc : PropTypes.node
+    desc : PropTypes.node,
+    setScrollIconDown:PropTypes.func.isRequired,
+    setScrollIconUp:PropTypes.func.isRequired
 }
