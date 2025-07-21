@@ -11,7 +11,7 @@ import { faTwitter } from "@fortawesome/free-brands-svg-icons"
 import { useEffect, useRef } from "react"
 
 export default function Intro(props) {
-    const {setShowScrollIconPos,pageIndex,pageUrls,viewList,setCurrentIndex,setCurrentLink,setShowScrollIconNeg} = props
+    const {pageIndex,pageUrls,viewList,setCurrentIndex} = props
 
     const iconRef = useRef([])
 
@@ -28,11 +28,7 @@ export default function Intro(props) {
     
 
     useEffect(()=>{
-        setShowScrollIconPos(false)
-        setShowScrollIconNeg(true)
         setCurrentIndex(pageIndex)
-        setCurrentLink(pageUrls[pageIndex])
-        
     },[viewList[pageIndex].inView])
     
   return (

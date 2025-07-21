@@ -23,6 +23,7 @@ html{
     background-color:#171616 ;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    scroll-behavior: smooth;
     /* scroll-snap-type: both mandatory; */
 }
 

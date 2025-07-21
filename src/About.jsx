@@ -13,18 +13,16 @@ import PropTypes from 'prop-types'
 
 
 export default function About(props) {
-  const {setShowScrollIconPos,setScrollIconUp,setScrollIconDown,pageIndex,viewList,setCurrentIndex,setCurrentLink,pageUrls} = props
+  const {setScrollIconUp,setScrollIconDown,pageIndex,viewList,setCurrentIndex,pageUrls} = props
   const [mobileLoaded,setMobileLoaded] = useState(false)
 
 
 
 
   useEffect(()=>{
-      setShowScrollIconPos(true)
       setScrollIconUp(true)
       setScrollIconDown(true)
       setCurrentIndex(pageIndex)
-      setCurrentLink(pageUrls[pageIndex])
   },[viewList[pageIndex].inView])
   
 

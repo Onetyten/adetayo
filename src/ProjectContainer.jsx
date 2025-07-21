@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
-import { useEffect, useRef} from "react";
+
+import { useEffect, useRef, forwardRef } from "react";
 import Project from "./Project";
 import LiftMobile from '/Images/Portfolio/LiftMobile.png'
 import OSLogistics from '/Images/Portfolio/OSLogistics.png'
@@ -80,18 +80,11 @@ const projectDetails = [
 ];
 
 
-
-
-
-export default function ProjectContainer(props) {
-  const {setScrollIconUp, setScrollIconDown,pageIndex, viewList,setCurrentIndex,pageUrls,setCurrentLink} = props
+const ProjectContainer = forwardRef((props, ref) => {
+  const {setScrollIconUp, setScrollIconDown, pageIndex, viewList, setCurrentIndex, pageUrls, setCurrentLink} = props
   const containerRef = useRef(null);
   const scrollTimeout = useRef(null);
 
-
-
-  
-  
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -128,11 +121,8 @@ export default function ProjectContainer(props) {
     }; 
   }, []);
   
-
-
-
   return (
-    <div className="section-snap h-screen overflow-y-auto">
+    <div ref={ref} className="section-snap h-screen overflow-y-auto">
       <div
         ref={containerRef}
         className="w-screen h-screen overflow-x-scroll flex"
@@ -145,7 +135,8 @@ export default function ProjectContainer(props) {
             pageUrls = {pageUrls}
             setCurrentLink = {setCurrentLink}
             projectlength={projectDetails.length}
-            setScrollIconUp={setScrollIconUp} setScrollIconDown = {setScrollIconDown}
+            setScrollIconUp={setScrollIconUp} 
+            setScrollIconDown = {setScrollIconDown}
             viewList={viewList}
             setCurrentIndex={setCurrentIndex}
             {...project}
@@ -154,10 +145,18 @@ export default function ProjectContainer(props) {
       </div>
     </div>
   );
-}
+});
 
+ProjectContainer.displayName = 'ProjectContainer';
 
 ProjectContainer.propTypes={
-  setScrollIconDown:PropTypes.func.isRequired,
-  setScrollIconUp:PropTypes.func.isRequired
+  setScrollIconDown: PropTypes.func.isRequired,
+  setScrollIconUp: PropTypes.func.isRequired,
+  pageIndex: PropTypes.number.isRequired,
+  viewList: PropTypes.array.isRequired,
+  setCurrentIndex: PropTypes.func.isRequired,
+  pageUrls: PropTypes.array.isRequired,
+  setCurrentLink: PropTypes.func.isRequired
 }
+
+export default ProjectContainer;

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
  
 import { ToastContainer } from "react-toastify"
 import About from "./About"
@@ -46,6 +47,18 @@ function App() {
 
    useEffect(()=>{
     console.log("CurrentIndex",currentIndex," ","currentLink",currentLink)
+    if (currentIndex==0){
+      setShowScrollIconPos(false)
+      setShowScrollIconNeg(true)
+    }
+    else if (currentIndex==pageUrls.length){
+      setShowScrollIconPos(true)
+      setShowScrollIconNeg(false)
+    }
+    else{
+      setShowScrollIconPos(true)
+      setShowScrollIconNeg(true)
+    }
    },[currentIndex,currentLink])
 
   return (
@@ -54,9 +67,20 @@ function App() {
         <ScrollManager currentLink={currentLink} pageUrls={pageUrls} viewList={viewList} currentIndex={currentIndex} ScrollIconUp = {ScrollIconUp} ScrollIconDown={ScrollIconDown} showScrollIconPos= {showScrollIconPos} showScrollIconNeg={showScrollIconNeg}/>
 
 
-        <Intro pageIndex={0} pageUrls={pageUrls} setCurrentLink={setCurrentLink}  viewList={viewList} setCurrentIndex={setCurrentIndex} setShowScrollIconNeg={setShowScrollIconNeg} setShowScrollIconPos={setShowScrollIconPos}/>
+        <Intro 
+        pageIndex={0}
+        pageUrls={pageUrls}
+        viewList={viewList}
+        setCurrentIndex={setCurrentIndex}/>
  
-        <About pageIndex={1} pageUrls={pageUrls} setCurrentLink={setCurrentLink} viewList={viewList} setCurrentIndex={setCurrentIndex} setShowScrollIconPos={setShowScrollIconPos} setScrollIconUp={setScrollIconUp} setScrollIconDown={setScrollIconDown} />
+
+        <About 
+          pageIndex={1}
+          pageUrls={pageUrls} 
+          viewList={viewList} 
+          setCurrentIndex={setCurrentIndex}
+          setScrollIconUp={setScrollIconUp}
+          setScrollIconDown={setScrollIconDown}/>
 
         <ProjectContainer pageUrls={pageUrls}  pageIndex={2} setCurrentLink={setCurrentLink} viewList={viewList} setCurrentIndex={setCurrentIndex} setScrollIconUp={setScrollIconUp} setScrollIconDown = {setScrollIconDown}/>    
 
