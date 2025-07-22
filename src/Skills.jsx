@@ -18,7 +18,7 @@ import JestImg from '/Images/Skills/jest.png'
 import TypescriptImg from '/Images/Skills/typescript.png'
 import { motion } from 'framer-motion' 
 import { useEffect } from 'react'
-import PropTypes from 'prop-types'
+import { Element } from 'react-scroll'
 
 
 
@@ -40,41 +40,33 @@ export default function Skills(props) {
         {name:"Tailwind", source: Tailwind },
         {name:"ThreeJS", source: ThreeJsIMG},
     ]
-    const {setScrollIconUp, setScrollIconDown,pageIndex,viewList,setCurrentIndex,setCurrentLink,pageUrls} = props
+    const {pageIndex,viewList,setCurrentIndex,pageUrls} = props
     
     useEffect(()=>{
-        setScrollIconUp(true)
-        setScrollIconDown(true)
         setCurrentIndex(pageIndex)
-        setCurrentLink(pageUrls[pageIndex])
-    },[pageIndex, setCurrentIndex, setScrollIconDown, setScrollIconUp,viewList[pageIndex].inView])
+    },[pageIndex, setCurrentIndex,viewList[pageIndex].inView])
 
 
   return (
-    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='max-w-full h-screen relative box-border section-snap flex overflow-hidden justify-center flex-wrap items-center'>
+    <Element name={pageUrls[pageIndex]}>
+        <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='max-w-full h-screen relative box-border section-snap flex overflow-hidden justify-center flex-wrap items-center'>
 
-        <div className='absolute top-[3%] left-[4%] md:top-[10%] md:left-[5%]'>
-            <p className='md:text-3xl text-xl font-intel font-extrabold text-white'>Skills</p>
+            <div className='absolute top-[3%] left-[4%] md:top-[10%] md:left-[5%]'>
+                <p className='md:text-3xl text-xl font-intel font-extrabold text-white'>Skills</p>
+            </div>
+
+            <div className=" w-[60%]  relative box-border section-snap flex overflow-hidden justify-center gap-12 flex-wrap items-center">
+                {skillContainer.map((skill, index)=>{
+                    return(
+                        <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} transition={{duration:2,delay:index/10 }} key={index}>
+                            <SkillItem source = {skill.source} title = {skill.name}/>
+                        </motion.div>
+                    )
+
+                })}
+            </div>
+
         </div>
-
-        <div className=" w-[60%]  relative box-border section-snap flex overflow-hidden justify-center gap-12 flex-wrap items-center">
-            {skillContainer.map((skill, index)=>{
-                return(
-                    <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} transition={{duration:2,delay:index/10 }} key={index}>
-                        <SkillItem source = {skill.source} title = {skill.name}/>
-                    </motion.div>
-                )
-
-            })}
-        </div>
-
-    </div>
-
+    </Element>
   )
-}
-
-
-Skills.propTypes = {
-    setScrollIconUp:PropTypes.func.isRequired,
-    setScrollIconDown:PropTypes.func.isRequired
 }

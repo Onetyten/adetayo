@@ -24,7 +24,6 @@ html{
     -ms-overflow-style: none;
     scrollbar-width: none;
     scroll-behavior: smooth;
-    /* scroll-snap-type: both mandatory; */
 }
 
 .section-snap{
@@ -66,3 +65,4 @@ main {
     overflow-y: scroll;
     height: 100vh;
 }
+

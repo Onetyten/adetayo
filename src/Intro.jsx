@@ -32,113 +32,113 @@ export default function Intro(props) {
     },[viewList[pageIndex].inView])
     
   return (
-    
-    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='max-w-full h-screen relative box-border overflow-hidden section-snap'>
+        <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='max-w-full h-screen relative box-border overflow-hidden section-snap'>
 
-        {/* the two backgrounds that are going to scroll in */}
-        <div className='max-w-full h-screen flex  flex-row relative justify-start '>
-            <div className="flex-1">
-                <div className='bg-darkgrey background-canvas h-screen w-[101%]'>
+            {/* the two backgrounds that are going to scroll in */}
+            <div className='max-w-full h-screen flex  flex-row relative justify-start '>
+                <div className="flex-1">
+                    <div className='bg-darkgrey background-canvas h-screen w-[101%]'>
 
+                    </div>
+                </div>
+
+                <div className="flex-1">
+                    <div className='bg-darkgrey background-canvas h-screen w-[100%]'>
+
+                    </div>
                 </div>
             </div>
 
-            <div className="flex-1">
-                <div className='bg-darkgrey background-canvas h-screen w-[100%]'>
+            {/* Two hidden hello text */}
+            {/* Left side hello */}
+            <div className="absolute h-screen top-0 w-screen flex head-shadows items-center">
+
+            <div className='h-screen top-0 w-screen absolute box-border flex-1  overflow-hidden flex justify-start  items-center'>
+                    <div className="justify-self-start w-[50vw] h-full flex justify-center items-center overflow-hidden">
+                        <span className="left-span">
+                            <p className="text-[40vw] xl:text-[30vw] uppercase ab font-intel font-bold text-lightgrey text-center left-title">
+                                Hello
+                            </p>     
+                        </span>
+                        
+                    </div>
 
                 </div>
-            </div>
-        </div>
 
-        {/* Two hidden hello text */}
-        {/* Left side hello */}
-        <div className="absolute h-screen top-0 w-screen flex head-shadows items-center">
 
-        <div className='h-screen top-0 w-screen absolute box-border flex-1  overflow-hidden flex justify-start  items-center'>
-                <div className="justify-self-start w-[50vw] h-full flex justify-center items-center overflow-hidden">
-                    <span className="left-span">
-                        <p className="text-[40vw] xl:text-[30vw] uppercase ab font-intel font-bold text-lightgrey text-center left-title">
-                            Hello
-                        </p>     
-                    </span>
-                    
+                {/* right side hello */}
+                <div className='h-screen top-0 w-screen absolute box-border flex-1  overflow-hidden flex justify-end  items-center'>
+                    <div className="justify-self-end w-[50vw] h-full flex justify-center items-center overflow-hidden">
+                        <span className="right-span">
+                            <p className=" text-[40vw] uppercase xl:text-[30vw] ab font-intel font-bold text-lightgrey text-center right-title">
+                                Hello 
+                            </p>   
+                        </span>
+                        
+                    </div>
+
                 </div>
 
-            </div>
 
 
-            {/* right side hello */}
-            <div className='h-screen top-0 w-screen absolute box-border flex-1  overflow-hidden flex justify-end  items-center'>
-                <div className="justify-self-end w-[50vw] h-full flex justify-center items-center overflow-hidden">
-                    <span className="right-span">
-                        <p className=" text-[40vw] uppercase xl:text-[30vw] ab font-intel font-bold text-lightgrey text-center right-title">
-                            Hello 
-                        </p>   
-                    </span>
-                      
-                </div>
 
             </div>
 
 
+            <div className='animated-divided h-screen top-0 w-screen absolute box-border flex justify-center items-center'>
+                <div className="h-full w-[1px] bg-[#5d5c5c] flex items-center">
+                    <div className=" inner-animated-divided h-full w-full bg-white">
 
-
-        </div>
-
-
-        <div className='animated-divided h-screen top-0 w-screen absolute box-border flex justify-center items-center'>
-            <div className="h-full w-[1px] bg-[#5d5c5c] flex items-center">
-                <div className=" inner-animated-divided h-full w-full bg-white">
-
+                    </div>
                 </div>
             </div>
-        </div>
-    
-        <div className='h-screen top-0 w-screen absolute box-border flex justify-center items-center'>
-            <div className="flex flex-col gap-1">
-                <div className="bg-white h-10 overflow-hidden slide-in uppercase font-intel text-center text-2xl px-5 py-1 font-extralight">
-                    <p  className="name-popup">
-                        &lt; LABAEKA ADETAYO/ &gt;
-                    </p>
-                </div>
-                <div className="bg-white h-10 slide-in overflow-hidden uppercase text-center font-intel text-2xl px-5 py-1 font-extralight">
-                    <p className="name-popup">
-                        Frontend engineer
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-
-        <div className='h-screen top-0 w-screen absolute box-content flex justify-center items-end '>
-            <div className="w-[80%] xl:w-[50%] h-12 bg-lightgrey mb-14 sm:mb-0 flex justify-center gap-[5%] items-center overflow-hidden">
-
-
-
-                <a href="https://github.com/Onetyten" target='_blank' rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faGithub} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow " ref ={(el)=>{iconRef.current[0] = el}}/>
-                </a>
-                <a href="https://www.linkedin.com/in/labaeka-adetayo-a9681a247" target='_blank' rel="noopener noreferrer" >
-                    <FontAwesomeIcon icon={faLinkedin} className="text-white hover:text-lightergrey  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[1] = el}}/>
-                </a>
-                <a href="mailto:labaekaabdulrazaq@gmail.com">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-white hover:text-lightergrey  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[2] = el}}/>
-                </a>
-                <a href="tel:+2349155073769">
-                    <FontAwesomeIcon icon={faPhone} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[3] = el}}/>
-                </a>
-                <a href="https://x.com/Onetyten_exe" target='_blank' rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faTwitter} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[4] = el}}/>
-                </a>
-
-            </div>
-
-        </div>
-
         
+            <div className='h-screen top-0 w-screen absolute box-border flex justify-center items-center'>
+                <div className="flex flex-col gap-1">
+                    <div className="bg-white h-10 overflow-hidden slide-in uppercase font-intel text-center text-2xl px-5 py-1 font-extralight">
+                        <p  className="name-popup">
+                            &lt; LABAEKA ADETAYO/ &gt;
+                        </p>
+                    </div>
+                    <div className="bg-white h-10 slide-in overflow-hidden uppercase text-center font-intel text-2xl px-5 py-1 font-extralight">
+                        <p className="name-popup">
+                            Frontend engineer
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div className='h-screen top-0 w-screen absolute box-content flex justify-center items-end '>
+                <div className="w-[80%] xl:w-[50%] h-12 bg-lightgrey mb-14 sm:mb-0 flex justify-center gap-[5%] items-center overflow-hidden">
+
+
+
+                    <a href="https://github.com/Onetyten" target='_blank' rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faGithub} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow " ref ={(el)=>{iconRef.current[0] = el}}/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/labaeka-adetayo-a9681a247" target='_blank' rel="noopener noreferrer" >
+                        <FontAwesomeIcon icon={faLinkedin} className="text-white hover:text-lightergrey  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[1] = el}}/>
+                    </a>
+                    <a href="mailto:labaekaabdulrazaq@gmail.com">
+                        <FontAwesomeIcon icon={faEnvelope} className="text-white hover:text-lightergrey  text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[2] = el}}/>
+                    </a>
+                    <a href="tel:+2349155073769">
+                        <FontAwesomeIcon icon={faPhone} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[3] = el}}/>
+                    </a>
+                    <a href="https://x.com/Onetyten_exe" target='_blank' rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faTwitter} className="text-white hover:text-lightergrey text-lg xl:text-3xl link-shadow" ref ={(el)=>{iconRef.current[4] = el}}/>
+                    </a>
+
+                </div>
+
+            </div>
+
+            
+        
+        </div>
     
-    </div>
 
   )
 }

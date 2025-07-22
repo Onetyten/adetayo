@@ -11,6 +11,7 @@ import ScrollManager from "./ScrollManager"
 import { useEffect, useState } from "react"
 import { useInView } from "react-intersection-observer"
 
+
 function App() {
   const {ref:introRef,inView:IntroInView} = useInView({threshold:1})
   const {ref:aboutRef,inView:AboutInView} = useInView({threshold:1})
@@ -24,7 +25,6 @@ function App() {
 
   const pageUrls = ["Intro","About","Project1","project2","project3","project4","Skills","Education","Contact"]
   
-  const [currentLink,setCurrentLink] = useState('Intro')
 
 
   const viewList = [
@@ -46,7 +46,7 @@ function App() {
 
 
    useEffect(()=>{
-    console.log("CurrentIndex",currentIndex," ","currentLink",currentLink)
+    console.log("CurrentIndex",currentIndex)
     if (currentIndex==0){
       setShowScrollIconPos(false)
       setShowScrollIconNeg(true)
@@ -59,12 +59,32 @@ function App() {
       setShowScrollIconPos(true)
       setShowScrollIconNeg(true)
     }
-   },[currentIndex,currentLink])
+
+
+    // set scroll icon direction based on index
+    if (currentIndex ==2){
+      setScrollIconUp(true)
+      setScrollIconDown(false)
+    }
+    else if (currentIndex == 3 || currentIndex == 4 ){
+      setScrollIconUp(false)
+      setScrollIconDown(false)
+    }
+    else if (currentIndex == 5 ){
+      setScrollIconUp(false)
+      setScrollIconDown(true)
+    }
+    else{
+      setScrollIconUp(true)
+      setScrollIconDown(true)
+    }
+    
+   },[currentIndex])
 
   return (
-    <main className="overflow-x-hidden relative scroll-snap-y font-intel">
+    <main id="main-container" className="overflow-x-hidden relative scroll-snap-y font-intel">
       
-        <ScrollManager currentLink={currentLink} pageUrls={pageUrls} viewList={viewList} currentIndex={currentIndex} ScrollIconUp = {ScrollIconUp} ScrollIconDown={ScrollIconDown} showScrollIconPos= {showScrollIconPos} showScrollIconNeg={showScrollIconNeg}/>
+        <ScrollManager pageUrls={pageUrls} viewList={viewList} currentIndex={currentIndex} ScrollIconUp = {ScrollIconUp} ScrollIconDown={ScrollIconDown} showScrollIconPos= {showScrollIconPos} showScrollIconNeg={showScrollIconNeg}/>
 
 
         <Intro 
@@ -75,20 +95,39 @@ function App() {
  
 
         <About 
-          pageIndex={1}
-          pageUrls={pageUrls} 
-          viewList={viewList} 
-          setCurrentIndex={setCurrentIndex}
-          setScrollIconUp={setScrollIconUp}
-          setScrollIconDown={setScrollIconDown}/>
+        pageIndex={1}
+        pageUrls={pageUrls} 
+        viewList={viewList} 
+        setCurrentIndex={setCurrentIndex}
+        />
 
-        <ProjectContainer pageUrls={pageUrls}  pageIndex={2} setCurrentLink={setCurrentLink} viewList={viewList} setCurrentIndex={setCurrentIndex} setScrollIconUp={setScrollIconUp} setScrollIconDown = {setScrollIconDown}/>    
+        <ProjectContainer 
+        pageUrls={pageUrls} 
+        pageIndex={2}
+        viewList={viewList}
+        setCurrentIndex={setCurrentIndex}
+        />    
 
-        <Skills pageIndex={6} pageUrls={pageUrls} setCurrentLink={setCurrentLink} viewList={viewList} setCurrentIndex={setCurrentIndex}  setScrollIconUp={setScrollIconUp} setScrollIconDown = {setScrollIconDown} />
+        <Skills 
+        pageIndex={6}
+        pageUrls={pageUrls}
+        viewList={viewList}
+        setCurrentIndex={setCurrentIndex} 
+        />
 
-        <Education pageIndex={7} pageUrls={pageUrls} setCurrentLink={setCurrentLink} viewList={viewList} setCurrentIndex={setCurrentIndex} setShowScrollIconNeg = {setShowScrollIconNeg} />
+        <Education 
+        pageIndex={7}
+        pageUrls={pageUrls}
+        viewList={viewList}
+        setCurrentIndex={setCurrentIndex}
+        />
 
-        <Contact pageIndex={8} pageUrls={pageUrls} setCurrentLink={setCurrentLink} viewList={viewList} setCurrentIndex={setCurrentIndex} setShowScrollIconNeg = {setShowScrollIconNeg}/>
+        <Contact
+        pageIndex={8} 
+        pageUrls={pageUrls} 
+        viewList={viewList}
+        setCurrentIndex={setCurrentIndex}
+        />
 
         <ToastContainer autoClose={5000}/>
     </main>

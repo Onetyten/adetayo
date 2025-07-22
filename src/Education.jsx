@@ -1,67 +1,63 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
+import { Element } from "react-scroll";
 import EducationCard from "./EducationCard";
 import { useEffect } from "react";
-import PropTypes from "prop-types";
 
 
 export default function Education(props) {
-    const {setShowScrollIconNeg,pageIndex,viewList,setCurrentIndex,setCurrentLink,pageUrls} = props
+    const {pageIndex,viewList,setCurrentIndex,pageUrls} = props
     useEffect(()=>{
-        setShowScrollIconNeg(true)
         setCurrentIndex(pageIndex)
-        setCurrentLink(pageUrls[pageIndex])
-    },[setShowScrollIconNeg,viewList[pageIndex].inView])
+    },[viewList[pageIndex].inView])
 
 
   return (
-    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between bg-white">
+    <Element name={pageUrls[pageIndex]}>
+        <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between bg-white">
 
 
-        <div className='flex-1 min-h-screen '>
-            <div className="min-h-screen grid grid-cols-[1fr_2px_1fr] gap-4 items-center p-3 md:p-8 py-16 xl:py-32">
-                <div className="grid grid-rows-3 gap-2 w-full justify-items-end ">
-                    <div>2019</div>
-                    <EducationCard projectname="Aptech computer institute" timeline="2023 - 2024" skills = "Web development, Python programming" desc="In 2023. I expanded my knowledge in Web Development and Python programming at Aptech Computer Institute, located in Adamasingba, Ibadan.This programme gave a solid foundation in front-end web development. During this time, I collaborated with various developers to create functional web apps" />
-                    <div>2024</div>
-                </div>
-
-                <div className="grid grid-rows-3 h-full">
-                    <div className="bg-myblack h-full relative">
-                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
-
-                        </div>
+            <div className='flex-1 min-h-screen '>
+                <div className="min-h-screen grid grid-cols-[1fr_2px_1fr] gap-4 items-center p-3 md:p-8 py-16 xl:py-32">
+                    <div className="grid grid-rows-3 gap-2 w-full justify-items-end ">
+                        <div>2019</div>
+                        <EducationCard projectname="Aptech computer institute" timeline="2023 - 2024" skills = "Web development, Python programming" desc="In 2023. I expanded my knowledge in Web Development and Python programming at Aptech Computer Institute, located in Adamasingba, Ibadan.This programme gave a solid foundation in front-end web development. During this time, I collaborated with various developers to create functional web apps" />
+                        <div>2024</div>
                     </div>
-                    <div className="bg-myblack h-full  relative">
-                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white hover:bg-myteal absolute top-0 -left-2">
 
+                    <div className="grid grid-rows-3 h-full">
+                        <div className="bg-myblack h-full relative">
+                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
+
+                            </div>
                         </div>
-                    </div>
-                    <div className="bg-myblack  h-full  relative">
-                        <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
+                        <div className="bg-myblack h-full  relative">
+                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white hover:bg-myteal absolute top-0 -left-2">
 
+                            </div>
                         </div>
+                        <div className="bg-myblack  h-full  relative">
+                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
+
+                            </div>
+                        </div>
+                        
                     </div>
-                    
-                </div>
 
-                <div className="grid grid-rows-3 gap-2">
-                    <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - 2025" skills = "Computer Engineering" desc="I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/>
-                    <div>2023</div>
-                    <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/>
+                    <div className="grid grid-rows-3 gap-2">
+                        <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - 2025" skills = "Computer Engineering" desc="I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/>
+                        <div>2023</div>
+                        <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/>
 
+                    </div>
                 </div>
             </div>
+
+
+
+
+            
         </div>
-
-
-
-
-        
-    </div>
+    </Element>
   )
-}
-
-Education.propTypes = {
-    setShowScrollIconNeg:PropTypes.func.isRequired
 }

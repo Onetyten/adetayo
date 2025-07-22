@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, forwardRef } from "react";
+import { useEffect, useRef,useState } from "react";
 import Project from "./Project";
 import LiftMobile from '/Images/Portfolio/LiftMobile.png'
 import OSLogistics from '/Images/Portfolio/OSLogistics.png'
@@ -80,49 +80,81 @@ const projectDetails = [
 ];
 
 
-const ProjectContainer = forwardRef((props, ref) => {
-  const {setScrollIconUp, setScrollIconDown, pageIndex, viewList, setCurrentIndex, pageUrls, setCurrentLink} = props
-  const containerRef = useRef(null);
-  const scrollTimeout = useRef(null);
+export default function ProjectContainer (props) {
+  const { pageIndex, viewList, setCurrentIndex, pageUrls} = props
+  const containerRef = useRef(null)
+  const scrollTimeout = useRef(null)
+  const [isReactScrollActive, setIsReactScrollActive] = useState(false)
+
+   const scrollToProject = (projectIndex) => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    setIsReactScrollActive(true);
+    
+    container.scrollTo({
+      left: projectIndex * container.clientWidth,
+      behavior: "smooth",
+    });
+
+    // Reset the flag after scrolling is complete
+    setTimeout(() => {
+      setIsReactScrollActive(false);
+    }, 1000);
+  };
+
+
+  // Expose scrollToProject function globally for React Scroll to use
+  useEffect(() => {
+    window.scrollToProject = scrollToProject;
+    
+    return () => {
+      delete window.scrollToProject;
+    };
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
     const handleWheelScroll = (e) => {
+      if (isReactScrollActive) {
+        return;
+      }
+
       const scrollLeft = container.scrollLeft;
       const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      const direction = e.deltaY > 0 ? 1 : -1; // Detect scroll direction
+      const direction = e.deltaY > 0 ? 1 : -1;
       const atStart = scrollLeft < 1;
       const atEnd = Math.abs(scrollLeft - maxScrollLeft) < 1;
 
       if ((atStart && direction === -1) || (atEnd && direction === 1)) {
-        return; // Let native vertical scrolling happen
+        return;
       }
 
-      e.preventDefault(); // Prevent default only for horizontal scrolling
+      e.preventDefault();
 
       if (scrollTimeout.current) return; 
 
       container.scrollTo({
         left: scrollLeft + direction * container.clientWidth,
-        behavior: "smooth", // Smooth scrolling effect
+        behavior: "smooth",
       });
 
       scrollTimeout.current = setTimeout(() => {
         scrollTimeout.current = null;
-      }, 650); // A longer timeout to ensure animation completes
-    };
+      }, 650);
+    }
 
     container.addEventListener("wheel", handleWheelScroll, { passive: false }); 
     return () => { 
       container.removeEventListener("wheel", handleWheelScroll); 
       clearTimeout(scrollTimeout.current); 
-    }; 
-  }, []);
+    }
+  }, [isReactScrollActive])
   
   return (
-    <div ref={ref} className="section-snap h-screen overflow-y-auto">
+    <div className="section-snap h-screen overflow-y-auto">
       <div
         ref={containerRef}
         className="w-screen h-screen overflow-x-scroll flex"
@@ -133,10 +165,7 @@ const ProjectContainer = forwardRef((props, ref) => {
             index={index}
             pageIndex={pageIndex+index}
             pageUrls = {pageUrls}
-            setCurrentLink = {setCurrentLink}
             projectlength={projectDetails.length}
-            setScrollIconUp={setScrollIconUp} 
-            setScrollIconDown = {setScrollIconDown}
             viewList={viewList}
             setCurrentIndex={setCurrentIndex}
             {...project}
@@ -144,19 +173,13 @@ const ProjectContainer = forwardRef((props, ref) => {
         ))}
       </div>
     </div>
-  );
-});
+  )
+}
 
-ProjectContainer.displayName = 'ProjectContainer';
 
 ProjectContainer.propTypes={
-  setScrollIconDown: PropTypes.func.isRequired,
-  setScrollIconUp: PropTypes.func.isRequired,
   pageIndex: PropTypes.number.isRequired,
   viewList: PropTypes.array.isRequired,
   setCurrentIndex: PropTypes.func.isRequired,
   pageUrls: PropTypes.array.isRequired,
-  setCurrentLink: PropTypes.func.isRequired
 }
-
-export default ProjectContainer;

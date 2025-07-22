@@ -7,12 +7,12 @@ import PropTypes from "prop-types";
 import ConsoleText from "./ConsoleText";
 import ProjectItem from "./Components/ProjectItem";
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { Element } from "react-scroll";
 
 
 
 export default function Project(props) {
-  const { name,image,letter,isMobile ,showMessage,message,githubPath,projectPath,video,setScrollIconUp,setScrollIconDown,index,projectlength,pageIndex,pageUrls,setCurrentLink,viewList,setCurrentIndex} = props;
+  const { name,image,letter,isMobile ,showMessage,message,githubPath,projectPath,video,index,projectlength,pageIndex,pageUrls,viewList,setCurrentIndex} = props;
   const imageRef = useRef(null);
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
@@ -35,69 +35,57 @@ export default function Project(props) {
 
   useEffect(()=>{
 
-      if (index == 0){
-        setScrollIconUp(true)
-        setScrollIconDown(false)
-      }
-      else if (index == projectlength-1)
-      {
-          setScrollIconUp(false)
-          setScrollIconDown(true)
-      }
-      else{
-          setScrollIconUp(false)
-          setScrollIconDown(false)
-      }
       setCurrentIndex(pageIndex)
-      setCurrentLink(pageUrls[pageIndex])
-  },[index, projectlength, setScrollIconDown, setScrollIconUp,viewList[pageIndex].inView])
+  },[index, projectlength,viewList[pageIndex].inView])
 
   return (
-    <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className="min-w-screen h-screen relative box-border section-snap flex justify-between items-center bg-white">
-      <div className="w-screen h-screen flex xl:flex-row flex-col-reverse">
-        <div className=" flex-1 sm:flex-[0.6] flex justify-center p-2 sm:p-4 xl:p-0 items-center">
-          <ConsoleText projectname={name}>
-            <ProjectItem {...props} />
-          </ConsoleText>
-        </div>
-
-        <div className="flex-[0.8] md:flex-1 bg-darkgrey relative" onMouseMove={handleMouseMove}>
-          <div className="w-full h-full absolute top-0 left-0 flex justify-center items-center overflow-hidden">
-            <p className="text-[65vw] p-32 font-intel head-shadows text-lightgrey">
-              {letter}
-            </p>
+    <Element name={pageUrls[pageIndex]} >
+      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className="min-w-screen h-screen relative box-border section-snap flex justify-between items-center bg-white">
+        <div className="w-screen h-screen flex xl:flex-row flex-col-reverse">
+          <div className=" flex-1 sm:flex-[0.6] flex justify-center p-2 sm:p-4 xl:p-0 items-center">
+            <ConsoleText projectname={name}>
+              <ProjectItem {...props} />
+            </ConsoleText>
           </div>
 
-          {showMessage&&(<div className="w-full h-full absolute top-0 left-0 p-2 md:p-9 flex justify-end items-start overflow-hidden">
-            <div className="bg-lightergrey hover:bg-stone-400 console-shadow2 md:px-9 md:py-5 px-3 py-2 ">
-              <p className="text text-xs font-intel text-white font-bold">
-                {message}
-              </p> 
+          <div className="flex-[0.8] md:flex-1 bg-darkgrey relative" onMouseMove={handleMouseMove}>
+            <div className="w-full h-full absolute top-0 left-0 flex justify-center items-center overflow-hidden">
+              <p className="text-[65vw] p-32 font-intel head-shadows text-lightgrey">
+                {letter}
+              </p>
             </div>
-          </div>)}
 
-          <motion.div initial={{height:'100%'}} whileInView={{height:0}} transition={{duration:0.5,ease:'easeInOut'}} className="w-full z-10 h-full absolute top-0 left-0 bg-gradient-to-b from-myblack to-lightgrey flex justify-center items-center overflow-hidden">
-          </motion.div>
+            {showMessage&&(<div className="w-full h-full absolute top-0 left-0 p-2 md:p-9 flex justify-end items-start overflow-hidden">
+              <div className="bg-lightergrey hover:bg-stone-400 console-shadow2 md:px-9 md:py-5 px-3 py-2 ">
+                <p className="text text-xs font-intel text-white font-bold">
+                  {message}
+                </p> 
+              </div>
+            </div>)}
+
+            <motion.div initial={{height:'100%'}} whileInView={{height:0}} transition={{duration:0.5,ease:'easeInOut'}} className="w-full z-10 h-full absolute top-0 left-0 bg-gradient-to-b from-myblack to-lightgrey flex justify-center items-center overflow-hidden">
+            </motion.div>
 
 
-          <div className={`h-full w-full absolute top-0 left-0 flex justify-center items-center p-10`}>
-              {video?(
+            <div className={`h-full w-full absolute top-0 left-0 flex justify-center items-center p-10`}>
+                {video?(
+                  <a href={projectPath} target='_blank' className="w-full h-full flex justify-center">
+                    <video src={video} autoPlay loop muted playsInline className={`${isMobile ? "h-[90%]" : "w-full"} object-contain`} style={{transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,transition: "transform 0.1s ease-out",}}/>
+                  </a>
+                )
+              :(
                 <a href={projectPath} target='_blank' className="w-full h-full flex justify-center">
-                  <video src={video} autoPlay loop muted playsInline className={`${isMobile ? "h-[90%]" : "w-full"} object-contain`} style={{transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,transition: "transform 0.1s ease-out",}}/>
+                    <img ref={imageRef} src={image} alt="Portfolio link image" className={`${isMobile ? "h-[80%]" : "w-full"} object-contain`} style={{transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,transition: "transform 0.1s ease-out",}} />
                 </a>
-              )
-            :(
-              <a href={projectPath} target='_blank' className="w-full h-full flex justify-center">
-                  <img ref={imageRef} src={image} alt="Portfolio link image" className={`${isMobile ? "h-[80%]" : "w-full"} object-contain`} style={{transform: `perspective(600px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`,transition: "transform 0.1s ease-out",}} />
-              </a>
-              )}
-              
-              
-          </div>
+                )}
+                
+                
+            </div>
 
+          </div>
         </div>
       </div>
-    </div>
+    </Element>
   );
 }
 
@@ -117,6 +105,4 @@ Project.propTypes = {
   image: PropTypes.node,
   video: PropTypes.node,
   index:PropTypes.node,
-  setScrollIconDown:PropTypes.func.isRequired,
-  setScrollIconUp:PropTypes.func.isRequired
 };

@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 
 export default function ProjectItem(props) {
-    const { name,role,skills,desc,githubPath,projectPath,setScrollIconUp,setScrollIconDown} = props
+    const { name,role,skills,desc,githubPath,projectPath} = props
     
    
 
@@ -65,6 +65,4 @@ ProjectItem.propTypes={
     githubPath : PropTypes.node,
     projectPath : PropTypes.node,
     desc : PropTypes.node,
-    setScrollIconDown:PropTypes.func.isRequired,
-    setScrollIconUp:PropTypes.func.isRequired
 }
