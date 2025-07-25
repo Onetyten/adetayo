@@ -14,40 +14,98 @@ export default function Education(props) {
 
   return (
     <Element name={pageUrls[pageIndex]}>
-        <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between bg-white">
+        <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between py-20 sm:py-12 p-2 pl-10 bg-white">
+
+            <div className='absolute top-[3%] left-[4%] md:top-[10%] md:left-[5%]'>
+                <p className='md:text-3xl text-md font-intel font-extrabold text-darkgrey'>Education</p>
+            </div>
 
 
             <div className='flex-1 min-h-screen '>
-                <div className="min-h-screen grid grid-cols-[1fr_2px_1fr] gap-4 items-center p-3 md:p-8 py-16 xl:py-32">
-                    <div className="grid grid-rows-3 gap-2 w-full justify-items-end ">
-                        <div>2019</div>
-                        <EducationCard projectname="Aptech computer institute" timeline="2023 - 2024" skills = "Web development, Python programming" desc="In 2023. I expanded my knowledge in Web Development and Python programming at Aptech Computer Institute, located in Adamasingba, Ibadan.This programme gave a solid foundation in front-end web development. During this time, I collaborated with various developers to create functional web apps" />
-                        <div>2024</div>
-                    </div>
+                <div className="min-h-screen grid grid-cols-[0.02fr_1fr] sm:grid-cols-[1fr_2px_1fr] gap-4 items-center p-3 md:p-8 py-16 xl:py-32">
 
-                    <div className="grid grid-rows-3 h-full">
-                        <div className="bg-myblack h-full relative">
+                    <div className="grid grid-rows-3 sm:hidden h-full">
+                        <div className="bg-myblack w-0.5 h-full relative">
                             <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
-
+                                <div className="absolute -left-10 -top-1.5 text-sm">2019</div>
                             </div>
                         </div>
-                        <div className="bg-myblack h-full  relative">
+                        <div className="bg-myblack w-0.5 h-full  relative">
                             <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white hover:bg-myteal absolute top-0 -left-2">
-
+                                <div className="absolute -left-10 -top-1.5 text-sm">2023</div>
                             </div>
                         </div>
-                        <div className="bg-myblack  h-full  relative">
+                        <div className="bg-myblack w-0.5 h-full  relative">
                             <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
-
+                                <div className="absolute -left-10 -top-1.5 text-sm">2024</div>
                             </div>
                         </div>
+                    </div> 
+                    
+
+
+                    <div className="flex flex-col w-full h-full items-start sm:items-end  gap-10 ">
+
+
+                        <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
+                           <div className="">
+                                <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - 2025" skills = "Computer Engineering" desc="I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/> 
+                           </div>
+                        </div>
+
+                        <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
+                           <div className="block sm:hidden">
+                               <EducationCard projectname="Aptech computer institute" timeline="2023 - 2024" skills = "Web development, Python programming" desc="In 2023. I expanded my knowledge in Web Development and Python programming at Aptech Computer Institute, located in Adamasingba, Ibadan.This programme gave a solid foundation in front-end web development. During this time, I collaborated with various developers to create functional web apps" /> 
+                           </div>
+                        </div>
+
+                        <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
+                           <div className="">
+                               <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/> 
+                           </div>
+                        </div>
+                        
                         
                     </div>
 
-                    <div className="grid grid-rows-3 gap-2">
-                        <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - 2025" skills = "Computer Engineering" desc="I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/>
-                        <div>2023</div>
-                        <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/>
+                    <div className="sm:grid grid-rows-3 hidden h-full">
+                        <div className="bg-myblack w-0.5 h-full relative">
+                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
+                                <div className="absolute left-4 -top-1.5">2019</div>
+                            </div>
+                        </div>
+                        <div className="bg-myblack w-0.5 h-full  relative">
+                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white hover:bg-myteal absolute top-0 -left-2">
+                                <div className="absolute -left-12 -top-1.5 ">2023</div>
+                            </div>
+                        </div>
+                        <div className="bg-myblack w-0.5 h-full  relative">
+                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
+                                <div className="absolute left-4 -top-1.5">2024</div>
+                            </div>
+                        </div>
+                    </div> 
+
+                    <div  className="sm:flex flex-col w-full h-full items-start hidden gap-10 ">
+
+
+                        <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
+                           <div className="block sm:hidden">
+                                <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - 2025" skills = "Computer Engineering" desc="I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/> 
+                           </div>
+                        </div>
+
+                        <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
+                           <div className="hidden sm:block">
+                               <EducationCard projectname="Aptech computer institute" timeline="2023 - 2024" skills = "Web development, Python programming" desc="In 2023. I expanded my knowledge in Web Development and Python programming at Aptech Computer Institute, located in Adamasingba, Ibadan.This programme gave a solid foundation in front-end web development. During this time, I collaborated with various developers to create functional web apps" /> 
+                           </div>
+                        </div>
+
+                        <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
+                           <div className="block sm:hidden">
+                               <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/> 
+                           </div>
+                        </div>
 
                     </div>
                 </div>

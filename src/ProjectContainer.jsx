@@ -50,7 +50,7 @@ const projectDetails = [
     name: "Questlog",
     role: "Fullstack developer ",
     skills: ["NextJs","Typescript","NodeJs","ExpressJs","MongoDB","Jsonwebtoken","Jest","Supertest","Bcrypt","Axios","Redux","Redux-toolkit"],
-    desc: "This is a task management web app that gamifies doing. This is done by letting users break down large tasks into subtasks, as well as awarding users on the basis of task completion, while rocking a fully-featured backend in the form of a REST API that securely saves user data and tasks.",
+    desc: "This is a task management web app that gamifies doing  by letting users break down large tasks into subtasks, as well as awarding users on the basis of task completion, while rocking a fully-featured backend in the form of a REST API that securely saves user data and tasks.",
     letter: "Q",
     showMessage: false,
     message: "",

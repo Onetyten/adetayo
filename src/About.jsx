@@ -3,8 +3,9 @@
 import Aboutpic from '/Images/aboutpic.png'
 import ConsoleText from './ConsoleText'
 import AboutpicMobile from '/Images/aboutpicmobile.png'
-import placMobilePic from '/Images/placeholderImage/plac-aboutpicmobile.png'
-import { useEffect, useState } from 'react'
+import {useEffect} from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 
@@ -13,7 +14,6 @@ import { useEffect, useState } from 'react'
 
 export default function About(props) {
   const {pageIndex,viewList,setCurrentIndex,pageUrls} = props
-  const [mobileLoaded,setMobileLoaded] = useState(false)
 
 
 
@@ -24,20 +24,18 @@ export default function About(props) {
   
 
   return (
-      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className=' h-screen relative box-border flex-col md:flex-row  flex overflow-x-hidden section-snap '>
-        <div className="bg-darkgrey h-0 sm:h-full flex-[0.45]  md:flex-[0.62] relative ">
-          <div>
-            <img src={Aboutpic} alt="" loading='lazy' className='absolute md:-right-[22%] md:block hidden v-align md:w-xs w-60 object-contain grayscale-0 hover:grayscale transition duration-300'/>
+      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className=' min-h-screen relative box-border flex-col md:flex-row  flex overflow-x-hidden section-snap '>
+        <div className="bg-darkgrey h-full flex justify-center items-center flex-[0.45] min-h-72  md:min-h-screen md:flex-[0.62] relative ">
+          <div className='w-full h-full flex justify-center items-center flex-1'>
+            <LazyLoadImage alt="About me"src={Aboutpic} effect="blur" className='md:block hidden  xl:translate-x-52 border-4 md:w-xs w-60 h-auto object-contain grayscale-0 hover:grayscale transition duration-400'/>
           </div>
 
 
-          <div className='md:hidden right-[12%] flex justify-center items-center h-full w-full mt-10'>
-              <div className='md:w-xs min-h-96 w-[60%] bg-cover bg-center' style={{backgroundImage: mobileLoaded? "" : `url(${placMobilePic})`}}>
-                <img src={AboutpicMobile} loading='lazy' onLoad={()=>{setMobileLoaded(true)}} alt="" className='md:w-xs w-full object-contain grayscale-0 hover:grayscale transition duration-300'/>
-              </div>
+          <div className='md:hidden flex justify-center items-center h-full w-full overflow-hidden'>
+                <LazyLoadImage alt="About me"src={AboutpicMobile} effect="blur" className='object-center object-contain grayscale-0 hover:grayscale transition duration-400 max-w-64'/>
           </div>
         </div>
-        <div className="bg-white h-full flex-1 flex justify-center p-2 md:p-4 items-center">
+        <div className="bg-white h-full md:min-h-screen flex-1 flex justify-center pb-20 p-2 md:p-4 md:pb-4 items-center">
           <ConsoleText projectname = 'About'>
 
 
