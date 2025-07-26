@@ -51,7 +51,7 @@ export default function Skills(props) {
     <Element name={pageUrls[pageIndex]}>
         <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='max-w-full min-h-screen relative box-border section-snap flex overflow-hidden justify-center flex-wrap items-center'>
 
-            <div className='absolute top-8 left-2'>
+            <div className='absolute top-16 sm:top-8 left-2'>
                 <p className='md:text-2xl text-md font-intel font-extrabold text-white'>Skills</p>
             </div>
 

@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-hooks/exhaustive-deps */
-import Aboutpic from '/Images/aboutpic.png'
+import Aboutpic from '/Images/aboutpic.webp'
 import ConsoleText from './ConsoleText'
-import AboutpicMobile from '/Images/aboutpicmobile.png'
+import AboutpicMobile from '/Images/aboutpicmobile.webp'
 import {useEffect} from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
 import 'react-lazy-load-image-component/src/effects/blur.css';

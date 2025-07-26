@@ -16,7 +16,7 @@ export default function Education(props) {
     <Element name={pageUrls[pageIndex]}>
         <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between py-20 sm:py-12 p-2 pl-10 bg-white">
 
-            <div className='absolute top-8 left-2'>
+            <div className='absolute top-16 sm:top-8 left-2'>
                 <p className='md:text-2xl text-md font-intel font-extrabold text-darkgrey'>Education</p>
             </div>
 

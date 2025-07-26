@@ -71,7 +71,7 @@ export default function Contact(props) {
 
             <div className="w-screen min-h-screen  flex xl:flex-row flex-col" >
 
-                <div className="flex-1 xl:text-lg mt-6 md:mt-0 w-full xl:mb-0 mb-16 relative flex justify-center items-center">
+                <div className="flex-1 xl:text-lg mt-20 xl:mt-0 w-full xl:mb-0 mb-16 relative flex justify-center items-center">
                     <ContactConsole projectname='Contact'>
                         <form className="flex mb-10 md:mb-0 flex-col h-full justify-between gap-3 relative" action="" onSubmit={onSubmit}>
                             <p className="text-lightergrey text-xs md:text-sm">Please fill out the form and i’ll be in touch as soon as possible.</p>
