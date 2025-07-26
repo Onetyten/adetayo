@@ -17,7 +17,7 @@ export default function ContactConsole({children,projectname}) {
                 </div>
 
                 <div className='flex-1 text-center w-full flex justify-center text-lg 2xl:text-2xl'>
-                    <p className='font-roboto text-white text-md'>{projectname}</p>
+                    <p className='text-white text-md'>{projectname}</p>
                     
                 </div>
 

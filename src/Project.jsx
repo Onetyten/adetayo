@@ -55,9 +55,9 @@ export default function Project(props) {
               </p>
             </div>
 
-            {showMessage&&(<div className="w-full h-full absolute top-0 left-0 p-2 md:p-9 flex justify-end items-start overflow-hidden">
-              <div className="bg-lightergrey hover:bg-stone-400 console-shadow2 md:px-9 md:py-5 px-3 py-2 ">
-                <p className="text text-xs font-intel text-white font-bold">
+            {message && message!=""&&(<div className="w-full h-full sm:hidden absolute top-0 left-0 p-2 md:p-9 flex justify-end items-start overflow-hidden">
+              <div className="bg-lightergrey hover:bg-stone-400 console-shadow2 px-3 p-1 ">
+                <p className="text text-xs font-intel text-darkgrey font-bold">
                   {message}
                 </p> 
               </div>

@@ -58,6 +58,10 @@ export default function Contact(props) {
         finally
         {
             setIsSubmitting(false)
+            setName("")
+            setEmail("")
+            setPhone("")
+            setMessage("")
         }
       };
 
@@ -74,10 +78,10 @@ export default function Contact(props) {
 
 
                             <div className="flex flex-col gap-3 sm:gap-5">
-                                <ContactBox name="Name" isRequired={true} onChange={(e)=>{setName(e.target.value)}} icon = {faUser} placeholder = "John Doe" isArea = {false}/>
-                                <ContactBox name="Email" isRequired={true}  onChange={(e)=>{setEmail(e.target.value)}} icon = {faEnvelope} placeholder = "johndoe@gmail.com" isArea = {false}/>
-                                <ContactBox name="Phone" isRequired={false}  onChange={(e)=>{setPhone(e.target.value)}} icon = {faPhone} placeholder = "Phone Number" isArea = {false}/>
-                                <ContactBox name="Message" isRequired={true}  onChange={(e)=>{setMessage(e.target.value)}} icon = {faMessage} placeholder = "Write message..." isArea = {true}/>
+                                <ContactBox name="Name" isRequired={true} value = {name} onChange={(e)=>{setName(e.target.value)}} icon = {faUser} placeholder = "John Doe" isArea = {false}/>
+                                <ContactBox name="Email" isRequired={true} value={email}  onChange={(e)=>{setEmail(e.target.value)}} icon = {faEnvelope} placeholder = "johndoe@gmail.com" isArea = {false}/>
+                                <ContactBox name="Phone" isRequired={false}  value ={phone} onChange={(e)=>{setPhone(e.target.value)}} icon = {faPhone} placeholder = "Phone Number" isArea = {false}/>
+                                <ContactBox name="Message" isRequired={true} value={message}  onChange={(e)=>{setMessage(e.target.value)}} icon = {faMessage} placeholder = "Write message..." isArea = {true}/>
                             </div>
                             <button type="submit" className="text-center bg-white cursor-pointer text-sm md:text-base hover:bg-lightergrey text-darkgrey hover:text-white md:p-2 p-1 font-bold">
                                 SEND
@@ -101,7 +105,7 @@ export default function Contact(props) {
 
 
 
-                <div className=" md:p-5 p-5  grey flex-1 md:pb-0 pb-16 flex bg-darkgrey flex-col justify-between items-center">
+                <div className="  p-5  grey flex-1 flex bg-darkgrey flex-col justify-between items-center">
                     <h2 className=" text-lg md:text-2xl mb-16 font-bold text-white">Contact me</h2>
                     <div className="flex-1 md:w-96 w-xs items-center justify-center h-full flex flex-col gap-4">
 
@@ -127,15 +131,8 @@ export default function Contact(props) {
                             <p className="text-lightergrey hover:text-white text-sm md:text-base">Lagos Mainland 101245</p>
                         </a>
 
-                        {/* <div className="w-full console-shadow2 h-32 md:h-72  mt-2 md:mt-0">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31713.527194184662!2d3.363557479355735!3d6.497499581915034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c8f121645c5%3A0xf5436090467df795!2sLagos%20Mainland%20101245%2C%20Lagos!5e0!3m2!1sen!2sng!4v1752955714728!5m2!1sen!2sng"
-                                width="100%" height="100%" style={{ border: 0 }}  allowFullScreen={true}  loading="lazy" title="Google Map Embed"
-                            />
-                        </div> */}
-
                     </div>
-                    <div className="md:w-96 w-xs h-12 bg-lightgrey mt-16 md:my-3 sm:mb-0 flex justify-center gap-[5%] items-center overflow-hidden">
+                    <div className="md:w-96 w-xs h-12 bg-lightgrey my-16 xl:my-3 sm:mb-0 flex justify-center gap-[5%] items-center overflow-hidden">
 
                         <a href="https://github.com/Onetyten" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className="text-white hover:text-lightergrey text-lg xl:text-2xl link-shadow " />

@@ -24,18 +24,18 @@ export default function About(props) {
   
 
   return (
-      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className=' min-h-screen relative box-border flex-col md:flex-row  flex overflow-x-hidden section-snap '>
-        <div className="bg-darkgrey h-full flex justify-center items-center flex-[0.45] min-h-72  md:min-h-screen md:flex-[0.62] relative ">
+      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className=' min-h-screen relative box-border flex-col lg:flex-row  flex overflow-x-hidden section-snap '>
+        <div className="bg-darkgrey h-full flex justify-center items-center flex-[0.45] min-h-72  lg:min-h-screen lg:flex-[0.62] relative ">
           <div className='w-full h-full flex justify-center items-center flex-1'>
-            <LazyLoadImage alt="About me"src={Aboutpic} effect="blur" className='md:block hidden  xl:translate-x-52 border-4 md:w-xs w-60 h-auto object-contain grayscale-0 hover:grayscale transition duration-400'/>
+            <LazyLoadImage alt="About me"src={Aboutpic} effect="blur" className='lg:block hidden  2xl:translate-x-64 xl:translate-x-48  border-4 lg:w-xs w-60 h-auto object-contain grayscale-0 hover:grayscale transition duration-400'/>
           </div>
 
 
-          <div className='md:hidden flex justify-center items-center h-full w-full overflow-hidden'>
+          <div className='lg:hidden flex justify-center items-center h-full w-full overflow-hidden'>
                 <LazyLoadImage alt="About me"src={AboutpicMobile} effect="blur" className='object-center object-contain grayscale-0 hover:grayscale transition duration-400 max-w-64'/>
           </div>
         </div>
-        <div className="bg-white h-full md:min-h-screen flex-1 flex justify-center pb-20 p-2 md:p-4 md:pb-4 items-center">
+        <div className="bg-white h-full lg:min-h-screen flex-1 flex justify-center pb-20 p-2 lg:p-4 lg:pb-4 items-center">
           <ConsoleText projectname = 'About'>
 
 
@@ -57,7 +57,7 @@ export default function About(props) {
               I specialize in the JavaScript stack, including HTML, CSS, JavaScript, React, React Native, and more, as detailed below. I invite you to explore my portfolio and discover the passion and dedication that fuels my craft. Whether you are here to check out my latest project or learn more about my expertise in the world of web development and programming in general, I hope you find inspiration in my projects and feel the passion I felt while making them.
             </div>
 
-            <div className="text-center bg-white hover:bg-lightergrey w-32 text-darkgrey hover:text-white text-sm md:text-base p-1 md:p-2   font-bold">
+            <div className="text-center bg-white hover:bg-lightergrey w-32 text-darkgrey hover:text-white text-sm lg:text-base p-1 lg:p-2   font-bold">
                   <a href= "https://github.com/Onetyten" target='_blank' > GITHUB </a>
             </div>
 
