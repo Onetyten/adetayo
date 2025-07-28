@@ -69,7 +69,7 @@ const projectDetails = [
     image: LiftMobile,
     video:LiftVid,
     imgPath:'/3D model/screenImg/LiftMobile.png',
-    projectPath:'https://github.com/Onetyten/Lift-mobile',
+    projectPath:'https://lift-mobile.vercel.app/',
     githubPath:'https://github.com/Onetyten/Lift-mobile'
     
   },
