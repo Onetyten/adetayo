@@ -39,7 +39,7 @@ const projectDetails = [
     image: OSLogistics,
     video:OSVid,
     imgPath:'/3D model/screenImg/scissors.png',
-    projectPath:'https://oslogistics.netlify.app/',
+    projectPath:'https://os-logistics.vercel.app/',
     githubPath:'https://github.com/Onetyten/os-logistics'
   },
   
