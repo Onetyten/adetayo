@@ -54,7 +54,7 @@ export default function About(props) {
             </div>
 
             <div className=' 2xl:text-lg'>
-              I specialize in the JavaScript stack, including HTML, CSS, JavaScript, React, React Native, and more, as detailed below. I invite you to explore my portfolio and discover the passion and dedication that fuels my craft. Whether you are here to check out my latest project or learn more about my expertise in the world of web development and programming in general, I hope you find inspiration in my projects and feel the passion I felt while making them.
+             I am a driven Fullstack developer who thrives in the JavaScript ecosystem, proficient in technologies like Next.js, React, and React Native. I'm always keeping up with modern tech trends and technologies and I find joy in making the web a more pleasurable space. I thrive in a fast-paced, collaborative environment and i am currently open to remote, on-site, and hybrid roles, as well as contract gigs and collaborative opportunities where I can bring value, grow, and contribute to real-world projects that make an impact.
             </div>
 
             <div className="text-center bg-white hover:bg-lightergrey w-32 text-darkgrey hover:text-white text-sm lg:text-base p-1 lg:p-2   font-bold">
