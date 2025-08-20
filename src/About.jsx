@@ -54,7 +54,7 @@ export default function About(props) {
             </div>
 
             <div className=' 2xl:text-lg'>
-             I am a driven Fullstack developer who thrives in the JavaScript ecosystem, proficient in technologies like Next.js, React, and React Native. I'm always keeping up with modern tech trends and technologies and I find joy in making the web a more pleasurable space. I thrive in a fast-paced, collaborative environment and i am currently open to remote, on-site, and hybrid roles, as well as contract gigs and collaborative opportunities where I can bring value, grow, and contribute to real-world projects that make an impact.
+             I am a driven Fullstack developer who thrives in the JavaScript ecosystem, proficient in technologies like Next.js, React, and React Native. I&apos;m always keeping up with modern tech trends and technologies and I thrive in a fast-paced, collaborative environment. I am currently open to remote, on-site, and hybrid roles, as well as contract gigs and collaborative opportunities where I can bring value, grow, and contribute to real-world projects that make an impact.
             </div>
 
             <div className="text-center bg-white hover:bg-lightergrey w-32 text-darkgrey hover:text-white text-sm lg:text-base p-1 lg:p-2   font-bold">

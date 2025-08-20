@@ -22,31 +22,11 @@ export default function Education(props) {
 
 
             <div className='flex-1 min-h-screen '>
-                <div className="min-h-screen grid grid-cols-[0.02fr_1fr] sm:grid-cols-[1fr_2px_1fr] gap-4 items-center p-3 md:p-8 py-16 xl:py-32">
+                <div className="min-h-screen grid grid-cols-[12px_1fr] sm:grid-cols-[1fr_2px_1fr] pl-6 sm:pl-0 gap-1 sm:gap-4 items-center p-1 md:p-8 py-16 xl:py-32">
 
-                    <div className="grid grid-rows-3 sm:hidden h-full">
-                        <div className="bg-myblack w-0.5 h-full relative">
-                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
-                                <div className="absolute -left-10 -top-1.5 text-sm">2024</div>
-                            </div>
-                        </div>
-                        <div className="bg-myblack w-0.5 h-full  relative">
-                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white hover:bg-myteal absolute top-0 -left-2">
-                                <div className="absolute -left-10 -top-1.5 text-sm">2023</div>
-                            </div>
-                        </div>
-                        <div className="bg-myblack w-0.5 h-full  relative">
-                            <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
-                                <div className="absolute -left-10 -top-1.5 text-sm">2019</div>
-                            </div>
-                        </div>
-                    </div> 
-                    
+                    <div className="flex flex-col w-full h-full items-start sm:items-end  gap-10  sm:order-1 order-2">
 
-
-                    <div className="flex flex-col w-full h-full items-start sm:items-end  gap-10 ">
-
-                        <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
+                        <div className="sm:min-h-96 min-h-80 justify-around items-center flex flex-1 ">
                            <div className="">
                                <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/> 
                            </div>
@@ -63,18 +43,13 @@ export default function Education(props) {
                                 <EducationCard projectname="Olabisi Onabanjo University " timeline="2019 - 2025" skills = "Computer Engineering" desc="I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."/> 
                            </div>
                         </div>
-
-                        
-
-                        
-                        
                         
                     </div>
 
-                    <div className="sm:grid grid-rows-3 hidden h-full">
+                    <div className="grid grid-rows-3 h-full sm:order-2 order-1">
                         <div className="bg-myblack w-0.5 h-full relative">
                             <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-0 -left-2">
-                                <div className="absolute left-6 -top-1.5">2024</div>
+                                <div className="absolute sm:left-6 sm:-top-1.5 -left-12 -top-1.5">2024</div>
                             </div>
                         </div>
                         <div className="bg-myblack w-0.5 h-full  relative">
@@ -89,9 +64,8 @@ export default function Education(props) {
                         </div>
                     </div> 
 
-                    <div  className="sm:flex flex-col w-full h-full items-start hidden gap-10 ">
-
-
+                    
+                    <div  className="sm:flex flex-col w-full h-full items-start hidden gap-10 sm:order-3 ">
                         <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
                            <div className="block sm:hidden">
                                <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/> 
