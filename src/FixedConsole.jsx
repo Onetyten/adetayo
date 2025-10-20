@@ -18,17 +18,16 @@ export default function FixedConsole({children,projectname,isTimeline}) {
                 </div>
 
                 <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:1}}  className='flex-1 text-center w-full flex justify-center'>
-                    <p className='font-intel text-white hover:text-lightergrey text-sm md:text-xl 2xl:text-2xl'>{projectname}</p>
-                    
+                    <p className='font-intel text-white hover:text-lightergrey text-sm md:text-xl'>{projectname}</p>  
                 </motion.div>
 
             </div>
 
           </div>
 
-          <div className='text-white xl:px-4 xl:py-8 p-2 box-border'>
+          <div className='text-white xl:px-4 xl:py-8 2xl:text-base text-xs p-2 box-border'>
             {children}
-          </div>
+          </div> 
         </div>
   )
 }

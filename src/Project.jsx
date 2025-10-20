@@ -40,9 +40,9 @@ export default function Project(props) {
 
   return (
     <Element name={pageUrls[pageIndex]} >
-      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className="min-w-screen min-h-screen relative box-border section-snap flex justify-between items-center bg-white">
-        <div className="w-screen min-h-screen flex xl:flex-row flex-col-reverse">
-          <div className=" flex-1 xl:flex-[0.6] pb-24 md:p-0 flex justify-center p-2 sm:p-4 xl:p-0 items-center">
+      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className="min-w-screen min-h-dvh relative box-border section-snap flex justify-between items-center bg-white">
+        <div className="w-screen h-dvh flex xl:flex-row flex-col-reverse">
+          <div className=" flex-1 xl:flex-[0.6] pb-5 md:p-0 flex justify-center p-2 sm:p-4 xl:p-0 items-center">
             <ConsoleText projectname={name}>
               <ProjectItem {...props} />
             </ConsoleText>

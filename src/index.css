@@ -14,6 +14,7 @@
     --color-myteal: #16f2b3;
     --font-roboto: "Roboto",sans-serif;
     --font-intel: "Intel One Mono",sans-serif;
+    --breakpoint-xs:360px;
 }
 
 ::-webkit-scrollbar {

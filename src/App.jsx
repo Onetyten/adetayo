@@ -85,8 +85,7 @@ function App() {
     <main id="main-container" className="overflow-x-hidden relative scroll-snap-y font-intel">
       
         <ScrollManager pageUrls={pageUrls} viewList={viewList} currentIndex={currentIndex} ScrollIconUp = {ScrollIconUp} ScrollIconDown={ScrollIconDown} showScrollIconPos= {showScrollIconPos} showScrollIconNeg={showScrollIconNeg}/>
-
-
+        
         <Intro 
         pageIndex={0}
         pageUrls={pageUrls}

@@ -77,7 +77,7 @@ export default function Contact(props) {
                             <p className="text-lightergrey text-xs md:text-sm">Please fill out the form and i’ll be in touch as soon as possible.</p>
 
 
-                            <div className="flex flex-col gap-2 sm:gap-3 2xl:gap-4 2xl:gap-5">
+                            <div className="flex flex-col gap-2 sm:gap-3 2xl:gap-5">
                                 <ContactBox name="Name" isRequired={true} value = {name} onChange={(e)=>{setName(e.target.value)}} icon = {faUser} placeholder = "John Doe" isArea = {false}/>
                                 <ContactBox name="Email" isRequired={true} value={email}  onChange={(e)=>{setEmail(e.target.value)}} icon = {faEnvelope} placeholder = "johndoe@gmail.com" isArea = {false}/>
                                 <ContactBox name="Phone" isRequired={false}  value ={phone} onChange={(e)=>{setPhone(e.target.value)}} icon = {faPhone} placeholder = "Phone Number" isArea = {false}/>

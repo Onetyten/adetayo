@@ -17,7 +17,7 @@ export default function ConsoleText({children,projectname}) {
                 </div>
 
                 <div className='flex-1 p-2 sm:r-2  text-center w-full flex justify-center'>
-                    <p className='text-white hover:text-lightergrey text-base sm:text-xl 2xl:text-2xl'>{projectname}</p>
+                    <p className='text-white hover:text-lightergrey text-sm md:text-xl'>{projectname}</p>
                     
                 </div>
 
@@ -29,7 +29,7 @@ export default function ConsoleText({children,projectname}) {
 
           </div>
 
-          <div className='text-white p-6 box-border'>
+          <div className='text-white p-6 box-border 2xl:text-base text-xs'>
             {children}
           </div>
         </div>

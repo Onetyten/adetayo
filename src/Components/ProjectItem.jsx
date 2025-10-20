@@ -11,16 +11,12 @@ export default function ProjectItem(props) {
 
     
   return (
-    <div className='flex flex-col gap-2 sm:gap-3'>
-        
-        {/* <div className=''>
-            <p className='text-lg 2xl:text-2xl'>{name}</p>
-        </div> */}
+    <div className='flex flex-col gap-2 sm:gap-3 text-xs 2xl:text-base'>
         <div>
-           <p className=' 2xl:text-lg text-lightergrey' >Role : <span className='text-white'>{role}</span></p> 
+           <p className='text-lightergrey' >Role : <span className='text-white'>{role}</span></p> 
         </div>
 
-        <div className='2xl:text-lg text-lightergrey'>
+        <div className='text-lightergrey'>
             Tools : { " "}
                 {
                     skills.map((item,index)=>{
@@ -33,26 +29,21 @@ export default function ProjectItem(props) {
                     })
                 }
                 <span className='text-myteal'> Git</span>
-               
-
         </div>
 
-        <div className='2xl:text-lg'>
+        <div>
             {desc}
         </div>
 
         <div className=' flex gap-3'>
-            <div className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-sm md:text-base p-1 md:p-2 font-bold">
+            <div className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-sm p-1 md:p-2 font-bold">
                 <a href={githubPath} target='_blank'> GITHUB </a>
             </div>
 
-            <div className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-sm md:text-base p-1 md:p-2  font-bold">
+            <div className="text-center bg-white hover:bg-lightergrey text-darkgrey hover:text-white text-sm p-1 md:p-2  font-bold">
                 <a href={projectPath} target='_blank'>VIEW PROJECT </a>
             </div>
         </div>
-
-      
-
     </div>
     
   )
