@@ -96,7 +96,7 @@ export default function Intro(props) {
             <div className='h-dvh top-0 w-screen absolute box-border flex justify-center items-center'>
                 <div className="flex flex-col gap-1">
                     <div className="bg-white h-10 overflow-hidden slide-in uppercase font-intel text-center text-lg xs:text-2xl px-1 sm:px-5 py-1 font-extralight">
-                        <p  className="name-popup">
+                        <p  className="name-popup text-nowrap">
                             &lt; LABAEKA ADETAYO /&gt;
                         </p>
                     </div>

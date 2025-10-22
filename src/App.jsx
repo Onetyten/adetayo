@@ -61,8 +61,6 @@ function App() {
       setShowScrollIconNeg(true)
     }
 
-
-    // set scroll icon direction based on index
     if (currentIndex ==2){
       setScrollIconUp(true)
       setScrollIconDown(false)
@@ -87,47 +85,17 @@ function App() {
       
         <ScrollManager pageUrls={pageUrls} viewList={viewList} currentIndex={currentIndex} ScrollIconUp = {ScrollIconUp} ScrollIconDown={ScrollIconDown} showScrollIconPos= {showScrollIconPos} showScrollIconNeg={showScrollIconNeg}/>
         
-        <Intro 
-        pageIndex={0}
-        pageUrls={pageUrls}
-        viewList={viewList}
-        setCurrentIndex={setCurrentIndex}/>
+        <Intro  pageIndex={0} pageUrls={pageUrls} viewList={viewList} setCurrentIndex={setCurrentIndex}/>
  
+        <About pageIndex={1}pageUrls={pageUrls} viewList={viewList} setCurrentIndex={setCurrentIndex} />
 
-        <About 
-        pageIndex={1}
-        pageUrls={pageUrls} 
-        viewList={viewList} 
-        setCurrentIndex={setCurrentIndex}
-        />
+        <ProjectContainer pageUrls={pageUrls} pageIndex={2}viewList={viewList} setCurrentIndex={setCurrentIndex}/>    
 
-        <ProjectContainer 
-        pageUrls={pageUrls} 
-        pageIndex={2}
-        viewList={viewList}
-        setCurrentIndex={setCurrentIndex}
-        />    
+        <Skills pageIndex={7}pageUrls={pageUrls}viewList={viewList}setCurrentIndex={setCurrentIndex} />
 
-        <Skills 
-        pageIndex={7}
-        pageUrls={pageUrls}
-        viewList={viewList}
-        setCurrentIndex={setCurrentIndex} 
-        />
+        <Education pageIndex={8}pageUrls={pageUrls}viewList={viewList}setCurrentIndex={setCurrentIndex} />
 
-        <Education 
-        pageIndex={8}
-        pageUrls={pageUrls}
-        viewList={viewList}
-        setCurrentIndex={setCurrentIndex}
-        />
-
-        <Contact
-        pageIndex={9} 
-        pageUrls={pageUrls} 
-        viewList={viewList}
-        setCurrentIndex={setCurrentIndex}
-        />
+        <Contact pageIndex={9}  pageUrls={pageUrls}  viewList={viewList} setCurrentIndex={setCurrentIndex} />
 
         <ToastContainer autoClose={5000}/>
     </main>
