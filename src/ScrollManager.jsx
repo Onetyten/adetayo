@@ -1,36 +1,37 @@
-/* eslint-disable react/prop-types */
-// import { IoMdArrowDropleftCircle,IoMdArrowDroprightCircle } from "react-icons/io";
+
 import { faCaretLeft, faCaretUp,faCaretRight,faCaretDown } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { motion } from "framer-motion"
-
-
-function ScrollIcon(props){
-  const {icon,elementUrl} = props
-  const handleClick = () => {
-    console.log("link to", elementUrl);
-    const targetElement = document.getElementById(elementUrl);
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-  };
-  return(
-        <motion.div onClick={handleClick} initial={{rotate:0,opacity:0,y:30}} animate={{y:[0,30,0],opacity:[0,1,1],rotate:[0,90,0]}} transition={{duration:0.5,delay:0.5, ease:'easeOut',times: [0, 0.5, 1] }} className="w-12 navIcon pointer-events-auto cursor-pointer h-12 flex justify-center items-center rounded-full bg-lightgrey/50 text-white/80 md:bg-lightgrey md:text-white">
-          <FontAwesomeIcon icon={icon} className=" text-lg md:text-3xl"/>
-        </motion.div>
-        
-  )
-}
-
-
-
-
+import ScrollIcon from "./Components/ScrollIcon"
+import PropTypes from "prop-types";
+import { useEffect } from "react";
 
 export default function ScrollManager(props) {
 
   const {ScrollIconUp ,ScrollIconDown,showScrollIconPos,showScrollIconNeg,currentIndex,pageUrls} = props
   const prevUrl = pageUrls[currentIndex - 1];
   const nextUrl = pageUrls[currentIndex + 1];
+
+  const handleClick = (elementUrl) => {
+    const targetElement = document.getElementById(elementUrl);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+  };
+
+  useEffect(()=>{
+    function handleKeyDown(event){
+      if((event.key == "ArrowUp" || event.key == "ArrowLeft" )&& prevUrl ){
+        handleClick(prevUrl)
+      }
+      if((event.key == "ArrowDown" || event.key == "ArrowRight" )&& nextUrl ){
+        handleClick(nextUrl)
+      }
+    }
+    window.addEventListener("keydown",handleKeyDown)
+
+    return ()=> window.removeEventListener("keydown",handleKeyDown)
+  },[prevUrl,nextUrl])
+
+
 
   return (
     <div className="fixed w-screen z-30 h-screen pointer-events-none text-white text-7xl hidden sm:flex justify-center items-center">
@@ -39,27 +40,32 @@ export default function ScrollManager(props) {
         <div className="pointer-events-none" >
           {showScrollIconPos&&prevUrl&&(<div>
             {ScrollIconUp?(
-              <ScrollIcon icon={faCaretUp} elementUrl={prevUrl}/>) 
+              <ScrollIcon icon={faCaretUp} handleClick={handleClick} elementUrl={prevUrl}/>) 
             :
-              (<ScrollIcon icon={faCaretLeft} elementUrl={prevUrl} />)}
+              (<ScrollIcon icon={faCaretLeft} handleClick={handleClick} elementUrl={prevUrl} />)}
           </div>)}
         </div>
         
         <div className="pointer-events-none">
           {showScrollIconNeg&&nextUrl&&(<div>
-            {ScrollIconDown?( <ScrollIcon icon={faCaretDown} elementUrl={nextUrl} />) 
+            {ScrollIconDown?( <ScrollIcon icon={faCaretDown} handleClick={handleClick} elementUrl={nextUrl} />) 
             :
-            (<ScrollIcon icon={faCaretRight} elementUrl={nextUrl} />)}
+            (<ScrollIcon icon={faCaretRight} handleClick={handleClick} elementUrl={nextUrl} />)}
           </div>)}
         </div>
-        
-        
-
-
-
       </div>
         
     </div>
   )
-
 }
+
+
+
+ScrollManager.propTypes = {
+  ScrollIconUp: PropTypes.bool.isRequired ,
+  ScrollIconDown: PropTypes.bool.isRequired,
+  showScrollIconPos:PropTypes.bool.isRequired,
+  showScrollIconNeg:PropTypes.bool.isRequired,
+  currentIndex:PropTypes.number.isRequired,
+  pageUrls:PropTypes.array.isRequired
+} 

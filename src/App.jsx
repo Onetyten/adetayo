@@ -48,7 +48,6 @@ function App() {
 
 
    useEffect(()=>{
-    console.log("CurrentIndex",currentIndex)
     if (currentIndex==0){
       setShowScrollIconPos(false)
       setShowScrollIconNeg(true)

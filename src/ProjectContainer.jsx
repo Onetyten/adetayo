@@ -151,22 +151,10 @@ export default function ProjectContainer (props) {
   }, [isReactScrollActive])
   
   return (
-    <div className="section-snap h-screen overflow-y-auto">
-      <div
-        ref={containerRef}
-        className="w-screen h-screen overflow-x-scroll flex"
-      >
+    <div className="section-snap min-h-dvh">
+      <div ref={containerRef} className="w-screen sm:h-dvh overflow-x-scroll flex">
         {projectDetails.map((project, index) => (
-          <Project
-            key={index}
-            index={index}
-            pageIndex={pageIndex+index}
-            pageUrls = {pageUrls}
-            projectlength={projectDetails.length}
-            viewList={viewList}
-            setCurrentIndex={setCurrentIndex}
-            {...project}
-          />
+          <Project key={index} index={index} pageIndex={pageIndex+index} pageUrls = {pageUrls} projectlength={projectDetails.length} viewList={viewList} setCurrentIndex={setCurrentIndex} {...project} />
         ))}
       </div>
     </div>

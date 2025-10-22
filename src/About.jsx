@@ -24,7 +24,7 @@ export default function About(props) {
   
 
   return (
-      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='h-dvh relative box-border flex-col lg:flex-row  flex overflow-x-hidden section-snap '>
+      <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='min-h-dvh relative box-border flex-col lg:flex-row  flex overflow-x-hidden section-snap '>
         <div className="bg-darkgrey h-full flex justify-center items-center flex-[0.45] min-h-72  lg:min-h-dvh lg:flex-[0.62] relative ">
           <div className='w-full h-full flex justify-center items-center flex-1'>
             <LazyLoadImage alt="About me"src={Aboutpic} effect="blur" className='lg:block hidden  2xl:translate-x-64 xl:translate-x-48  border-4 lg:w-xs w-60 h-auto object-contain grayscale-0 hover:grayscale transition duration-400'/>
