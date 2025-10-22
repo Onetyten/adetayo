@@ -67,13 +67,13 @@ export default function Contact(props) {
 
   return (
     <Element name={pageUrls[pageIndex]}>
-        <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='w-screen min-h-screen relative box-border section-snap flex justify-between items-center bg-white'>
+        <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='w-screen min-h-dvh relative box-border section-snap flex justify-between items-center bg-white'>
 
             <div className="w-screen min-h-screen  flex xl:flex-row flex-col" >
 
                 <div className="flex-1 xl:text-lg mt-20 xl:mt-0 w-full xl:mb-0 mb-16 relative flex justify-center items-center">
                     <ContactConsole projectname='Contact'>
-                        <form className="flex mb-10 md:mb-0 flex-col h-full justify-between gap-3 relative" action="" onSubmit={onSubmit}>
+                        <form className="flex sm:mb-10 md:mb-0 flex-col h-full justify-between gap-3 relative" action="" onSubmit={onSubmit}>
                             <p className="text-lightergrey text-xs md:text-sm">Please fill out the form and i’ll be in touch as soon as possible.</p>
 
 
@@ -106,33 +106,31 @@ export default function Contact(props) {
 
 
                 <div className="  p-5  grey flex-1 flex bg-darkgrey flex-col justify-between items-center">
-                    <h2 className=" text-lg md:text-2xl mb-16 font-bold text-white">Contact me</h2>
-                    <div className="flex-1 md:w-96 w-xs items-center justify-center h-full flex flex-col gap-4">
-
-                        
+                    <h2 className=" text-base xs:text-lg md:text-2xl mb-8 sm:mb-16 font-bold text-white">Contact me</h2>
+                    <div className="flex-1 md:w-96 w-full text-xs xs:text-sm md:text-base xs:w-xs items-center justify-center h-full flex flex-col gap-4">
 
                         <a href="tel:+2349155073769" className="w-full  gap-3 flex  justify-between items-center">
                             <FontAwesomeIcon icon={faPhone} className="text-white hover:text-lightergrey text-lg md:text-xl link-shadow"/>
-                            <p className="text-lightergrey text-sm md:text-base hover:text-white">09155073769</p>
+                            <p className="text-lightergrey  hover:text-white">09155073769</p>
                         </a>
                         
                         <a href="https://wa.me/+2347089126752" className="w-full  gap-3 flex  justify-between items-center">
                             <FontAwesomeIcon icon={faWhatsapp} className="text-white hover:text-lightergrey text-lg md:text-xl link-shadow"/>
-                            <p className="text-lightergrey hover:text-white text-sm md:text-base">07089126752</p>
+                            <p className="text-lightergrey hover:text-white">07089126752</p>
                         </a>
                         <a href="mailto:labaekaabdulrazaq@gmail.com" target="_blank" rel="noopener noreferrer" className="w-full  gap-3 flex  justify-between items-center">
                             <FontAwesomeIcon icon={faEnvelope} className="text-white hover:text-lightergrey text-lg md:text-xl link-shadow"/>
-                            <p className="text-lightergrey hover:text-white text-sm md:text-base">labaekaabdulrazaq@gmail.com</p>
+                            <p className="text-lightergrey hover:text-white">labaekaabdulrazaq@gmail.com</p>
                         </a>
 
 
                         <a  href="https://maps.app.goo.gl/BtMczikoAdhF55o27" target="_blank" rel="noopener noreferrer"  className="w-full gap-3 flex  justify-between items-center">
                             <FontAwesomeIcon icon={faLocationPin} className="text-white hover:text-lightergrey text-lg md:text-xl link-shadow"/>
-                            <p className="text-lightergrey hover:text-white text-sm md:text-base">Lagos Mainland 101245</p>
+                            <p className="text-lightergrey hover:text-white">Lagos Mainland 101245</p>
                         </a>
-
                     </div>
-                    <div className="md:w-96 w-xs h-12 bg-lightgrey my-16 xl:my-3 sm:mb-0 flex justify-center gap-[5%] items-center overflow-hidden">
+
+                    <div className="md:w-96 w-9/10 xs:w-xs h-12 bg-lightgrey my-8 sm:my-16 xl:my-3 sm:mb-0 flex justify-center gap-[5%] items-center overflow-hidden">
 
                         <a href="https://github.com/Onetyten" target="_blank" rel="noopener noreferrer">
                             <FontAwesomeIcon icon={faGithub} className="text-white hover:text-lightergrey text-lg xl:text-2xl link-shadow " />

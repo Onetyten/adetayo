@@ -62,12 +62,6 @@ html{
     
 }
 
-@media (width <= 40rem) {
-    .console-shadow{
-        box-shadow: 3px 3px 0px #bab4b4  ;
-}
-}
-
 
 main {
     scroll-snap-type: y mandatory;
@@ -75,3 +69,15 @@ main {
     height: 100vh;
 }
 
+@media (width <= 640px) {
+    .console-shadow{
+        box-shadow: 3px 3px 0px #bab4b4;
+    }
+    main {
+        scroll-snap-type: none;
+    }
+    .section-snap{
+        scroll-snap-align: none;
+    }
+    
+}

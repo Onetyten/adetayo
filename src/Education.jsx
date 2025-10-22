@@ -17,7 +17,7 @@ export default function Education(props) {
         <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]}  className="min-w-screen min-h-screen overflow-x-hidden relative box-border section-snap flex-col  flex xl:flex-row items-stretch justify-between py-20 sm:py-12 p-2 pl-10 bg-white">
 
             <div className='absolute top-16 sm:top-8 left-2'>
-                <p className='md:text-2xl text-md font-intel font-extrabold text-darkgrey'>Education</p>
+                <p className='md:text-2xl text-md font-intel font-extrabold text-darkgrey'>Experience</p>
             </div>
 
 
@@ -59,7 +59,7 @@ export default function Education(props) {
                         </div>
                         <div className="bg-myblack w-0.5 h-full  relative">
                             <div className="w-4 h-4 border-[1px] border-myblack rounded-full bg-white absolute hover:bg-myteal top-6 -left-2">
-                                <div className="absolute left-6 -top-1.5">2019</div>
+                                <div className="absolute sm:left-6 sm:-top-1.5 -left-12 -top-1.5">2019</div>
                             </div>
                         </div>
                     </div> 
@@ -68,7 +68,7 @@ export default function Education(props) {
                     <div  className="sm:flex flex-col w-full h-full items-start hidden gap-10 sm:order-3 ">
                         <div className="sm:min-h-96 min-h-80 justify-around items-center flex">
                            <div className="block sm:hidden">
-                               <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/> 
+                               <EducationCard   projectname="AltSchool Africa" timeline="2024 - 2025" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/> 
                            </div>
                         </div>
 
