@@ -19,11 +19,12 @@ function App() {
   const {ref:projectRef2,inView:ProjectInView2} = useInView({threshold:0.9})
   const {ref:projectRef3,inView:ProjectInView3} = useInView({threshold:0.9})
   const {ref:projectRef4,inView:ProjectInView4} = useInView({threshold:0.9})
+  const {ref:projectRef5,inView:ProjectInView5} = useInView({threshold:0.9})
   const {ref:skillRef, inView:skillIsInView} = useInView({threshold:0.9})
   const {ref:eduRef,inView:EduInView} = useInView({threshold:0.3})
   const {ref:contactRef, inView:contactIsInView} = useInView({threshold:0.9})
 
-  const pageUrls = ["Intro","About","Project1","project2","project3","project4","Skills","Education","Contact"]
+  const pageUrls = ["Intro","About","Project1","project2","project3","project4","project5","Skills","Education","Contact"]
   
 
 
@@ -34,6 +35,7 @@ function App() {
     {ref:projectRef2,inView:ProjectInView2},
     {ref:projectRef3,inView:ProjectInView3},
     {ref:projectRef4,inView:ProjectInView4},
+    {ref:projectRef5,inView:ProjectInView5},
     {ref:skillRef, inView:skillIsInView},
     {ref:eduRef,inView:EduInView},
     {ref:contactRef, inView:contactIsInView}
@@ -66,11 +68,11 @@ function App() {
       setScrollIconUp(true)
       setScrollIconDown(false)
     }
-    else if (currentIndex == 3 || currentIndex == 4 ){
+    else if (currentIndex == 3 || currentIndex == 4 || currentIndex == 5 ){
       setScrollIconUp(false)
       setScrollIconDown(false)
     }
-    else if (currentIndex == 5 ){
+    else if (currentIndex == 6 ){
       setScrollIconUp(false)
       setScrollIconDown(true)
     }
@@ -108,21 +110,21 @@ function App() {
         />    
 
         <Skills 
-        pageIndex={6}
+        pageIndex={7}
         pageUrls={pageUrls}
         viewList={viewList}
         setCurrentIndex={setCurrentIndex} 
         />
 
         <Education 
-        pageIndex={7}
+        pageIndex={8}
         pageUrls={pageUrls}
         viewList={viewList}
         setCurrentIndex={setCurrentIndex}
         />
 
         <Contact
-        pageIndex={8} 
+        pageIndex={9} 
         pageUrls={pageUrls} 
         viewList={viewList}
         setCurrentIndex={setCurrentIndex}

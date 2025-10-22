@@ -1,14 +1,11 @@
 
 import { useEffect, useRef,useState } from "react";
 import Project from "./Project";
-import LiftMobile from '/Images/Portfolio/LiftMobile.png'
-import OSLogistics from '/Images/Portfolio/OSLogistics.png'
-import Questlog from '/Images/Portfolio/Questlog.png'
-import Conduit from '/Images/Portfolio/Conduit.png'
 import OSVid from '/Video/OS logistics.webm'
 import ConduitVid from '/Video/Conduit.webm'
-import QuestlogVid from '/Video/Questlog.webm'
+import MoriVid from '/Video/mori.webm'
 import LiftVid from '/Video/Liftmobile.webm'
+import CliqueVid from '/Video/clique.webm'
 import PropTypes from "prop-types";
 
 
@@ -16,59 +13,63 @@ const projectDetails = [
     {
     name: "Conduit",
     role: "Fullstack developer",
-    skills: ["NextJs","Framer motion","Cloudinary","MongoDB","Axios","Redux","Redux-toolkit","Figma","Typescript","NodeJs","Bcrypt"],
-    desc: "Conduit is a Local service Aggregator that connects users with local service providers around them. You can message service providers, book appointments, and handle payment all on Conduit, Additionally, you can offer your own services and get hired through the platform",
+    skills: ["NextJs","Framer motion","Cloudinary","MongoDB","Redux","Figma","Typescript","NodeJs"],
+    desc: "Conduit is a Local service Aggregator that connects users with local service providers around them. You can message service providers, book appointments, and handle payment all on Conduit, Additionally, you can offer your own services and get hired through the platform.",
     letter: "C",
     message: "Scroll left",
     isMobile:false,
-    image: Conduit,
     video:ConduitVid,
-    imgPath:'/3D model/screenImg/scissors.png',
     projectPath:'https://conduit-services.vercel.app/',
     githubPath:'https://github.com/Onetyten/conduit'
-
     },
     {
     name: "OS Logistics",
     role: "Frontend Engineer",
-    skills: ["React", "TailwindCSS","WebSocket","Axios","React Router","Map Libre","Recharts"],
-    desc: "This here is a responsive that dashboard that displays shipment data for a logistics company. With features like dark/light theme toggle, A map used for the tracking of individual shipments and a collection of charts for better data visualisation while adopting various optimization methods like lazyloading components to reduce initial load time.",
+    skills: ["React", "TailwindCSS","WebSocket","Map Libre","React Leaflet","Recharts"],
+    desc: "This is a responsive dashboard that displays shipment data for a logistics company. With A global map for the tracking of individual shipments and a collection of charts for better data visualisation while adopting various optimization methods like lazyloading and virtualization to reduce initial load time.",
     letter: "O",
     message: "",
     isMobile:false,
-    image: OSLogistics,
     video:OSVid,
-    imgPath:'/3D model/screenImg/scissors.png',
     projectPath:'https://os-logistics.vercel.app/',
     githubPath:'https://github.com/Onetyten/os-logistics'
   },
   
-
   {
-    name: "Questlog",
+    name: "Mori Cafe",
     role: "Fullstack developer ",
-    skills: ["NextJs","Typescript","NodeJs","ExpressJs","MongoDB","Jsonwebtoken","Jest","Supertest","Bcrypt","Axios","Redux","Redux-toolkit"],
-    desc: "This is a task management web app that gamifies doing  by letting users break down large tasks into subtasks, as well as awarding users on the basis of task completion, while rocking a fully-featured backend in the form of a REST API that securely saves user data and tasks.",
-    letter: "Q",
+    skills: ["Paystack","ReactJs","Typescript","ExpressJs","MongoDB","Supertest","React to print","Redux"],
+    desc: "This is a web application that allows you to seamlessly browse through the Mori Café menu, customise orders, receive personalized food suggestions, handle payment, and explore more, all through an intelligent and friendly chatbot named Mori.",
+    letter: "M",
     message: "",
     isMobile:false,
-    image: Questlog,
-    video:QuestlogVid,
-    imgPath:'/3D model/screenImg/Questlog.png',
-    projectPath:'https://questlog-gamified.vercel.app/',
-    githubPath:'https://github.com/Onetyten/questlog'
+    video:MoriVid,
+    projectPath:'https://m-foodie-chatbot.onrender.com',
+    githubPath:'https://github.com/Onetyten/m_foodie_chatbot'
   },
+
+  {
+    name: "Clique",
+    role: "Fullstack developer ",
+    skills: ["HTML","CSS","Typescript","ExpressJs","PostgreSQL","Supabase","Jest","Websocket","Redis/caching"],
+    desc: "Clique is a social bonding chat and guessing game app that lets you connect with friends, play fun guessing games, and get to know each other better. It features real-time messaging, instant notifications, and an engaging, optimized gameplay experience.",
+    letter: "C",
+    message: "",
+    isMobile:false,
+    video:CliqueVid,
+    projectPath:'https://clique-1.onrender.com',
+    githubPath:'https://github.com/Onetyten/clique'
+  },
+
   {
     name: "Lift mobile",
     role: " FullStack developer",
-    skills: ["React native", "Native wind","Axios","Bcrypt","Expo","Expo-router","Express","MongoDB","React","React-dom","react-native-encrypted-storage","TailwindCSS","NodeJS"],
-    desc: "This is a full-stack, user-driven car rental platform that allows individuals to rent out their cars when not in use. Built with Express.js and MongoDB, it has a smooth authentication and profile creation system and provides a seamless and secure experience for both car owners and renters",
+    skills: ["React native","Expo","Express","MongoDB","React"],
+    desc: "This is a full-stack, user-driven car rental platform that allows individuals to rent out their cars when not in use. Built with Express.js and MongoDB, providing a seamless and secure experience for both car owners and renters",
     letter: "L",
     message: "scroll down",
     isMobile:true,
-    image: LiftMobile,
     video:LiftVid,
-    imgPath:'/3D model/screenImg/LiftMobile.png',
     projectPath:'https://lift-mobile.vercel.app/',
     githubPath:'https://github.com/Onetyten/Lift-mobile'
     
