@@ -28,7 +28,7 @@ export default function Education(props) {
 
                         <div className="sm:min-h-96 min-h-80 justify-around items-center flex flex-1 ">
                            <div className="">
-                               <EducationCard   projectname="AltSchool Africa" timeline="2024 - now" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/> 
+                               <EducationCard   projectname="AltSchool Africa" timeline="2024 - 2025" skills = "Front-end Engineering" desc="In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."/> 
                            </div>
                         </div>
 
