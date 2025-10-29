@@ -109,7 +109,6 @@ export default function Intro(props) {
 
             </div>
 
-
             <div className='h-dvh top-0 w-screen absolute box-content flex justify-center items-end '>
                 <div className="w-[80%] xl:w-[50%] h-12 bg-lightgrey  sm:mb-0 flex justify-center gap-5 sm:gap-10 items-center overflow-hidden">
 
