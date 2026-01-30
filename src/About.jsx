@@ -55,7 +55,6 @@ export default function About(props) {
 
               <div>
                 Fullstack developer with a lifelong obsession for building. From early childhood experiments wiring motors to toy cars to architecting robust web, mobile, and backend systems.<br/><br/> I thrive in the Typescript ecosystem, proficient in technologies like Next.js, React, Node.js, and React Native. Over the years i&apos;ve worked on a diverse range of projects from high performance real-time backend systems to high fidelity frontends.<br/><br/>
-                I excel in fast-paced, collaborative environments and every project is a chance to learn something new, and bring value through technology.<br/><br/>
                 Outside of tech, I enjoy drawing and video games, which often spark creative ideas I later bring to life through code.
               </div>
 
