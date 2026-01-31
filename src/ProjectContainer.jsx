@@ -11,6 +11,18 @@ import PropTypes from "prop-types";
 
 const projectDetails = [
     {
+      name: "Mori Cafe",
+      role: "Fullstack developer ",
+      skills: ["Paystack","ReactJs","Typescript","ExpressJs","MongoDB","Supertest","React to print","Redux"],
+      desc: "This is a cross-platform mobile / web application that lets you seamlessly browse through the Mori Café menu, customise orders, receive personalized food suggestions, handle payment, and explore more, all through an intelligent and friendly chatbot named Mori.",
+      letter: "M",
+      message: "",
+      isMobile:false,
+      video:MoriVid,
+      projectPath:'https://m-foodie-chatbot.onrender.com',
+      githubPath:'https://github.com/Onetyten/m_foodie_chatbot'
+    },
+    {
     name: "Conduit",
     role: "Fullstack developer",
     skills: ["NextJs","Framer motion","Cloudinary","MongoDB","Redux","Figma","Typescript","NodeJs"],
@@ -34,20 +46,6 @@ const projectDetails = [
     projectPath:'https://os-logistics.vercel.app/',
     githubPath:'https://github.com/Onetyten/os-logistics'
   },
-  
-  {
-    name: "Mori Cafe",
-    role: "Fullstack developer ",
-    skills: ["Paystack","ReactJs","Typescript","ExpressJs","MongoDB","Supertest","React to print","Redux"],
-    desc: "This is a web application that allows you to seamlessly browse through the Mori Café menu, customise orders, receive personalized food suggestions, handle payment, and explore more, all through an intelligent and friendly chatbot named Mori.",
-    letter: "M",
-    message: "",
-    isMobile:false,
-    video:MoriVid,
-    projectPath:'https://m-foodie-chatbot.onrender.com',
-    githubPath:'https://github.com/Onetyten/m_foodie_chatbot'
-  },
-
   {
     name: "Clique",
     role: "Fullstack developer ",
@@ -60,7 +58,6 @@ const projectDetails = [
     projectPath:'https://clique-1.onrender.com',
     githubPath:'https://github.com/Onetyten/clique'
   },
-
   {
     name: "Lift mobile",
     role: " FullStack developer",
