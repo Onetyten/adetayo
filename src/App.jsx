@@ -1,12 +1,16 @@
 import { ToastContainer } from "react-toastify"
 import Intro from "./Pages/Intro/Intro"
+import { useState } from "react"
+import Contact from "./Pages/Contact/Contact"
 
 
 function App() {
+  const [showContact,setShowContact] = useState(false)
 
   return (
     <main id="main-container" className="overflow-x-hidden relative scroll-snap-y font-intel">  
-        <Intro/>
+        <Intro setShowContact={setShowContact}/>
+        {showContact && <Contact setShowContact={setShowContact}/>}
  
         {/* <About pageIndex={1}pageUrls={pageUrls} viewList={viewList} setCurrentIndex={setCurrentIndex} /> */}
         {/* <ProjectContainer pageUrls={pageUrls} pageIndex={2}viewList={viewList} setCurrentIndex={setCurrentIndex}/>     */}

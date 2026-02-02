@@ -2,10 +2,15 @@ import TypescriptLogo from "../../assets/Icons/Typescript_logo.png"
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from "react";
+import SlotText from "./SlotText";
 
+interface propType{
+    setShowContact:React.Dispatch<React.SetStateAction<boolean>>
+}
 
-export default function DescriptionCard() {
+export default function DescriptionCard({setShowContact}:propType) {
     const [hoveringEmail,setHoveringEmail] = useState(false)
+    const [hoveringResume,setHoveringResume] = useState(false)
 
   return (
     <div className="w-10/12">
@@ -22,11 +27,15 @@ export default function DescriptionCard() {
                 <div className={`h-11 absolute bg-text aspect-square flex ${hoveringEmail?"justify-start w-full":"w-11"} pl-2.5 transition-all duration-300 items-center`}>
                     <FontAwesomeIcon icon={faArrowRight} className="h-full x-0 bg-text text-darkgrey size-6" />
                 </div>
-                <span className="px-6 pl-14 text-sm font-bold relative z-10">SEND A MESSAGE</span> 
+                <span onClick={()=>setShowContact(true)} className="px-6 pl-14 text-sm font-bold relative z-10">
+                    <SlotText text="SEND A MESSAGE" active={hoveringEmail}/>
+                </span> 
             </div>
 
-            <div className="text-text cursor-pointer">
-                <span className="text-sm font-bold relative uppercase">Download Resume</span> 
+            <div onMouseEnter={()=>setHoveringResume(prev=>(prev?prev:true))} onMouseLeave={()=>setHoveringResume(prev=>(prev?false:prev))}  className="text-text cursor-pointer">
+                <span className="text-sm font-bold relative uppercase">
+                    <SlotText text="Download Resume" active={hoveringResume}/>
+                </span> 
             </div>
 
         </div>
