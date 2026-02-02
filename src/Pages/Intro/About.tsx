@@ -3,6 +3,7 @@ import aboutImage from "../../assets/profile.webp"
 import ConsoleText from "../../ConsoleText"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import SlotText from './SlotText'
 
 
 export default function About() {
@@ -32,7 +33,9 @@ export default function About() {
                     <div className={`h-11 absolute bg-text aspect-square flex ${hoveringGit?"justify-start w-full":"w-11"} pl-2.5 transition-all duration-300 items-center`}>
                         <FontAwesomeIcon icon={faGithub} className="h-full x-0 bg-text text-darkgrey text-xl" />
                     </div>
-                    <span className="px-6 pl-14 text-sm font-bold uppercase relative z-10">Github</span> 
+                    <span className="px-6 pl-14 text-sm font-bold uppercase relative z-10">
+                        <SlotText text="GITHUB" active={hoveringGit}/>
+                    </span> 
                 </a>
 
             </div>
