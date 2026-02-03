@@ -77,3 +77,15 @@ html{
 * {
   -ms-overflow-style: none;
 }
+
+
+/* Custom CSS to force bigger contribution squares */
+.github-contributions-grid {
+  gap: 6px !important; /* Increase gap between squares */
+}
+
+.github-contributions-grid rect {
+  width: 25px !important; /* Increase square size */
+  height: 25px !important;
+  rx: 3px; /* Rounds the corners for a modern look */
+}

@@ -4,14 +4,15 @@ interface propTypes{
     children?:React.ReactNode
     className?:string
     projectname:string
+    isTimeline?:boolean
 }
 
-export default function ConsoleText({children,className,projectname}:propTypes) {
+export default function ConsoleText({children,className,projectname,isTimeline}:propTypes) {
   return (
         <div className={clsx('border-[1px] transition-all duration-500 border-background flex flex-col text-xs ',className?className:"")}>
           <div className='border-b-[1px] min-h-12 w-full border-b-background flex flex-row items-center justify-start'>
             <div className='flex items-center justify-center w-full px-4 relative'>
-                <div className=' flex w-14 gap-3 top-0 left-0 h-full items-center'>
+                <div className={`flex w-14 gap-3 top-0 left-0 h-full items-center ${isTimeline?'hidden md:flex':''}`}>
                     <div className='bg-blue hover:bg-blue-600 w-3 h-3 rounded-full'></div>
                     <div className='bg-green-400 hover:bg-green-600 w-3 h-3 rounded-full'></div>
                     <div className='bg-red hover:bg-red-600 w-3 h-3 rounded-full'></div>

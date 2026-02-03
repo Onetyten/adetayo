@@ -68,3 +68,41 @@ export const projectDetails = [
     
   },
 ];
+
+export const educationList =[
+    {
+        Place:"Freelance Development",
+        start:"2025",
+        timeline:"Oct 2024 - now",
+        skill:"Fullstack Development",
+        desc:"As a freelance fullstack developer, I build and deploy web applications for clients, handling both frontend and backend development. Completing different projects like Tutoring platforms, finance apps and so on. I work directly with clients to translate requirements into scalable, maintainable products while meeting performance and usability goals. "
+    },
+    {
+        Place:"Hyperbird Technologies",
+        start:"2024",
+        timeline:"Aug 2024 - Dec 2025",
+        skill:"Front-end Engineering",
+        desc:"In 2025, I started an Internship at Hyperbird Technologies where I collaborated with a team in building the frontend for a PPQL Ad platform using NextJS and TypeScript alongside a modern ecosystem including Recharts for data visualization and Redux for State Management. I designed dashboards for visualising real-time data and key advertising metrics while reducing the dashboard loading times by 65%."
+    },
+    {
+        Place:"AltSchool Africa",
+        start:"2024",
+        timeline:"2024 - 2025",
+        skill:"Front-end Engineering",
+        desc:"In 2024, I furthered my expertise by becoming a Backend Engineering candidate at AltSchool Africa. This specialized program focuses on developing advanced backend development skills, with a curriculum that covers the MERN JavaScript stack (MongoDB, Express.js, React, Node.js)."
+    },
+    {
+        Place:"Aptech computer institute",
+        start:"2023",
+        timeline:"2023 - 2024",
+        skill:"Web development, Python programming",
+        desc:"In 2023. I expanded my knowledge in Web Development and Python programming at Aptech Computer Institute, located in Adamasingba, Ibadan.This programme gave a solid foundation in front-end web development. During this time, I collaborated with various developers to create functional web apps"
+    },
+    {
+        Place:"Olabisi Onabanjo University",
+        start:"2019",
+        timeline:"2019 - 2025",
+        skill:"Computer Engineering",
+        desc:"I pursued my Bachelors of Engineering in Computer Engineering at Olabisi Onabanjo University, Ibogun. My experience there had exposed me to core principles of computer engineering, including software development, Artificial intelligence, embedded systems, and digital system."
+    },
+]
