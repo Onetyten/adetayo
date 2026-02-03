@@ -19,6 +19,9 @@ export default function Contact({setShowContact}:propType) {
     const [isSubmitting,setIsSubmitting] = useState(false)
     const [hoveringSubmit,setHoveringSubmit] = useState(false)
     const [error,setError] = useState("")
+    const serviceKey = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateKey = import.meta.env.VITE_EMAILJS_TEMPLATE_KEY
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 
     const onSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
@@ -38,7 +41,8 @@ export default function Contact({setShowContact}:propType) {
         };
 
         try {
-          const response = await emailjs.send("service_2w95e4n","template_e3omq4a", templateParams,"euD0IpeDBiwmaCHrf");
+            
+          const response = await emailjs.send(serviceKey,templateKey, templateParams,publicKey);
           console.log("Email sent successfully!", response);
           toast("Email sent successfully!")
         } catch (error) 
@@ -59,7 +63,7 @@ export default function Contact({setShowContact}:propType) {
       };
 
   return (
-    <div className='w-screen min-h-dvh z-30 inset-0 text-text absolute box-border flex justify-center items-center '>
+    <div className='w-screen min-h-dvh z-30 inset-0 text-text fixed box-border flex justify-center items-center '>
         <div className="inset-0 z-20 absolute bg-card/50" onClick={()=>setShowContact(false)}></div>
         
         <form className="rounded-3xl overflow-hidden z-30 max-w-[95%] bg-card w-3xl flex sm:mb-10 md:mb-0 flex-col justify-between gap-3 p-8 relative" action="" onSubmit={onSubmit}>
@@ -67,21 +71,25 @@ export default function Contact({setShowContact}:propType) {
                 <p className="text-4xl cursor-pointer text-text hover:text-blurple hover:bg-text w-14 font-offbit flex justify-center items-center aspect-square bg-blurple rounded-full">x</p>
             </div>
             <div className="w-full flex justify-start" >
-                <p className="text-5xl text-text font-offbit">Get in touch</p>
+                <p className="text-4xl xs:text-5xl text-text font-offbit">Get in touch</p>
             </div>
 
             <div className="flex flex-col gap-2">
-                <div className="flex w-full gap-1 items-center">
-                    <ContactInput name="Name" isRequired={true} value = {name} onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{setName(e.target.value)}} placeholder = "John Doe" isArea = {false}/>
+                <div className="flex w-full flex-col sm:flex-row gap-2 sm:gap-1 items-start">
+                    <div className="w-full sm:w-1/2">
+                        <ContactInput name="Name" isRequired value={name} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)} placeholder="John Doe" isArea={false}/>
+                    </div>
 
-                    <ContactInput name="Email" isRequired={true} value={email}  onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{setEmail(e.target.value)}} placeholder = "johndoe@gmail.com" isArea = {false}/>
+                    <div className="w-full sm:w-1/2">
+                        <ContactInput name="Email" isRequired value={email} onChange={(e:React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)} placeholder="johndoe@gmail.com" isArea={false} />
+                    </div>
                 </div>
-                
+        
                 <ContactInput name="Phone" isRequired={false}  value ={phone} onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{setPhone(e.target.value)}} placeholder = "Phone Number" isArea = {false}/>
                 <ContactInput name="Message" isRequired={true} value={message}  onChange={(e:React.ChangeEvent<HTMLInputElement>)=>{setMessage(e.target.value)}} placeholder = "Write message..." isArea = {true}/>
             </div>
-            <div className="flex items-center justify-between">
-                <button onMouseEnter={()=>setHoveringSubmit(prev=>(prev?prev:true))} onMouseLeave={()=>setHoveringSubmit(prev=>(prev?false:prev))} type="submit" className="text-center rounded-sm bg-blurple cursor-pointer text-lg hover:bg-lightergrey text-white p-2 px-6 w-fit">
+            <div className="flex w-full items-center justify-between">
+                <button onMouseEnter={()=>setHoveringSubmit(prev=>(prev?prev:true))} onMouseLeave={()=>setHoveringSubmit(prev=>(prev?false:prev))} type="submit" className="text-center flex justify-center rounded-sm bg-blurple cursor-pointer text-lg hover:bg-lightergrey text-white p-2 px-6 w-full sm:w-fit">
                     <SlotText text="SUBMIT" active={hoveringSubmit} />
                 </button>
                 {error.length>0&&<p className="text-sm">*{error}</p>}

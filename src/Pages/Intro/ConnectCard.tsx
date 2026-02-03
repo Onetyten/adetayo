@@ -24,7 +24,7 @@ export default function ConnectCard() {
     ]
 
   return (
-    <div className='w-full h-full flex items-center justify-center gap-6'>
+    <div className='w-full h-full flex flex-col sm:flex-row items-center justify-center gap-6'>
         <div>
             You can reach me on
         </div>

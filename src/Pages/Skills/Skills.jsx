@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
 import JsIMG from '/Images/Skills/Js.png'
 import ReactIMG from '/Images/Skills/reactlogo.png'
 import ReactNIMG from '/Images/Skills/ReactNative.png'
@@ -13,16 +11,15 @@ import Python from '/Images/Skills/Python.png'
 import Tailwind from '/Images/Skills/tailwind.png'
 import ThreeJsIMG from '/Images/Skills/threejs.png'
 import NextJSImg from '/Images/Skills/NextJS.png'
-import SkillItem from './Components/SkillItem'
+import SkillItem from '../../Components/SkillItem'
 import JestImg from '/Images/Skills/jest.png'
 import TypescriptImg from '/Images/Skills/typescript.png'
 import { motion } from 'framer-motion' 
-import { useEffect } from 'react'
-import { Element } from 'react-scroll'
+import Box from '../../Components/Box'
 
 
 
-export default function Skills(props) {
+export default function Skills() {
     const skillContainer = [
         {name:"Javascript", source: JsIMG  },
         {name:"React",source: ReactIMG},
@@ -40,32 +37,28 @@ export default function Skills(props) {
         {name:"Tailwind", source: Tailwind },
         {name:"ThreeJS", source: ThreeJsIMG},
     ]
-    const {pageIndex,viewList,setCurrentIndex,pageUrls} = props
-    
-    useEffect(()=>{
-        setCurrentIndex(pageIndex)
-    },[pageIndex, setCurrentIndex,viewList[pageIndex].inView])
 
 
   return (
-    <Element name={pageUrls[pageIndex]}>
-        <div ref={viewList[pageIndex].ref} id={pageUrls[pageIndex]} className='max-w-full min-h-dvh relative box-border section-snap flex overflow-hidden justify-center flex-wrap items-center'>
-
-            <div className='absolute top-8 sm:left-4 left-3'>
-                <p className='md:text-2xl text-md font-intel font-extrabold text-white'>Skills</p>
+    <div className='max-w-full min-h-dvh xl:flex-row flex-col gap-0.5 relative p-0.5 flex text-text font-grotesk'>
+        <Box className=' xl:min-w-md w-full xl:w-lg flex justify-start items-start flex-shrink-0 max-w-full'>
+            <div className="flex justify-center font-semibold items-center  p-1.5 sm:p-3 px-5 border-muted border-1 rounded-full gap-2">
+                <span className="size-2 rounded-full bg-blurple"></span>
+                SKILLS
             </div>
+        </Box>
 
-            <div className= " w-[80%] md:w-[60%]  md:my-4 my-28 xs:my-16 relative box-border section-snap flex overflow-hidden justify-center gap-12 flex-wrap items-center">
+        <Box className='flex items-center max-w-full justify-center gap-6 flex-col text-text w-full py-32 xl:min-h-dvh'>
+            <div className= "w-full md:my-4 relative flex overflow-hidden justify-center gap-14 flex-wrap items-center">
                 {skillContainer.map((skill, index)=>{
                     return(
-                        <motion.div initial={{opacity:0,y:30}} whileInView={{opacity:1,y:0}} transition={{duration:2,delay:index/10 }} key={index}>
+                        <motion.div initial={{opacity:0,x:-50}} whileInView={{opacity:1,x:0}} transition={{duration:0.5,delay:index/10 }} key={index}>
                             <SkillItem source = {skill.source} title = {skill.name}/>
                         </motion.div>
                     )
                 })}
             </div>
-
-        </div>
-    </Element>
+        </Box>
+    </div>
   )
 }

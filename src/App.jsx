@@ -1,24 +1,31 @@
 import { ToastContainer } from "react-toastify"
 import Intro from "./Pages/Intro/Intro"
+import Project from "./Pages/Project/Project" 
 import { useState } from "react"
 import Contact from "./Pages/Contact/Contact"
+import Skills from "./Pages/Skills/Skills"
 
 
 function App() {
   const [showContact,setShowContact] = useState(false)
 
   return (
-    <main id="main-container" className="overflow-x-hidden relative scroll-snap-y font-intel">  
-        <Intro setShowContact={setShowContact}/>
-        {showContact && <Contact setShowContact={setShowContact}/>}
- 
-        {/* <About pageIndex={1}pageUrls={pageUrls} viewList={viewList} setCurrentIndex={setCurrentIndex} /> */}
-        {/* <ProjectContainer pageUrls={pageUrls} pageIndex={2}viewList={viewList} setCurrentIndex={setCurrentIndex}/>     */}
-        {/* <Skills pageIndex={7}pageUrls={pageUrls}viewList={viewList}setCurrentIndex={setCurrentIndex} /> */}
-        {/* <Education pageIndex={8}pageUrls={pageUrls}viewList={viewList}setCurrentIndex={setCurrentIndex} /> */}
-        {/* <Contact pageIndex={9}  pageUrls={pageUrls}  viewList={viewList} setCurrentIndex={setCurrentIndex} /> */}
-        <ToastContainer autoClose={5000}/>
-    </main>
+    <div className="w-full">
+      <main id="main-container" className="overflow-x-hidden gap-8 flex flex-col relative scroll-snap-y font-intel">
+          
+          <Intro setShowContact={setShowContact}/>
+          <Project />
+          <Skills/>
+          {showContact && <Contact setShowContact={setShowContact}/>}
+
+          {/* <Education pageIndex={8}pageUrls={pageUrls}viewList={viewList}setCurrentIndex={setCurrentIndex} /> */}
+          {/* <Contact pageIndex={9}  pageUrls={pageUrls}  viewList={viewList} setCurrentIndex={setCurrentIndex} /> */}
+          
+      </main>
+      <ToastContainer autoClose={5000}/>  
+
+    </div>
+    
 
   )
 }
