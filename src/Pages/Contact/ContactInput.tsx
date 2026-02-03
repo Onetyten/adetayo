@@ -19,11 +19,11 @@ export default function ContactInput(props:propTypes) {
     }
   return (
     <div className="flex text-text flex-col font-grotesk relative flex-1 gap-3">
-      <p className="text-[4px] absolute md:text-base top-1.5 font-semibold left-5">{name}*</p>
+      <p className="text-sm absolute md:text-base top-1.5 font-semibold left-5">{name}*</p>
       
-      {!isArea&&(<input type={`${name=="Email"?'email':'text'}`} value={value} required={isRequired}  className="w-full px-5 pb-3 pt-9 border-1 border-muted focus:outline-0 focus:border-blurple rounded-sm flex-1 text-base placeholder:text-lightergrey" onChange = {name === "Phone" ? handlePhoneChange : onChange as React.ChangeEventHandler<HTMLInputElement>} pattern={name === "Phone" ? "[0-9+-]*" : undefined} placeholder={placeholder}/>)}
+      {!isArea&&(<input type={`${name=="Email"?'email':'text'}`} value={value} required={isRequired}  className="w-full px-5 pb-3 pt-7 sm:pt-9 border-1 border-muted focus:outline-0 focus:border-blurple rounded-sm flex-1 text-base placeholder:text-lightergrey" onChange = {name === "Phone" ? handlePhoneChange : onChange as React.ChangeEventHandler<HTMLInputElement>} placeholder={placeholder}/>)}
 
-      {isArea&&(<textarea rows={5} value={value} required className="px-5 pb-3 pt-9 border-1 border-muted focus:outline-0 focus:border-blurple rounded-sm w-full h-28 min-h-18 max-h-36 placeholder:text-lightergrey"  onChange={onChange as React.ChangeEventHandler<HTMLTextAreaElement>}  placeholder={placeholder}/>)}
+      {isArea&&(<textarea rows={5} value={value} required className="px-5 pb-3 pt-7 sm:pt-9 border-1 border-muted focus:outline-0 focus:border-blurple rounded-sm w-full h-28 min-h-18 max-h-36 placeholder:text-lightergrey"  onChange={onChange as React.ChangeEventHandler<HTMLTextAreaElement>}  placeholder={placeholder}/>)}
     </div>
   )
 }

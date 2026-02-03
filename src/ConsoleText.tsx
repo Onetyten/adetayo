@@ -18,7 +18,7 @@ export default function ConsoleText({children,className,projectname}:propTypes) 
                 </div>
 
                 <div className='flex-1 p-2 sm:r-2  text-center w-full flex justify-center'>
-                    <p className='text-text hover:text-light capitalize text-sm md:text-lg'>{projectname}</p>
+                    <p className='text-text hover:text-light font-semibold uppercase text-base md:text-lg'>{projectname}</p>
                     
                 </div>
 

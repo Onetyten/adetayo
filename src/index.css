@@ -74,12 +74,6 @@ html{
     scroll-behavior: smooth;
 }
 
-.console-shadow{
-    box-shadow: 10px 10px 0px #292824  ;
-}
-.console-shadow3{
-    box-shadow: 7px 0px 0px #292824  ;
-}
-.console-shadow2{
-    box-shadow: 10px 10px 0px #121212  ;
+* {
+  -ms-overflow-style: none;
 }
