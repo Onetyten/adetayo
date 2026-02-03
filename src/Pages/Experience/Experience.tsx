@@ -4,7 +4,7 @@ import { educationList } from "../../data/data";
 import Card from "./Card";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import GithubGraph from "./GithubGraph";
+import GithubGraph from "./Github/GithubGraph";
 gsap.registerPlugin(ScrollTrigger)
 
 
