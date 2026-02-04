@@ -12,7 +12,7 @@ import gsap from "gsap";
 export default function ConnectCard() {
     const iconRef = useRef<(SVGSVGElement | null)[]>([])
     useGSAP(()=>{
-        gsap.from (iconRef.current,{x:'-200', opacity:0, stagger:0.15,duration:1,delay:0.5})
+        gsap.from (iconRef.current,{x:'-200', opacity:0, stagger:0.15,duration:1,delay:1})
     })
 
     const links = [

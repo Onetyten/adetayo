@@ -12,11 +12,11 @@ export default function About() {
 
   return (
     <div className='flex flex-col flex-grow justify-center items-center gap-12 h-full w-full max-w-full sm:max-w-lg'>
-        <div className="w-full flex justify-center items-center">
-            <img src={aboutImage} alt="" className="w-56 border-1 border-muted hover:shadow-[0px_0px_0px_#292824] transition-all duration-500 shadow-[0px_0px_0px_#292824] rounded-full object-contain" />
+        <div className="w-56 border-1 aspect-square rounded-full border-muted flex justify-center items-center">
+            <img src={aboutImage} alt="" className="w-full hover:shadow-[0px_0px_0px_#292824] transition-all duration-500 shadow-[0px_0px_0px_#292824] rounded-full object-contain" />
         </div> 
 
-        <ConsoleText projectname = 'About' className="w-full">
+        <ConsoleText animated projectname = 'About' className="w-full">
             <div className='flex flex-col text-base gap-5'>
                 <div>
                     <p className='text-lg text-wrap'>Labaeka_Adetayo</p>
