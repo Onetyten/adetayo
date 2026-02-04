@@ -226,7 +226,7 @@ export default function Project() {
 
         {isMobile &&
         <div className="w-full max-w-full">
-            <Box className=' xl:min-w-md flex-col gap-6 h-full w-full xl:w-lg flex flex-shrink-0 max-w-full'>
+            <Box className=' xl:min-w-md pointer-events-auto flex-col gap-6 h-full w-full xl:w-lg flex flex-shrink-0 max-w-full'>
                 <div className="w-full">
                     <GithubGraph />
                 </div>
