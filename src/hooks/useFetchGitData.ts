@@ -6,9 +6,16 @@ export default function useFetchGitData(username:string){
     const [data, setData] = useState<ContributionData | null>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
+    const CACHE_KEY = `github-commits-${username}`;
+    const CACHE_TTL = 3600;
+
+    function isContributionData(data: unknown): data is ContributionData {
+        return ( typeof data === "object" && data !== null && "totalContributions" in data && typeof (data as any).totalContributions === "number" && "username" in data && typeof (data as any).username === "string" && "contributions" in data && Array.isArray((data as any).contributions)
+    );
+    }
 
 
-    function setCachedData(key:string, value:number, ttl:number) {
+    function setCachedData(key:string, value:ContributionData, ttl:number) {
         const item = { value, timestamp: Date.now(), ttl: ttl * 1000 };
         localStorage.setItem(key, JSON.stringify(item));
     }
@@ -30,8 +37,18 @@ export default function useFetchGitData(username:string){
         }
     }
 
+    
+
     async function fetchContributions() {
         try {
+            const cachedData = getCachedData(CACHE_KEY);
+            if (cachedData && isContributionData(cachedData) ) {
+                setData(cachedData)
+                setLoading(false)
+                setError("")
+                return
+            }
+
             const toDate = new Date();
             const fromDate = new Date();
             fromDate.setMonth(fromDate.getMonth() - 12);
@@ -92,13 +109,10 @@ export default function useFetchGitData(username:string){
             })
 
             const totalContributions = allContributions.reduce((sum, day) => sum + day.count, 0);
-            
-            setData({
-                totalContributions,
-                contributions: allContributions,
-                username
-            });
+            const payload = { totalContributions, contributions: allContributions, username}
+            setData(payload);
             setLoading(false);
+            setCachedData(CACHE_KEY,payload,CACHE_TTL )
         }
         
         catch (err) {

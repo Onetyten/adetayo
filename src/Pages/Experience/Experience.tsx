@@ -165,15 +165,16 @@ export default function Project() {
 
         <div className="lg:sticky lg:top-0 lg:h-screen lg:self-start lg:min-w-md w-full lg:w-lg flex-shrink-0 max-w-full">
             <div ref={leftBoxRef} className="h-full">
-                <Box className=' xl:min-w-md flex-col h-full w-full xl:w-lg flex justify-start items-start flex-shrink-0 max-w-full'>
-                     <div className="flex justify-center font-semibold items-center  p-1.5 sm:p-3 px-5 border-muted border-1 rounded-full gap-2">
-                         <span className="size-2 rounded-full bg-blurple"></span>
-                         EXPERIENCE
-                     </div>
-                     <div>
-                        <GithubGraph />
-                     </div>
-                     
+                <Box className=' xl:min-w-md flex-col gap-6 h-full w-full xl:w-lg flex flex-shrink-0 max-w-full'>
+                    <div className="w-full flex flex-col h-full justify-start gap-6">
+                        <div className="flex justify-center font-semibold items-center  p-1.5 sm:p-3 px-5 border-muted border-1 rounded-full w-fit gap-2">
+                            <span className="size-2 rounded-full bg-blurple"></span>
+                            EXPERIENCE
+                        </div>
+                        <div className="w-full">
+                            <GithubGraph />
+                        </div>
+                    </div>
                  </Box>
             </div>
         </div>

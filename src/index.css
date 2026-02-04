@@ -79,13 +79,16 @@ html{
 }
 
 
-/* Custom CSS to force bigger contribution squares */
-.github-contributions-grid {
-  gap: 6px !important; /* Increase gap between squares */
-}
+.react-activity-calendar__tooltip {
+  width: max-content;
+  max-width: calc(100vw - 20px);
+  padding: 0.2em 0.5em;
+  border-radius: 0.25em;
+  background-color: #F5EFDD;
+  color: #171612;
+  font-size: 16px;
 
-.github-contributions-grid rect {
-  width: 25px !important; /* Increase square size */
-  height: 25px !important;
-  rx: 3px; /* Rounds the corners for a modern look */
+  .react-activity-calendar__tooltip-arrow {
+    fill: hsl(0 0% 10%);
+  }
 }
