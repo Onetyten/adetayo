@@ -161,7 +161,7 @@ export default function Project() {
     }, []);
 
   return (
-    <div className='max-w-full flex-col xl:flex-row min-h-dvh gap-0.5 relative p-0.5 flex text-text font-grotesk'>
+    <div id="exp-section" className='max-w-full flex-col xl:flex-row min-h-dvh gap-0.5 relative p-0.5 flex text-text font-grotesk'>
 
         <div className="xl:sticky xl:top-0 xl:h-screen xl:self-start xl:min-w-md w-full xl:w-lg flex-shrink-0 max-w-full">
             <div ref={leftBoxRef} className="h-full">

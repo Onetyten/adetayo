@@ -1,14 +1,20 @@
 import { useState } from "react"
 import SlotText from "./SlotText"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 
+interface propType{
+    setShowNav:React.Dispatch<React.SetStateAction<boolean>>
+}
 
 const localLinks = [
-    {name:"Work",url:""},
-    {name:"About",url:""},
-    {name:"Contact",url:""},
+    {name:"Work",url:"#work-section"},
+    {name:"Experience",url:"#exp-section"},
+    {name:"Contact",url:"#contact"},
 ]
 
-export default function NavBar() {
+
+export default function NavBar({setShowNav}:propType) {
     const [hoveredIndex,setHoveredIndex] = useState(-1)
     
   return (
@@ -21,6 +27,7 @@ export default function NavBar() {
             </a>
         )}
         </div>
+        <FontAwesomeIcon className="text-2xl" icon={faBars} onClick={()=>setShowNav(true)}/>
     </div>
   )
 }

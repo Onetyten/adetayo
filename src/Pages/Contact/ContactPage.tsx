@@ -9,7 +9,7 @@ interface propType{
 
 export default function ContactPage({setShowContact}:propType) {   
     return (
-    <div className='max-w-full min-h-dvh xl:flex-row flex-col gap-0.5 relative p-0.5 flex text-text font-grotesk'>
+    <div id='contact' className='max-w-full min-h-dvh xl:flex-row flex-col gap-0.5 relative p-0.5 flex text-text font-grotesk'>
         <Box className='w-full flex justify-start flex-col gap-6 items-start max-w-full'>
             <div className="flex justify-center font-semibold items-center p-1.5 sm:p-3 px-5 border-muted border-1 rounded-full gap-2">
                 <span className="size-2 rounded-full bg-yellow"></span>

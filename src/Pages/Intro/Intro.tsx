@@ -6,15 +6,16 @@ import NavBar from "./NavBar"
 
 interface propType{
     setShowContact:React.Dispatch<React.SetStateAction<boolean>>
+    setShowNav:React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function Intro({setShowContact}:propType) {
+export default function Intro({setShowContact,setShowNav}:propType) {
 
   return (
         <section className='max-w-full min-h-dvh relative p-0.5 overflow-hidden flex flex-col lg:flex-row text-text gap-0.5 font-grotesk'>
             <div className="lg:min-h-dvh gap-0.5 lg:min-w-md w-full lg:w-lg flex-shrink-0  max-w-full flex flex-col">
                 <Box className="min-h-[110px] flex items-center w-full">
-                    <NavBar/>
+                    <NavBar setShowNav={setShowNav}/>
                 </Box>
 
                 <Box className="flex flex-grow py-24 flex-col justify-center items-center h-full w-full">

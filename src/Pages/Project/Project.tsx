@@ -211,7 +211,7 @@ export default function Project() {
     }, [isMobile]);
 
   return (
-    <div className='max-w-full min-h-dvh gap-0.5 relative p-0.5 flex text-text font-grotesk'>
+    <div id="work-section" className='max-w-full min-h-dvh gap-0.5 relative p-0.5 flex text-text font-grotesk'>
         <div className="lg:sticky lg:top-0 lg:h-screen lg:self-start lg:min-w-md w-full lg:w-lg flex-shrink-0 max-w-full">
             <div ref={leftBoxRef} className="h-full">
                 <Box absolute className="gap-8 left-0 sticky flex flex-col justify-start h-full lg:h-dvh items-start">
