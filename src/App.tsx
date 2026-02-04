@@ -9,6 +9,7 @@ import Experience from "./Pages/Experience/Experience"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Skills from "./Pages/Skills/Skills"
+import DottedBackground from "./Components/DottedBackground"
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
@@ -23,8 +24,8 @@ function App() {
   
   
   return (
-    <div className="w-full flex flex-col">
-      <main id="main-container" className="overflow-x-hidden  gap-8 flex flex-col relative">
+    <DottedBackground>
+      <main id="main-container" className="overflow-x-hidden gap-20 flex flex-col relative">
           <Intro setShowNav={setShowNav} setShowContact={setShowContact}/>
           <Project />
           <Skills/>
@@ -35,7 +36,7 @@ function App() {
       {showNav && <MobileNav setShowNav={setShowNav}/>}
       <ToastContainer autoClose={5000}/>  
 
-    </div>
+    </DottedBackground>
     
 
   )

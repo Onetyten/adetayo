@@ -63,7 +63,7 @@ export default function Contact({setShowContact}:propType) {
       };
 
   return (
-    <div className='w-screen min-h-dvh z-30 inset-0 text-text fixed box-border flex justify-center items-center '>
+    <div className='w-screen min-h-dvh pointer-events-auto z-30 inset-0 text-text fixed box-border flex justify-center items-center '>
         <div className="inset-0 z-20 absolute bg-card/50" onClick={()=>setShowContact(false)}></div>
         
         <form className="rounded-3xl overflow-hidden z-30 max-w-[95%] bg-card w-3xl flex sm:mb-10 md:mb-0 flex-col justify-between gap-3 p-8 relative" action="" onSubmit={onSubmit}>

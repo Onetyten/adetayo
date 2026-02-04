@@ -12,7 +12,7 @@ interface propType{
 export default function Intro({setShowContact,setShowNav}:propType) {
 
   return (
-        <section className='max-w-full min-h-dvh relative p-0.5 overflow-hidden flex flex-col lg:flex-row text-text gap-0.5 font-grotesk'>
+        <section className='max-w-full pointer-events-auto min-h-dvh relative p-0.5 overflow-hidden flex flex-col lg:flex-row text-text gap-0.5 font-grotesk'>
             <div className="lg:min-h-dvh gap-0.5 lg:min-w-md w-full lg:w-lg flex-shrink-0  max-w-full flex flex-col">
                 <Box className="min-h-[110px] flex items-center w-full">
                     <NavBar setShowNav={setShowNav}/>
