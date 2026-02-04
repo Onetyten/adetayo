@@ -4,6 +4,22 @@ import MoriVid from '/Video/mori.webm'
 import LiftVid from '/Video/Liftmobile.webm'
 import CliqueVid from '/Video/clique.webm'
 
+    
+export const getColor = (level: number | string) => {
+    const levelMap: Record<string | number, string> = {
+        0: 'bg-gray-800',
+        'NONE': 'bg-gray-800',
+        1: 'bg-green-900',
+        'FIRST_QUARTILE': 'bg-green-900',
+        2: 'bg-green-700',
+        'SECOND_QUARTILE': 'bg-green-700',
+        3: 'bg-green-500',
+        'THIRD_QUARTILE': 'bg-green-500',
+        4: 'bg-green-300',
+        'FOURTH_QUARTILE': 'bg-green-300'
+    };
+    return levelMap[level] || 'bg-gray-800';
+};
 
 export const projectDetails = [
     {

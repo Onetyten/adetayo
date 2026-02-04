@@ -9,7 +9,7 @@ export default function MonthlyGraph({ contributions }: { contributions: Contrib
     const contributionsByMonth = groupByMonth(contributions);
 
     return (
-        <div className="space-y-8">
+        <div className="flex flex-col w-full gap-4">
             {contributionsByMonth.map((monthData, index) => (
                 <MonthBlock key={index} monthData={monthData} />
             ))}
