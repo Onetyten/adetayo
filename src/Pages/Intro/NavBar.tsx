@@ -27,7 +27,7 @@ export default function NavBar({setShowNav}:propType) {
             </a>
         )}
         </div>
-        <FontAwesomeIcon className="text-2xl" icon={faBars} onClick={()=>setShowNav(true)}/>
+        <FontAwesomeIcon className="text-2xl flex sm:hidden" icon={faBars} onClick={()=>setShowNav(true)}/>
     </div>
   )
 }
