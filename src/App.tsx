@@ -25,7 +25,7 @@ function App() {
   
   return (
     <DottedBackground>
-      <main id="main-container" className="overflow-x-hidden gap-20 flex flex-col relative">
+      <main id="main-container" className="overflow-x-hidden gap-8 flex flex-col relative">
           <Intro setShowNav={setShowNav} setShowContact={setShowContact}/>
           <Project />
           <Skills/>
