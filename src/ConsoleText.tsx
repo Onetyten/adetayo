@@ -18,7 +18,7 @@ export default function ConsoleText({children,className,projectname,isTimeline}:
                     <div className='bg-red hover:bg-red-600 w-3 h-3 rounded-full'></div>
                 </div>
 
-                <div className='flex-1 p-2 sm:r-2  text-center w-full flex justify-center'>
+                <div className='flex-1 p-2 sm:r-2 text-left sm:text-center w-full flex justify-center'>
                     <p className='text-text hover:text-light font-semibold uppercase text-base md:text-lg'>{projectname}</p>
                     
                 </div>

@@ -10,18 +10,16 @@ interface propType{
 export default function ContactPage({setShowContact}:propType) {   
     return (
     <div className='max-w-full min-h-dvh xl:flex-row flex-col gap-0.5 relative p-0.5 flex text-text font-grotesk'>
-        <Box className='w-1/2 flex justify-start flex-col gap-6 items-start max-w-full'>
-            <div className="flex justify-center font-semibold items-center  p-1.5 sm:p-3 px-5 border-muted border-1 rounded-full gap-2">
+        <Box className='w-full flex justify-start flex-col gap-6 items-start max-w-full'>
+            <div className="flex justify-center font-semibold items-center p-1.5 sm:p-3 px-5 border-muted border-1 rounded-full gap-2">
                 <span className="size-2 rounded-full bg-yellow"></span>
                 CONTACT
             </div>
             <ContactInfo/>
         </Box>
 
-
-
-        <Box transparent className='flex items-start bg-blurple max-w-full justify-center gap-40 flex-col text-text w-1/2 py-20 xl:min-h-dvh'>
-            <div className='flex  flex-col text-5xl gap-6'>
+        <Box transparent className='flex items-start bg-blurple max-w-full justify-center gap-40 flex-col text-text w-full py-20 xl:min-h-dvh'>
+            <div className='flex  flex-col text-3xl xs:text-5xl gap-6'>
                 <p>Want to say hi?</p>
                 <p className='font-offbit'>Lets Connect</p>
 

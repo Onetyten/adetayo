@@ -20,7 +20,7 @@ export default function Project() {
     const visibilityRef = useRef<boolean[]>([]);
     const [, forceRender] = useState(0);
     const [isMobile, setIsMobile] = useState(
-        window.matchMedia("(max-width: 1023px)").matches
+        window.matchMedia("(max-width: 1279px)").matches
     );
 
     useEffect(() => {
@@ -161,19 +161,22 @@ export default function Project() {
     }, []);
 
   return (
-    <div className='max-w-full min-h-dvh gap-0.5 relative p-0.5 flex text-text font-grotesk'>
+    <div className='max-w-full flex-col xl:flex-row min-h-dvh gap-0.5 relative p-0.5 flex text-text font-grotesk'>
 
-        <div className="lg:sticky lg:top-0 lg:h-screen lg:self-start lg:min-w-md w-full lg:w-lg flex-shrink-0 max-w-full">
+        <div className="xl:sticky xl:top-0 xl:h-screen xl:self-start xl:min-w-md w-full xl:w-lg flex-shrink-0 max-w-full">
             <div ref={leftBoxRef} className="h-full">
                 <Box className=' xl:min-w-md flex-col gap-6 h-full w-full xl:w-lg flex flex-shrink-0 max-w-full'>
-                    <div className="w-full flex flex-col h-full justify-start gap-6">
+                    <div className="w-full flex flex-col h-full justify-between gap-6">
                         <div className="flex justify-center font-semibold items-center  p-1.5 sm:p-3 px-5 border-muted border-1 rounded-full w-fit gap-2">
                             <span className="size-2 rounded-full bg-blurple"></span>
                             EXPERIENCE
                         </div>
-                        <div className="w-full">
-                            <GithubGraph />
-                        </div>
+                        {!isMobile &&
+                            <div className="w-full overflow-y-scroll">
+                                <GithubGraph />
+                            </div>
+                        }
+                        
                     </div>
                  </Box>
             </div>
@@ -183,13 +186,13 @@ export default function Project() {
             <div ref={entryRef}></div>
             <Box className="h-full w-full min-h-dvh max-w-full flex flex-col items-center">
                 
-                <div className="flex py-10 flex-row items-center justify-between gap-4 ">
-                    <div className="flex flex-col w-full h-full items-start sm:items-end gap-10  sm:order-1 order-2">
+                <div className="flex py-10 pl-8 sm:pl-0 flex-row items-center justify-between gap-4 ">
+                    <div className="sm:flex hidden flex-col w-full h-full items-start sm:items-end gap-6 sm:gap-10  sm:order-1 order-2">
                         {educationList.map((item,index)=>{
                         const isOdd = index%2===1
                         return(
-                                <div key={index} className="sm:min-h-96 min-h-80 justify-around items-center flex flex-1 ">
-                                <div className={`${isOdd?"block sm:hidden":"hidden sm:block"}`}>
+                            <div key={index} className="sm:min-h-96 min-h-80 justify-around items-center flex flex-1 ">
+                                <div className={`${isOdd?"block sm:hidden":"block"}`}>
                                     <Card projectname={item.Place} timeline={item.timeline} skills = {item.skill} desc={item.desc}/> 
                                 </div>
                             </div>
@@ -197,20 +200,20 @@ export default function Project() {
                     })}
                     </div>
 
-                    <div className=" bg-muted w-1 h-full relative sm:order-2 order-1">
-                    </div> 
+                    <div className=" bg-muted w-1 self-stretch sm:order-2 order-1"></div> 
 
-                    <div  className="sm:flex flex-col w-full h-full items-start hidden gap-10 sm:order-3 ">
+                    <div  className="flex flex-col w-full h-full items-start gap-10 order-2 sm:order-3 ">
+                        
                         {educationList.map((item,index)=>{
                             const isEven = index%2==0
                             return(
-                                <div className="sm:min-h-96 min-h-80 relative justify-around items-center flex flex-1 ">
-                                    <div className={`${isEven?"block sm:hidden":"hidden sm:block"}`}>
+                                <div key={index} className="sm:min-h-96 min-h-80 relative justify-around items-center flex flex-1 ">
+                                    <div className={`${isEven?"block sm:hidden":"block"}`}>
                                         <Card projectname={item.Place} timeline={item.timeline} skills = {item.skill} desc={item.desc}/> 
                                     </div>
 
-                                    <div className="w-4 h-4 border-[1px] bg-darkgrey border-muted rounded-full hover:bg-myteal absolute top-1/2 -left-[25px]">
-                                        <div className={`absolute ${!isEven?"-left-12 -top-1.5":"sm:left-6 sm:-top-1.5 -left-12 -top-1.5"}`}>{item.start}</div>
+                                    <div className="w-4 h-4 text-xs xs:text-sm sm:text-base border-[1px] bg-darkgrey border-muted rounded-full hover:bg-myteal absolute top-1/2 -left-[26px] sm:-left-[25px]">
+                                        <div className={`absolute -left-10 -top-1.5  ${!isEven?" ":"sm:left-6 sm:-top-1.5"}`}>{item.start}</div>
                                     </div>
                                 </div>
                             )
@@ -220,6 +223,15 @@ export default function Project() {
             </Box>
             <div ref={exitRef}></div>
         </div>
+
+        {isMobile &&
+        <div className="w-full max-w-full">
+            <Box className=' xl:min-w-md flex-col gap-6 h-full w-full xl:w-lg flex flex-shrink-0 max-w-full'>
+                <div className="w-full">
+                    <GithubGraph />
+                </div>
+            </Box>
+        </div>}
         
     </div>
   )
