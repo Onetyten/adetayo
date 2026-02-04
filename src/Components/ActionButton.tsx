@@ -24,9 +24,9 @@ export default function ActionButton({setShowContact}:propType) {
             </div>
 
             <div onMouseEnter={()=>setHoveringResume(prev=>(prev?prev:true))} onMouseLeave={()=>setHoveringResume(prev=>(prev?false:prev))}  className="text-text cursor-pointer">
-                <span className="text-sm font-bold relative uppercase">
+                <a href="https://docs.google.com/document/d/1KOrM3naUz9AZJNoqXWN-EP2jK1UNcRWv5SJQsktESYg/export?format=pdf" className="text-sm font-bold relative uppercase">
                     <SlotText text="Download Resume" active={hoveringResume}/>
-                </span> 
+                </a> 
             </div>
 
         </div>

@@ -25,23 +25,44 @@ export default function Project() {
 
     useEffect(() => {
         if (!isMobile) return;
-
         const onResize = () => {
-            visibilityRef.current = visibilityRef.current.map(() => true);
+            visibilityRef.current = visibilityRef.current.map(() => true)
             forceRender(v => v + 1);
-        };
+        }
 
-        window.addEventListener("resize", onResize);
+        window.addEventListener("resize", onResize)
         return () => window.removeEventListener("resize", onResize);
     }, [isMobile]);
 
     useEffect(() => {
         const media = window.matchMedia("(max-width: 1023px)");
 
-        const handler = () => setIsMobile(media.matches);
+        const handler = () => {
+            setIsMobile(media.matches);
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 100);
+        };
         media.addEventListener("change", handler);
-
         return () => media.removeEventListener("change", handler);
+    }, []);
+
+
+    useEffect(() => {
+        let resizeTimer: ReturnType<typeof setTimeout>
+        const handleResize = () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 250);
+        };
+
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            clearTimeout(resizeTimer);
+        };
     }, []);
         
 
@@ -68,6 +89,7 @@ export default function Project() {
 
     useEffect(()=>{
         if (isMobile) return
+        
         const st = ScrollTrigger.create({
             trigger:entryRef.current,
             start:"top top",
@@ -78,15 +100,25 @@ export default function Project() {
             pinSpacing:false,
             anticipatePin: 1,
             invalidateOnRefresh: true,
-            onRefresh: (self) => self.pin && gsap.set(self.pin, {clearProps: "all"})
+            onRefresh: (self) => {
+                if (self.pin) {
+                    gsap.set(self.pin, {clearProps: "all"})
+                }
+            }
         })
 
-        return ()=>st.kill()
-    },[])
+        return ()=>{
+            st.kill()
+            if (leftBoxRef.current) {
+                gsap.set(leftBoxRef.current, {clearProps: "all"})
+            }
+        }
+    },[isMobile])
 
     useEffect(() => {
         if (isMobile) return
         if (!letterPinRef.current || !entryRef.current || !exitRef.current) return;
+        
         const st = ScrollTrigger.create({
             trigger: leftBoxRef.current,
             start: "top top",
@@ -94,10 +126,16 @@ export default function Project() {
             end: "bottom bottom",
             pin: letterPinRef.current,
             pinSpacing: false,
+            invalidateOnRefresh: true,
         });
 
-        return () => st.kill()
-    }, []);
+        return () => {
+            st.kill()
+            if (letterPinRef.current) {
+                gsap.set(letterPinRef.current, {clearProps: "all"})
+            }
+        }
+    }, [isMobile]);
 
     useEffect(() => {
         if (isMobile) return;
@@ -109,7 +147,8 @@ export default function Project() {
                 start: "center center",
                 end: "center center",
                 onEnter: () => setCurrentIndex(index),
-                onEnterBack: () => setCurrentIndex(index)
+                onEnterBack: () => setCurrentIndex(index),
+                invalidateOnRefresh: true,
             });
             triggers.push(st);
         });
@@ -131,34 +170,45 @@ export default function Project() {
             duration: 0.6,
             ease: "power3.out"
         });
-    }, [currentIndex]);
+    }, [currentIndex, isMobile]);
 
 
     useEffect(() => {
         if (isMobile) return
+        
+        const animations: gsap.core.Timeline[] = [];
+        
         sectionsRef.current.forEach((anchor) => {
             if (!anchor) return;
             const video = anchor.querySelector(".project-video");
             if (!video) return;
 
             const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: anchor,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
+                scrollTrigger: {
+                    trigger: anchor,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true,
+                    invalidateOnRefresh: true,
+                }
             });
+            
             tl.fromTo(
-                video, {opacity: 0, filter: "blur(24px)", scale: 0.9},
+                video, 
+                {opacity: 0, filter: "blur(24px)", scale: 0.9},
                 {opacity: 1, filter: "blur(0px)", scale: 1, ease: "none", duration: 0.3}
             );
             tl.to(video, {opacity: 1,filter: "blur(0px)",scale: 1,ease: "none",duration: 0.4});
             tl.to(video, { opacity: 0, filter: "blur(24px)", scale: 0.94, ease: "none", duration: 0.3});
+            
+            animations.push(tl);
         });
         
-        return () => ScrollTrigger.getAll().forEach(t => t.kill());
-    }, []);
+        return () => {
+            animations.forEach(tl => tl.kill());
+            ScrollTrigger.getAll().forEach(t => t.kill());
+        };
+    }, [isMobile]);
 
   return (
     <div className='max-w-full min-h-dvh gap-0.5 relative p-0.5 flex text-text font-grotesk'>

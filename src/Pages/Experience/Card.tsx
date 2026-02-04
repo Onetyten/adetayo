@@ -12,9 +12,9 @@ interface propTypes {
 export default function Card(props:propTypes) {
     const {projectname,timeline,skills,desc}  = props
   return (
-    <div className="max-w-md xl:min-w-sm xl:max-w-lg ">
+    <div className="max-w-md xl:max-w-lg ">
         <ConsoleText projectname={projectname} isTimeline={true} >
-            <div className='flex pl-1 text-text md:pl-4 flex-col gap-3 py-2 pb-6'>
+            <div className='flex pl-1 text-text text-base md:pl-4 flex-col gap-3 py-2 pb-6'>
                 <div className=' '>
                     <p className='text-muted' >Timeline : <span className='text-text'>{timeline}</span></p> 
                 </div>
