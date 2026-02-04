@@ -165,7 +165,7 @@ export default function Project() {
 
         <div className="xl:sticky xl:top-0 xl:h-screen xl:self-start xl:min-w-md w-full xl:w-lg flex-shrink-0 max-w-full">
             <div ref={leftBoxRef} className="h-full">
-                <Box className=' xl:min-w-md flex-col gap-6 h-full w-full xl:w-lg flex flex-shrink-0 max-w-full'>
+                <Box className=' xl:min-w-md flex-col pointer-events-auto gap-6 h-full w-full xl:w-lg flex flex-shrink-0 max-w-full'>
                     <div className="w-full flex flex-col h-full justify-between gap-6">
                         <div className="flex justify-center font-semibold items-center  p-1.5 sm:p-3 px-5 border-muted border-1 rounded-full w-fit gap-2">
                             <span className="size-2 rounded-full bg-blurple"></span>
@@ -184,7 +184,7 @@ export default function Project() {
 
         <div className="flex flex-col w-full max-w-full">
             <div ref={entryRef}></div>
-            <Box className="h-full w-full min-h-dvh max-w-full flex flex-col items-center">
+            <Box className="h-full w-full pointer-events-auto min-h-dvh max-w-full flex flex-col items-center">
                 
                 <div className="flex py-10 pl-8 sm:pl-0 flex-row items-center justify-between gap-4 ">
                     <div className="sm:flex hidden flex-col w-full h-full items-start sm:items-end gap-6 sm:gap-10  sm:order-1 order-2">
@@ -212,7 +212,7 @@ export default function Project() {
                                         <Card projectname={item.Place} timeline={item.timeline} skills = {item.skill} desc={item.desc}/> 
                                     </div>
 
-                                    <div className="w-4 h-4 text-xs xs:text-sm sm:text-base border-[1px] bg-darkgrey border-muted rounded-full hover:bg-myteal absolute top-1/2 -left-[26px] sm:-left-[25px]">
+                                    <div className="w-4 h-4 text-xs xs:text-sm sm:text-base border-[1px] bg-darkgrey hover:bg-blurple hover:border-blurple border-muted rounded-full hover:bg-myteal absolute top-1/2 -left-[26px] sm:-left-[25px]">
                                         <div className={`absolute -left-10 -top-1.5  ${!isEven?" ":"sm:left-6 sm:-top-1.5"}`}>{item.start}</div>
                                     </div>
                                 </div>

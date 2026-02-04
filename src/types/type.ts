@@ -1,4 +1,4 @@
-type ContributionLevel = 'NONE' | 'FIRST_QUARTILE' | 'SECOND_QUARTILE' | 'THIRD_QUARTILE' | 'FOURTH_QUARTILE';
+// type ContributionLevel = 'NONE' | 'FIRST_QUARTILE' | 'SECOND_QUARTILE' | 'THIRD_QUARTILE' | 'FOURTH_QUARTILE';
 
 export interface ContributionDay {
     date: string;
@@ -18,4 +18,15 @@ export interface MonthData {
     monthName: string;
     weeks: ContributionDay[][];
     totalContributions: number;
+}
+
+export interface Dot {
+  x: number
+  y: number
+  originalX: number
+  originalY: number
+  offsetX: number
+  offsetY: number
+  velocityX: number
+  velocityY: number
 }

@@ -144,8 +144,8 @@ export default function Project() {
             if (!section) return;
             const st = ScrollTrigger.create({
                 trigger: section,
-                start: "center center",
-                end: "center center",
+                start: "top center",
+                end: "bottom center",
                 onEnter: () => setCurrentIndex(index),
                 onEnterBack: () => setCurrentIndex(index),
                 invalidateOnRefresh: true,
@@ -214,7 +214,7 @@ export default function Project() {
     <div id="work-section" className='max-w-full min-h-dvh gap-0.5 relative p-0.5 flex text-text font-grotesk'>
         <div className="lg:sticky lg:top-0 lg:h-screen lg:self-start lg:min-w-md w-full lg:w-lg flex-shrink-0 max-w-full">
             <div ref={leftBoxRef} className="h-full">
-                <Box absolute className="gap-8 left-0 sticky flex flex-col justify-start h-full lg:h-dvh items-start">
+                <Box absolute className="gap-8 left-0 sticky flex pointer-events-auto flex-col justify-start h-full lg:h-dvh items-start">
                     <div className="flex my-4 justify-center font-semibold items-center border-muted border-1 p-1.5 sm:p-3 px-5 rounded-full gap-2">
                         <span className="size-2 rounded-full bg-yellow"></span>
                         SELECTED PROJECTS
@@ -260,7 +260,7 @@ export default function Project() {
 
         {!isMobile && (<div className="flex flex-col w-full h-full max-w-full">
             <div ref={entryRef}></div>
-            <Box className="h-full w-full min-h-dvh max-w-full flex flex-col items-center">
+            <Box className="h-full w-full pointer-events-auto min-h-dvh max-w-full flex flex-col items-center">
                 <div ref={letterPinRef} className="absolute inset-0 opacity-35 flex justify-center w-full items-center pointer-events-none z-0">
                     <p id="letter-div" className="text-[40vw] font-offbit font-bold text-card  [text-shadow:10px_5px_0px_#29282440] head-shadows text-lightgrey">
                         {projectDetails[currentIndex].letter}

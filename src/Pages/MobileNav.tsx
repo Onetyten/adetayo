@@ -27,7 +27,7 @@ export default function MobileNav({setShowNav}:propType) {
     }
 
   return (
-    <div className='w-screen min-h-dvh z-50 inset-0 text-text fixed box-border flex sm:hidden  justify-center items-start '>
+    <div className='w-screen min-h-dvh pointer-events-auto z-50 inset-0 text-text fixed box-border flex sm:hidden  justify-center items-start '>
         <div className="inset-0 z-20 absolute bg-card/50" onClick={closeNav}></div>
         
         <div ref={navRef} className="overflow-hidden items-center z-30 w-full bg-card min-h-[50dvh] max-h-[70dvh] flex sm:mb-10 md:mb-0 flex-col justify-between gap-3 p-8 relative">
