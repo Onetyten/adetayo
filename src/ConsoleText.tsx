@@ -26,9 +26,7 @@ export default function ConsoleText({children,className,projectname,isTimeline}:
                 <div className='w-14'>
 
                 </div>
-
             </div>
-
           </div>
 
           <div className='text-text px-6 py-3 box-border 2xl:text-base text-xs'>

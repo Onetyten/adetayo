@@ -1,6 +1,10 @@
-import PropTypes from "prop-types"
 
-export default function SkillItem(props) {
+interface propTypes{
+  source:string,
+  title:string
+}
+
+export default function SkillItem(props:propTypes) {
     const {source,title} = props
   return (
         <div className='flex flex-col md:gap-4 gap-1.5 hover:opacity-45'>
@@ -10,9 +14,5 @@ export default function SkillItem(props) {
   )
 }
 
-SkillItem.propTypes ={
-  source:PropTypes.node,
-  title:PropTypes.node
-}
 
 
