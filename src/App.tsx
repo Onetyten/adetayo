@@ -3,10 +3,11 @@ import Intro from "./Pages/Intro/Intro"
 import Project from "./Pages/Project/Project" 
 import { useEffect, useState } from "react"
 import Contact from "./Pages/Contact/Contact"
-import Skills from "./Pages/Skills/Skills"
+import ContactPage from "./Pages/Contact/ContactPage"
 import Experience from "./Pages/Experience/Experience"
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Skills from "./Pages/Skills/Skills"
 gsap.registerPlugin(ScrollTrigger)
 
 function App() {
@@ -28,12 +29,11 @@ function App() {
           <Project />
           <Skills/>
           <Experience/>
+          <ContactPage setShowContact={setShowContact}/>
+          
           
           {showContact && <Contact setShowContact={setShowContact}/>}
           <div id="pin-stop"></div>
-
-          {/* <Education pageIndex={8}pageUrls={pageUrls}viewList={viewList}setCurrentIndex={setCurrentIndex} /> */}
-          {/* <Contact pageIndex={9}  pageUrls={pageUrls}  viewList={viewList} setCurrentIndex={setCurrentIndex} /> */}
           
       </main>
       <ToastContainer autoClose={5000}/>  
