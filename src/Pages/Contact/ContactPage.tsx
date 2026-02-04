@@ -19,8 +19,8 @@ export default function ContactPage({setShowContact}:propType) {
         </Box>
 
         <Box transparent className='flex items-start bg-blurple max-w-full justify-center gap-40 flex-col text-text w-full py-20 xl:min-h-dvh'>
-            <div className='flex  flex-col text-3xl xs:text-5xl gap-6'>
-                <p>Want to say hi?</p>
+            <div className='flex font-offbit flex-col text-3xl xs:text-5xl gap-6'>
+                <p>Want to say hi ?</p>
                 <p className='font-offbit'>Lets Connect</p>
 
             </div>
