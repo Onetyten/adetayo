@@ -47,6 +47,18 @@ export const projectDetails = [
     githubPath:'https://github.com/Onetyten/conduit'
     },
     {
+        name: "Clique",
+        role: "Fullstack developer ",
+        skills: ["HTML","CSS","Typescript","ExpressJs","PostgreSQL","Supabase","Jest","Websocket","Redis/caching"],
+        desc: "Clique is a social bonding chat and guessing game app that lets you connect with friends, play fun guessing games, and get to know each other better. It features real-time messaging, instant notifications, and an engaging, optimized gameplay experience.",
+        letter: "C",
+        message: "",
+        isMobile:false,
+        video:CliqueVid,
+        projectPath:'https://clique-1.onrender.com',
+        githubPath:'https://github.com/Onetyten/clique'
+    },
+    {
     name: "OS Logistics",
     role: "Frontend Engineer",
     skills: ["React", "TailwindCSS","WebSocket","Map Libre","React Leaflet","Recharts"],
@@ -58,18 +70,7 @@ export const projectDetails = [
     projectPath:'https://os-logistics.vercel.app/',
     githubPath:'https://github.com/Onetyten/os-logistics'
   },
-  {
-    name: "Clique",
-    role: "Fullstack developer ",
-    skills: ["HTML","CSS","Typescript","ExpressJs","PostgreSQL","Supabase","Jest","Websocket","Redis/caching"],
-    desc: "Clique is a social bonding chat and guessing game app that lets you connect with friends, play fun guessing games, and get to know each other better. It features real-time messaging, instant notifications, and an engaging, optimized gameplay experience.",
-    letter: "C",
-    message: "",
-    isMobile:false,
-    video:CliqueVid,
-    projectPath:'https://clique-1.onrender.com',
-    githubPath:'https://github.com/Onetyten/clique'
-  },
+
   {
     name: "Lift mobile",
     role: " FullStack developer",
