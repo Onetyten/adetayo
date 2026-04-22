@@ -71,19 +71,19 @@ export const projectDetails = [
     githubPath:'https://github.com/Onetyten/os-logistics'
   },
 
-  {
-    name: "Lift mobile",
-    role: " FullStack developer",
-    skills: ["React native","Expo","Express","MongoDB","React"],
-    desc: "This is a full-stack, user-driven car rental platform that allows individuals to rent out their cars when not in use. Built with Express.js and MongoDB, providing a seamless and secure experience for both car owners and renters",
-    letter: "L",
-    message: "scroll down",
-    isMobile:true,
-    video:LiftVid,
-    projectPath:'https://lift-mobile.vercel.app/',
-    githubPath:'https://github.com/Onetyten/Lift-mobile'
+//   {
+//     name: "Lift mobile",
+//     role: " FullStack developer",
+//     skills: ["React native","Expo","Express","MongoDB","React"],
+//     desc: "This is a full-stack, user-driven car rental platform that allows individuals to rent out their cars when not in use. Built with Express.js and MongoDB, providing a seamless and secure experience for both car owners and renters",
+//     letter: "L",
+//     message: "scroll down",
+//     isMobile:true,
+//     video:LiftVid,
+//     projectPath:'https://lift-mobile.vercel.app/',
+//     githubPath:'https://github.com/Onetyten/Lift-mobile'
     
-  },
+//   },
 ];
 
 export const educationList =[
