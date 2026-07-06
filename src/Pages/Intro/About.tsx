@@ -26,7 +26,7 @@ export default function About() {
                 </div>
 
                 <div>
-                    Hi, i&apos;m Adetayo a Fullstack developer with a lifelong obsession for building. Over the years i&apos;ve worked on a diverse range of projects from high performance real-time backend systems to high fidelity frontends.
+                    Hi, i&apos;m Adetayo a Software developer with a lifelong obsession for building. Over the years i&apos;ve worked on a diverse range of projects from high performance real-time backend systems to high fidelity frontends.
                 </div>
 
                 <a href= "https://github.com/Onetyten" target='_blank' onMouseEnter={()=>setHoveringGit(prev=>(prev?prev:true))} onMouseLeave={()=>setHoveringGit(prev=>(prev?false:prev))} className="border-1 text-text hover:text-darkgrey w-fit cursor-pointer border-muted p-[1px] bg-card flex relative items-center transition-all duration-300 h-12">
